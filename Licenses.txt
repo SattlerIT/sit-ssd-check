@@ -1,0 +1,7 @@
+Lizenzen / Licenses
+S-IT SSD-Check (S-IT-SSDCheck.exe)
+
+Freeware — © 2026 Hans Udo Sattler, Sattler IT-Service, Greifenstein
+
+Kostenlose Nutzung und Weitergabe des unveränderten Pakets erlaubt.
+Der Quellcode ist nicht öffentlich. Änderungen und kommerzielle Nutzung sind nicht gestattet.
