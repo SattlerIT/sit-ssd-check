@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S-IT SSD-Check – SSD-Gesundheit prüfen für PC, Laptop &amp; Gebrauchtkauf</title>
+  <style>
+    :root {
+      --primary:   #2C3E50;
+      --red:       #E74C3C;
+      --green:     #27AE60;
+      --blue:      #2980B9;
+      --orange:    #E67E22;
+      --yellow:    #F1C40F;
+      --light:     #ECF0F1;
+      --bg:        #F5F5F5;
+      --card:      #FFFFFF;
+      --border:    #BDC3C7;
+      --text:      #2C3E50;
+      --muted:     #7F8C8D;
+      --font:      'Segoe UI', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--primary);
+      padding: 28px 40px 24px;
+    }
+    .header-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .logo { display: flex; align-items: baseline; gap: 0; }
+    .logo-sit  { color: var(--red);   font-size: 36px; font-weight: 700; line-height: 1; }
+    .logo-name { color: #fff;         font-size: 36px; font-weight: 300; line-height: 1; }
+    .header-sub {
+      color: var(--border);
+      font-size: 13px;
+      padding-bottom: 4px;
+    }
+    .header-badge {
+      margin-left: auto;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.2);
+      color: var(--light);
+      font-size: 12px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    /* Rote Trennlinie */
+    .divider { height: 3px; background: var(--red); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--primary);
+      padding: 0 40px 36px;
+    }
+    .hero-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding-top: 32px;
+    }
+    .hero h1 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .hero p {
+      color: var(--border);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .btn-download {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-download:hover { background: #219a52; }
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--light);
+      font-size: 13px;
+      padding: 12px 20px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 4px;
+      text-decoration: none;
+      margin-left: 10px;
+      transition: border-color .2s;
+    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,.6); }
+
+    .hero-screenshot {
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,.4);
+    }
+    .hero-screenshot img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    /* ── AMPEL-LEGENDE ── */
+    .ampel-section {
+      background: var(--card);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      margin-bottom: 32px;
+    }
+    .ampel-section h2 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--red);
+      display: inline-block;
+    }
+    .ampel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .ampel-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 4px;
+      background: var(--bg);
+    }
+    .ampel-dot {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .ampel-item-text strong { font-size: 13px; display: block; }
+    .ampel-item-text span   { font-size: 11px; color: var(--muted); }
+
+    /* ── FEATURE CARDS ── */
+    .section-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--red);
+      display: inline-block;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px 22px;
+    }
+    .card-icon { font-size: 22px; margin-bottom: 10px; }
+    .card h3   { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .card p    { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* ── SCREENSHOT GALLERY ── */
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .gallery-item {
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      cursor: pointer;
+      transition: box-shadow .2s;
+    }
+    .gallery-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,.16); }
+    .gallery-item img   {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .gallery-caption {
+      background: var(--primary);
+      color: var(--light);
+      font-size: 11px;
+      padding: 6px 10px;
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.85);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img  { max-width: 90vw; max-height: 90vh; border-radius: 4px; }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 28px;
+      color: #fff; font-size: 32px; cursor: pointer; line-height: 1;
+    }
+
+    /* ── INFO-BOX ── */
+    .info-box {
+      background: #EBF5FB;
+      border-left: 4px solid var(--blue);
+      border-radius: 0 4px 4px 0;
+      padding: 14px 18px;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+      color: #1A5276;
+    }
+    .warn-box {
+      background: #FEF9E7;
+      border-left: 4px solid var(--yellow);
+      border-radius: 0 4px 4px 0;
+      padding: 14px 18px;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+      color: #7D6608;
+    }
+
+    /* ── CHANGELOG ── */
+    .changelog {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+    }
+    .changelog-entry { margin-bottom: 20px; }
+    .changelog-entry:last-child { margin-bottom: 0; }
+    .changelog-version {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .changelog-version span {
+      font-weight: 400;
+      color: var(--muted);
+      margin-left: 8px;
+    }
+    .changelog-entry ul {
+      list-style: none;
+      padding: 0;
+    }
+    .changelog-entry ul li {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 2px 0 2px 16px;
+      position: relative;
+    }
+    .changelog-entry ul li::before {
+      content: "•";
+      position: absolute; left: 4px;
+      color: var(--blue);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--primary);
+      color: var(--border);
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 12px;
+    }
+    footer a { color: var(--border); text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 640px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .gallery    { grid-template-columns: 1fr; }
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      header { padding: 20px; }
+      .hero  { padding: 0 20px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-sit">S-IT</span>
+      <span class="logo-name">&nbsp;SSD-Check</span>
+    </div>
+    <span class="header-sub">SSD-Gesundheit prüfen – für PC, Laptop &amp; Gebrauchtkauf</span>
+    <span class="header-badge">Freeware · Portable · Windows</span>
+  </div>
+</header>
+<div class="divider"></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Wie fit ist deine SSD?<br>Schnell prüfen – ohne Herstellertools</h1>
+      <p>S-IT SSD-Check zeigt dir in Sekunden, wie es um die Gesundheit deiner SSD steht – egal ob im eigenen PC, Laptop oder einer gebrauchten SSD vor dem Kauf. Ampel-Bewertung, SMART-Details und ein druckfertiger Kundenbericht auf Knopfdruck.</p>
+      <a href="../../releases/latest" class="btn-download">⬇ Download v1.3.0</a>
+      <a href="../../releases" class="btn-secondary">Alle Versionen</a>
+    </div>
+    <div class="hero-screenshot">
+      <img src="screenshots/screenshot-overview.png" alt="S-IT SSD-Check – Laufwerksauswahl und Übersicht">
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- AMPEL -->
+  <div class="ampel-section">
+    <h2>🚦 Ampel-Bewertung – auf einen Blick</h2>
+    <div class="ampel-grid">
+      <div class="ampel-item">
+        <div class="ampel-dot" style="background:#27AE60"></div>
+        <div class="ampel-item-text">
+          <strong>Sehr gut (≥ 80 %)</strong>
+          <span>Problemlos kaufen / weiterverwenden</span>
+        </div>
+      </div>
+      <div class="ampel-item">
+        <div class="ampel-dot" style="background:#F1C40F"></div>
+        <div class="ampel-item-text">
+          <strong>Noch gut (50 – 79 %)</strong>
+          <span>Bei günstigem Preis empfehlenswert</span>
+        </div>
+      </div>
+      <div class="ampel-item">
+        <div class="ampel-dot" style="background:#E67E22"></div>
+        <div class="ampel-item-text">
+          <strong>Vorsicht (20 – 49 %)</strong>
+          <span>Deutliche Abnutzung – kritische Daten vermeiden</span>
+        </div>
+      </div>
+      <div class="ampel-item">
+        <div class="ampel-dot" style="background:#E74C3C"></div>
+        <div class="ampel-item-text">
+          <strong>Tauschen! (&lt; 20 %)</strong>
+          <span>Hohes Ausfallrisiko – nicht kaufen</span>
+        </div>
+      </div>
+      <div class="ampel-item">
+        <div class="ampel-dot" style="background:#95A5A6"></div>
+        <div class="ampel-item-text">
+          <strong>Keine Daten (k.A.)</strong>
+          <span>SMART nicht auslesbar – Adapter prüfen</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="section-title">⚙ Funktionen</div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">💾</div>
+      <h3>SATA &amp; NVMe</h3>
+      <p>Unterstützt alle gängigen SSD-Typen: 2,5"-SATA, M.2 SATA und M.2 NVMe – intern sowie über USB-SATA-Adapter und Dockingstationen.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔍</div>
+      <h3>Automatische Laufwerkserkennung</h3>
+      <p>Zeigt alle angeschlossenen Laufwerke mit Typ (INT/USB), Medienart (SSD/HDD), Größe, Laufwerksbuchstaben und Modellname – sortiert nach Größe.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>SMART-Analyse</h3>
+      <p>Liest Restlebensdauer, Betriebsstunden, Temperatur, TBW, Reserveblöcke (NVMe), CRC-Fehler, umgesetzte Blöcke und Medienfehler aus.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏭</div>
+      <h3>Hersteller-Erkennung</h3>
+      <p>Erkennt automatisch den Hersteller aus dem Modellnamen: Samsung, Crucial, WD, Seagate, Kingston, SanDisk, LiteOn, InnovationIT u.v.m.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📄</div>
+      <h3>HTML-Bericht</h3>
+      <p>Exportiert einen übersichtlichen Prüfbericht als HTML-Datei – für die eigene Dokumentation, zur Weitergabe an Kunden oder als Nachweis beim Gebrauchtkauf.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🖥</div>
+      <h3>DPI-Skalierung</h3>
+      <p>Unterstützt Windows-Skalierung von 100 % bis 200 %. Skalierung per INI-Datei voreinstellbar – startet sofort korrekt auf jedem Monitor.</p>
+    </div>
+  </div>
+
+  <!-- SCREENSHOTS -->
+  <div class="section-title">📸 Screenshots</div>
+  <div class="gallery">
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="screenshots/screenshot-overview.png" alt="Laufwerksauswahl und Übersicht">
+      <div class="gallery-caption">Laufwerksauswahl mit Typ, Größe und Laufwerksbuchstaben</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="screenshots/screenshot-result.png" alt="Ergebnis und Übersicht-Tab">
+      <div class="gallery-caption">Ampel-Ergebnis mit SMART-Detailwerten</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="screenshots/screenshot-report.png" alt="HTML-Kundenbericht">
+      <div class="gallery-caption">HTML-Kundenbericht mit Ampelfarbe und Gebraucht-Bewertung</div>
+    </div>
+  </div>
+
+  <!-- INFO-BOX -->
+  <div class="info-box">
+    <strong>ℹ Voraussetzungen:</strong> Das Programm benötigt <strong>smartctl.exe</strong> aus dem
+    <a href="https://www.smartmontools.org" target="_blank" style="color:#1A5276">smartmontools-Projekt</a>
+    (GPLv2) – die Datei liegt bereits im ZIP-Archiv bei. Administrator-Rechte werden automatisch
+    per UAC angefordert.
+  </div>
+
+  <div class="warn-box">
+    <strong>⚠ Hinweis USB-Adapter:</strong> SMART-Daten sind nur lesbar wenn der USB-SATA-Adapter
+    SMART-Passthrough unterstützt (z. B. JMicron-, ASMedia-Chips). Bei manchen Billigadaptern
+    und einzelnen No-Name-SSDs kann die SMART-Abfrage den USB-Bus blockieren –
+    in diesem Fall direkt per SATA intern anschließen.
+  </div>
+
+  <!-- CHANGELOG -->
+  <div class="section-title">📋 Changelog</div>
+  <div class="changelog">
+    <div class="changelog-entry">
+      <div class="changelog-version">v1.3.0 <span>Mai 2026</span></div>
+      <ul>
+        <li>SSD/HDD-Erkennung in der Laufwerksliste via smartctl Rotation Rate</li>
+        <li>Programm-Icon auf s-it-ssd-check.ico umgestellt</li>
+        <li>Tag-Breite in Combobox auf feste 7 Zeichen normiert (kein Flattersatz)</li>
+      </ul>
+    </div>
+    <div class="changelog-entry">
+      <div class="changelog-version">v1.2.9 <span>Mai 2026</span></div>
+      <ul>
+        <li>NVMe available_spare (Reserveblöcke) + Schwellwert-Warnung</li>
+        <li>CRC Error Count (Attr. 199) – Kabel-/Adapterqualität sichtbar</li>
+        <li>Hilfe-Fenster vergrößerbar</li>
+        <li>Optionaler UsbSetup-Button im Footer (wenn S-IT-UsbSetup.exe vorhanden)</li>
+      </ul>
+    </div>
+    <div class="changelog-entry">
+      <div class="changelog-version">v1.2.8 <span>Mai 2026</span></div>
+      <ul>
+        <li>UnicodeDecodeError behoben (encoding=utf-8, errors=replace für alle subprocess-Aufrufe)</li>
+        <li>_detect_vendor: HP, LiteOn, InnovationIT, Intenso ergänzt – Reihenfolge korrigiert</li>
+        <li>Attr. 190 als Temperatur-Fallback (Samsung 840/850 EVO)</li>
+        <li>NVMe-Temperatur Plausibilitätscheck: nur 0–100 °C akzeptiert</li>
+      </ul>
+    </div>
+    <div class="changelog-entry">
+      <div class="changelog-version">v1.2.7 <span>Mai 2026</span></div>
+      <ul>
+        <li>USB-Erkennung dreistufig: --scan + smartctl -i Transport protocol + wmic InterfaceType</li>
+        <li>Hersteller-Erkennung aus Modellname (21 Hersteller)</li>
+        <li>Laufwerksliste mit Consolas-Font und │-Trennzeichen bündig ausgerichtet</li>
+        <li>HTML-Bericht mit dl/dt/dd-Layout – luftig und strukturiert</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DONATION -->
+  <div class="info-box" style="text-align:center">
+    <strong>☕ S-IT-Tools gefallen dir?</strong><br>
+    Über eine kleine Unterstützung freue ich mich:<br><br>
+    <a href="https://www.paypal.com/donate/?hosted_button_id=XXXX"
+       style="background:#2980B9;color:#fff;padding:8px 20px;border-radius:4px;
+              text-decoration:none;font-size:13px;font-weight:600">
+      PayPal – tool-entwicklung@sattler-it.de
+    </a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Sattler IT-Service, Greifenstein &nbsp;•&nbsp; Autor: Hans Udo Sattler &nbsp;•&nbsp;
+  <a href="../../blob/main/smartmontools-LICENSE.txt">smartmontools GPLv2</a> &nbsp;•&nbsp;
+  <a href="https://sattler-it.de/impressum">Impressum</a>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">×</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  function openLightbox(el) {
+    document.getElementById('lightbox-img').src = el.querySelector('img').src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>
