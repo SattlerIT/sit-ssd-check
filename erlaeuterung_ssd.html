@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S-IT SSD-Check – Anwendung, Adapter &amp; Bewertungsgrenzen</title>
+  <style>
+    :root {
+      --primary:   #2C3E50;
+      --red:       #E74C3C;
+      --green:     #27AE60;
+      --blue:      #2980B9;
+      --orange:    #E67E22;
+      --yellow:    #F1C40F;
+      --light:     #ECF0F1;
+      --bg:        #F5F5F5;
+      --card:      #FFFFFF;
+      --border:    #BDC3C7;
+      --text:      #2C3E50;
+      --muted:     #7F8C8D;
+      --font:      'Segoe UI', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); }
+
+    /* ── HEADER ── */
+    header { background: var(--primary); padding: 28px 40px 24px; }
+    .header-inner {
+      max-width: 980px; margin: 0 auto;
+      display: flex; align-items: flex-end; gap: 20px; flex-wrap: wrap;
+    }
+    .logo { display: flex; align-items: baseline; gap: 0; }
+    .logo-sit  { color: var(--red);   font-size: 36px; font-weight: 700; line-height: 1; }
+    .logo-name { color: #fff;         font-size: 36px; font-weight: 300; line-height: 1; }
+    .header-sub { color: var(--border); font-size: 13px; padding-bottom: 4px; }
+    .header-badge {
+      margin-left: auto; background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.2); color: var(--light);
+      font-size: 12px; padding: 5px 14px; border-radius: 20px; white-space: nowrap;
+    }
+    .divider { height: 3px; background: var(--red); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      max-width: 980px; margin: 0 auto; padding: 16px 20px 0;
+      font-size: 13px; color: var(--muted);
+    }
+    .breadcrumb a { color: var(--blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ── MAIN ── */
+    main { max-width: 980px; margin: 0 auto; padding: 24px 20px 60px; }
+
+    h1.page-title {
+      font-size: 24px; font-weight: 600; color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .page-intro {
+      font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 16px; font-weight: 700; color: var(--primary);
+      margin: 36px 0 16px; padding-bottom: 8px;
+      border-bottom: 2px solid var(--red); display: inline-block;
+    }
+
+    .block {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 6px; padding: 22px 26px; margin-bottom: 20px;
+    }
+    .block p { font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
+    .block p:last-child { margin-bottom: 0; }
+    .block h3 {
+      font-size: 14px; font-weight: 700; color: var(--primary);
+      margin: 16px 0 8px;
+    }
+    .block h3:first-child { margin-top: 0; }
+    .block ul { margin: 8px 0 12px 0; padding-left: 4px; list-style: none; }
+    .block ul li {
+      font-size: 14px; line-height: 1.6; color: var(--text);
+      padding: 4px 0 4px 22px; position: relative;
+    }
+    .block ul li::before {
+      content: "▸"; position: absolute; left: 4px; color: var(--blue);
+    }
+
+    /* Farbige Callout-Boxen */
+    .ok-box, .warn-box, .info-box, .danger-box {
+      border-radius: 0 4px 4px 0; padding: 14px 18px;
+      font-size: 13.5px; line-height: 1.65; margin: 14px 0;
+    }
+    .ok-box    { background: #EAFAF1; border-left: 4px solid var(--green);  color: #196F3D; }
+    .warn-box  { background: #FEF9E7; border-left: 4px solid var(--yellow); color: #7D6608; }
+    .info-box  { background: #EBF5FB; border-left: 4px solid var(--blue);   color: #1A5276; }
+    .danger-box{ background: #FDEDEC; border-left: 4px solid var(--red);    color: #922B21; }
+
+    /* Adapter-Tabelle */
+    .adapter-table {
+      width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13.5px;
+    }
+    .adapter-table th, .adapter-table td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .adapter-table th {
+      background: var(--light); color: var(--primary); font-weight: 700; font-size: 13px;
+    }
+    .adapter-table td:first-child { font-weight: 600; white-space: nowrap; }
+    .tag {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      padding: 2px 9px; border-radius: 12px; color: #fff;
+    }
+    .tag-ok   { background: var(--green); }
+    .tag-mid  { background: var(--orange); }
+    .tag-bad  { background: var(--red); }
+
+    /* Screenshots */
+    .shot {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08); margin: 14px 0; cursor: pointer;
+      transition: box-shadow .2s;
+    }
+    .shot:hover { box-shadow: 0 4px 16px rgba(0,0,0,.16); }
+    .shot img { width: 100%; display: block; }
+    .shot-caption {
+      background: var(--primary); color: var(--light);
+      font-size: 12px; padding: 8px 12px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--primary); color: var(--border);
+      text-align: center; padding: 14px 20px; font-size: 12px;
+    }
+    footer a { color: var(--border); text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,.85); z-index: 999;
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img  { max-width: 90vw; max-height: 90vh; border-radius: 4px; }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 28px;
+      color: #fff; font-size: 32px; cursor: pointer; line-height: 1;
+    }
+
+    @media (max-width: 640px) {
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      header { padding: 20px; }
+      .adapter-table th, .adapter-table td { padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-sit">S-IT</span>
+      <span class="logo-name">&nbsp;SSD-Check</span>
+    </div>
+    <span class="header-sub">Anwendung, geeignete Adapter &amp; Bewertungsgrenzen</span>
+    <span class="header-badge">Hintergrundwissen</span>
+  </div>
+</header>
+<div class="divider"></div>
+
+<div class="breadcrumb">
+  <a href="index_ssd.html">← Zurück zur Startseite</a>
+</div>
+
+<main>
+
+  <h1 class="page-title">So nutzen Sie S-IT SSD-Check richtig</h1>
+  <p class="page-intro">
+    S-IT SSD-Check liest die im Laufwerk selbst gespeicherten SMART-Gesundheitswerte aus
+    und bewertet sie verständlich per Ampel. Wie zuverlässig das funktioniert, hängt davon ab,
+    <strong>wie</strong> die SSD angeschlossen ist und <strong>welche</strong> Werte sie überhaupt
+    meldet. Diese Seite erklärt ehrlich, was das Tool kann, wo seine Grenzen liegen – und wie Sie
+    die besten Ergebnisse erzielen.
+  </p>
+
+  <!-- ZWECK -->
+  <div class="section-title">🎯 Wofür ist das Tool gedacht?</div>
+  <div class="block">
+    <p>
+      Der typische Anwendungsfall: Eine gebrauchte oder ausgebaute SSD soll schnell und
+      verständlich auf ihren Gesundheitszustand geprüft werden – etwa beim Ankauf von
+      Gebraucht-Hardware, vor dem Wiedereinbau oder zur Dokumentation gegenüber Kunden.
+    </p>
+    <p>
+      Das Tool richtet sich bewusst an die <strong>Prüfung per USB-SATA-Adapter oder
+      Dockingstation</strong> – also genau den Weg, den auch Werkstätten und Gebraucht-Händler
+      in der Praxis nutzen. Die SSD wird angeschlossen, das Tool zeigt in Sekunden Ampel,
+      SMART-Details und einen druckbaren Bericht.
+    </p>
+    <div class="ok-box">
+      <strong>✓ Am zuverlässigsten:</strong> SSD direkt am SATA-Port oder über einen
+      SMART-fähigen USB-Adapter / eine Dockingstation prüfen.
+    </div>
+  </div>
+
+  <!-- EMPFOHLENER WEG -->
+  <div class="section-title">🔌 Geeignete Adapter &amp; Gehäuse</div>
+  <div class="block">
+    <p>
+      Damit das Tool die Gesundheitswerte lesen kann, muss der USB-SATA-Adapter die
+      SMART-Befehle <em>durchreichen</em> („SMART-Passthrough"). Nicht jeder Adapter kann das –
+      und hier zeigen sich in der Praxis deutliche Unterschiede zwischen den verbauten
+      Bridge-Chips.
+    </p>
+
+    <h3>Erfahrungen aus unseren eigenen Werkstatt-Tests</h3>
+    <table class="adapter-table">
+      <tr>
+        <th>Chip / Typ</th>
+        <th>Bewertung</th>
+        <th>Beobachtung</th>
+      </tr>
+      <tr>
+        <td>Realtek RTL9210 / RTL9210B</td>
+        <td><span class="tag tag-ok">empfehlenswert</span></td>
+        <td>Lief in unseren Tests zuverlässig, reicht die Werte sauber durch.</td>
+      </tr>
+      <tr>
+        <td>ASMedia (neuere Serien)</td>
+        <td><span class="tag tag-ok">empfehlenswert</span></td>
+        <td>Gute Erfahrung; SMART-Werte werden in der Regel korrekt übergeben.</td>
+      </tr>
+      <tr>
+        <td>Ältere ASMedia-SATA-Bridges<br>(z. B. ASM1051/1153)</td>
+        <td><span class="tag tag-mid">wechselhaft</span></td>
+        <td>Je nach Firmware: läuft mal stabil, blockierte bei uns aber gelegentlich
+            die Laufwerks-Erkennung von Windows – am selben Adapter mal am Laptop ok,
+            am Desktop nicht.</td>
+      </tr>
+      <tr>
+        <td>Günstige No-Name-Gehäuse<br>(diverse Chips)</td>
+        <td><span class="tag tag-mid">wechselhaft</span></td>
+        <td>Funktionieren oft, reichen aber einzelne Werte nicht durch – z. B. fehlt
+            die Temperatur oder der TBW-Wert. Manche bleiben sporadisch hängen.</td>
+      </tr>
+      <tr>
+        <td>Sehr billige Adapter an USB-Hub</td>
+        <td><span class="tag tag-bad">heikel</span></td>
+        <td>Am USB-Hub instabil (mal erkannt, mal nicht); direkt am PC- oder Laptop-Port
+            dagegen oft stabil und mit vollständigen Daten.</td>
+      </tr>
+    </table>
+
+    <div class="info-box">
+      <strong>ℹ Hinweis zur Einordnung:</strong> Die obigen Angaben sind eigene
+      Praxis-Beobachtungen aus unseren Werkstatt-Tests. Einzelne Exemplare, Firmware-Stände
+      und Kombinationen mit bestimmten USB-Controllern können abweichen – ein und derselbe
+      Adapter kann sich an verschiedenen Rechnern unterschiedlich verhalten.
+    </div>
+
+    <div class="warn-box">
+      <strong>⚠ Praxis-Tipp:</strong> Wird ein Adapter träge oder bricht der
+      Geschwindigkeitstest mit einem Hardware-Hinweis ab, liegt das fast immer am
+      Adapter/Gehäuse oder am USB-Port – nicht an der SSD. Dann einen anderen Adapter
+      probieren, direkt an einen rückwärtigen USB-Port des PCs gehen (statt an einen Hub)
+      oder den PC einmal komplett aus- und einschalten.
+    </div>
+  </div>
+
+  <!-- SCREENSHOT 1 -->
+  <div class="shot" onclick="openLightbox(this)">
+    <img src="screenshots/erl-uebersicht.png" alt="Laufwerksauswahl und Übersicht">
+    <div class="shot-caption">Laufwerksauswahl: Typ (INT/USB), Größe, Buchstabe und Modell auf einen Blick</div>
+  </div>
+
+  <!-- DATENLAGE -->
+  <div class="section-title">📊 Welche Werte eine SSD meldet – und welche nicht</div>
+  <div class="block">
+    <p>
+      Nicht jede SSD liefert dieselben Kennzahlen. Das Tool wertet aus, was vorhanden ist,
+      und sagt ehrlich, wenn etwas fehlt:
+    </p>
+    <h3>Idealfall: Verschleiß-Indikator vorhanden</h3>
+    <p>
+      Viele SSDs (z. B. Crucial, Samsung, Toshiba/Kioxia NVMe) melden einen prozentualen
+      Verschleiß-Wert und/oder die geschriebene Datenmenge (TBW). Daraus berechnet das Tool
+      eine belastbare Restlebensdauer und Prognose – das ist die zuverlässigste Bewertung.
+    </p>
+    <h3>Eingeschränkt: kein Verschleiß-Indikator</h3>
+    <p>
+      Manche – vor allem ältere OEM-SSDs aus Fertig-PCs und Business-Laptops (z. B. diverse
+      SanDisk-OEM-Modelle) – melden <strong>keinen</strong> Verschleiß-Wert und kein normiertes
+      TBW. Dann kann das Tool keine echte Verschleiß-Aussage treffen und stützt sich ehrlich
+      nur auf die <strong>Betriebsstunden</strong> als groben Anhaltspunkt.
+    </p>
+    <div class="info-box">
+      In diesem Fall steht in der Bewertung bewusst <em>kein</em> „neuwertig" – sondern eine
+      vorsichtige Einordnung nach Laufzeit. Ohne Herstellerdaten bleibt der tatsächliche
+      Verschleiß schlicht unbekannt, und das kommuniziert das Tool offen.
+    </div>
+    <h3>Teilweise: einzelne Werte fehlen adapterbedingt</h3>
+    <p>
+      Kommt z. B. die Temperatur oder der TBW-Wert nicht an, obwohl die SSD sie eigentlich
+      meldet, liegt das oft am Adapter, der diese Werte nicht durchreicht. Das Tool zeigt
+      dann „k. A." mit einem entsprechenden Hinweis.
+    </p>
+  </div>
+
+  <!-- RAID/RST -->
+  <div class="section-title">🔒 Intern verbaute Laufwerke (RAID / Intel RST)</div>
+  <div class="block">
+    <p>
+      Bei vielen Marken-Laptops (u. a. Dell, Lenovo, HP, Acer) ist die interne SSD im
+      BIOS auf den <strong>RAID-/Intel-RST-Modus</strong> gestellt. In diesem Modus blockiert
+      der Speicher-Controller den standardisierten Weg, über den Diagnose-Tools die SMART-Werte
+      abfragen – die Daten sind zwar vorhanden, aber nicht auf dem üblichen Weg erreichbar.
+    </p>
+    <p>
+      S-IT SSD-Check erkennt das und zeigt in diesem Fall ehrlich <strong>„SMART nicht
+      verfügbar"</strong> an – statt falsche Werte zu erfinden. Ein Geschwindigkeitstest ist
+      trotzdem möglich, da er unabhängig von SMART funktioniert.
+    </p>
+    <div class="danger-box">
+      <strong>Lösung:</strong> Soll eine solche SSD vollständig geprüft werden, bauen Sie sie
+      aus und schließen sie per USB-Adapter oder Dockingstation an – dann ist der RAID-Controller
+      außen vor und die Werte sind wieder lesbar. (Alternativ ließe sich im BIOS der Modus auf
+      AHCI umstellen, was aber ein installiertes Windows ohne Vorbereitung nicht mehr starten
+      lässt – daher ist der Ausbau der unkompliziertere Weg.)
+    </div>
+  </div>
+
+  <!-- SCREENSHOT 2 -->
+  <div class="shot" onclick="openLightbox(this)">
+    <img src="screenshots/erl-kein-smart.png" alt="Ehrliche Meldung SMART nicht verfügbar">
+    <div class="shot-caption">Ehrliche Meldung statt erfundener Werte: „SMART nicht verfügbar" bei RAID/RST</div>
+  </div>
+
+  <!-- GRENZEN DER BEWERTUNG -->
+  <div class="section-title">⚖ Grenzen der Bewertung</div>
+  <div class="block">
+    <p>
+      Damit Sie die Ergebnisse richtig einordnen können – ein paar bewusste Grenzen des Tools:
+    </p>
+    <ul>
+      <li>Die Bewertung beruht auf den vom Laufwerk gemeldeten SMART-Werten. Sind keine
+          Verschleiß-Daten vorhanden, ist nur eine grobe Einordnung nach Betriebsstunden möglich.</li>
+      <li>Betriebsstunden allein sagen wenig über den tatsächlichen Zellenverschleiß – eine
+          Platte mit vielen Stunden, aber wenig Schreiblast kann gesünder sein als umgekehrt.
+          Die Laufzeit-Bewertung ist daher bewusst vorsichtig.</li>
+      <li>Prognose-Angaben sind theoretische Schätzwerte auf Basis der aktuellen Werte und
+          keine Garantie. Ein plötzlicher Elektronik-Defekt ist bei keiner SSD vorhersehbar.</li>
+      <li>Der Geschwindigkeitstest misst sequenzielle Lese-/Schreibraten als Plausibilitätsprüfung
+          – er ersetzt keinen vollständigen Benchmark.</li>
+      <li>Das Tool ist auf <strong>SSDs</strong> ausgelegt. Herkömmliche Festplatten (HDDs)
+          werden zwar angezeigt, aber nicht nach ihren spezifischen Gesundheitskriterien bewertet.</li>
+    </ul>
+    <div class="ok-box">
+      <strong>Unser Anspruch:</strong> Lieber eine ehrliche „keine Aussage möglich"-Meldung
+      als eine schöne, aber falsche Zahl. Genau das unterscheidet eine seriöse Einschätzung
+      von Schönfärberei.
+    </div>
+  </div>
+
+  <!-- ABSCHLUSS -->
+  <div class="section-title">✅ Kurz zusammengefasst</div>
+  <div class="block">
+    <ul>
+      <li>Am zuverlässigsten per SMART-fähigem USB-Adapter oder Dock prüfen (Realtek RTL9210,
+          neuere ASMedia haben sich bewährt).</li>
+      <li>Bei RAID-/RST-Laptops die SSD ausbauen und per Adapter prüfen.</li>
+      <li>Fehlen Verschleiß-Daten, bewertet das Tool ehrlich nur grob nach Laufzeit.</li>
+      <li>Wird ein Adapter träge: anderen Port/Adapter probieren oder PC neu starten.</li>
+    </ul>
+    <p style="margin-top:14px">
+      <a href="index_ssd.html" style="color:var(--blue);font-weight:600;text-decoration:none">
+        ← Zurück zur Startseite und Download
+      </a>
+    </p>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Sattler IT-Service, Greifenstein &nbsp;•&nbsp; Autor: Hans Udo Sattler &nbsp;•&nbsp;
+  <a href="https://sattler-it.de/impressum">Impressum</a>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">×</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  function openLightbox(el) {
+    document.getElementById('lightbox-img').src = el.querySelector('img').src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>
