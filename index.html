@@ -215,6 +215,11 @@
       object-position: top;
       display: block;
     }
+    /* Speed-Screenshot: Ausschnitt tiefer setzen, damit die
+       Lese-/Schreib-Kästen in der Vorschau sichtbar sind */
+    .gallery-item img.shot-speed {
+      object-position: center 78%;
+    }
     .gallery-caption {
       background: var(--primary);
       color: var(--light);
@@ -439,7 +444,7 @@
       <div class="gallery-caption">Ampel-Ergebnis mit SMART-Detailwerten</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="screenshots/screenshot-speed.png" alt="Geschwindigkeitstest mit Lese- und Schreibwerten">
+      <img src="screenshots/screenshot-speed.png" class="shot-speed" alt="Geschwindigkeitstest mit Lese- und Schreibwerten">
       <div class="gallery-caption">Geschwindigkeitstest: Lesen &amp; Schreiben mit Ampelbewertung</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
