@@ -339,7 +339,7 @@
     <div>
       <h1>Wie fit ist deine SSD?<br>Schnell prüfen – ohne Herstellertools</h1>
       <p>S-IT SSD-Check zeigt dir in Sekunden, wie es um die Gesundheit deiner SSD steht – egal ob im eigenen PC, Laptop oder einer gebrauchten SSD vor dem Kauf. Ampel-Bewertung, SMART-Details und ein druckfertiger Kundenbericht auf Knopfdruck.</p>
-      <a href="https://github.com/sattlerit/sit-ssd-check/releases/latest" class="btn-download">⬇ Download v1.4.6</a>
+      <a href="https://github.com/sattlerit/sit-ssd-check/releases/latest" class="btn-download">⬇ Download v1.4.10</a>
       <a href="https://github.com/sattlerit/sit-ssd-check/releases" class="btn-secondary">Alle Versionen</a>
     </div>
     <div class="hero-screenshot">
@@ -364,14 +364,14 @@
       <div class="ampel-item">
         <div class="ampel-dot" style="background:#F1C40F"></div>
         <div class="ampel-item-text">
-          <strong>Noch gut (50 – 79 %)</strong>
+          <strong>Noch gut (40 – 79 %)</strong>
           <span>Bei günstigem Preis empfehlenswert</span>
         </div>
       </div>
       <div class="ampel-item">
         <div class="ampel-dot" style="background:#E67E22"></div>
         <div class="ampel-item-text">
-          <strong>Vorsicht (20 – 49 %)</strong>
+          <strong>Vorsicht (20 – 39 %)</strong>
           <span>Deutliche Abnutzung – kritische Daten vermeiden</span>
         </div>
       </div>
@@ -453,15 +453,35 @@
   </div>
 
   <div class="warn-box">
-    <strong>⚠ Hinweis USB-Adapter:</strong> SMART-Daten sind nur lesbar wenn der USB-SATA-Adapter
-    SMART-Passthrough unterstützt (z. B. JMicron-, ASMedia-Chips). Bei manchen Billigadaptern
-    und einzelnen No-Name-SSDs kann die SMART-Abfrage den USB-Bus blockieren –
-    in diesem Fall direkt per SATA intern anschließen.
+    <strong>⚠ Optimal per USB-Adapter / Dockingstation:</strong> Die zuverlässigsten Ergebnisse
+    liefert das Tool bei direkt oder per USB-SATA-Adapter bzw. Dockingstation angeschlossenen
+    SSDs – vorausgesetzt, der Adapter unterstützt SMART-Passthrough (gute Erfahrung mit
+    Realtek-RTL9210- und ASMedia-Chips; manche günstigen Gehäuse reichen nicht alle Werte durch
+    oder blockieren die Erkennung). Bei intern in <strong>RAID-/Intel-RST-Systemen</strong>
+    verbauten Laufwerken (häufig in Marken-Laptops) sind die SMART-Werte herstellerbedingt oft
+    nicht auslesbar – in diesem Fall die SSD ausbauen und per Adapter prüfen.
+    <br><br>
+    <a href="erlaeuterung_ssd.html" style="color:#7D6608;font-weight:600">
+      → Ausführliche Erläuterung: Tool-Zweck, geeignete Adapter &amp; Bewertungsgrenzen
+    </a>
   </div>
 
   <!-- CHANGELOG -->
   <div class="section-title">📋 Changelog</div>
   <div class="changelog">
+    <div class="changelog-entry">
+      <div class="changelog-version">v1.4.10 <span>Juni 2026</span></div>
+      <ul>
+        <li>Laufwerkserkennung komplett auf Windows-PowerShell umgestellt – läuft jetzt auch auf neuen Windows-11-Systemen ohne WMIC</li>
+        <li>Ehrliche Bewertung bei fehlendem Verschleiß-Indikator: Einordnung über Betriebsstunden statt falscher „neuwertig“-Aussage</li>
+        <li>RAID-/Intel-RST-Laufwerke werden klar als „SMART nicht verfügbar“ ausgewiesen – mit Hinweis auf direkten SATA-Anschluss</li>
+        <li>Geschwindigkeitstest: Abbruch mit Hinweis bei hängendem Laufwerk (Hardware-/USB-Problem) statt Einfrieren</li>
+        <li>Betriebsstunden-Plausibilität: korrekte Auswertung herstellerspezifischer Roh-Werte (u. a. Seagate)</li>
+        <li>Geschwindigkeits-Ergebnisse werden bei Laufwerkswechsel zurückgesetzt</li>
+        <li>Farbige, deutlich sichtbare Reiter; Karten-Darstellung bei 125 %-Skalierung korrigiert</li>
+        <li>Dateiname des Berichts von Sonderzeichen bereinigt (z. B. Anführungszeichen im Modellnamen)</li>
+      </ul>
+    </div>
     <div class="changelog-entry">
       <div class="changelog-version">v1.4.6 <span>Mai 2026</span></div>
       <ul>
