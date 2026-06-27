@@ -344,7 +344,7 @@
     <div>
       <h1>Wie fit ist deine SSD?<br>Schnell prüfen – ohne Herstellertools</h1>
       <p>S-IT SSD-Check zeigt dir in Sekunden, wie es um die Gesundheit deiner SSD steht – egal ob im eigenen PC, Laptop oder einer gebrauchten SSD vor dem Kauf. Ampel-Bewertung, SMART-Details und ein druckfertiger Kundenbericht auf Knopfdruck.</p>
-      <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.4.10/sit-ssdcheck_latest.zip" class="btn-download">⬇ Download v1.4.10</a>
+      <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.5.0/sit-ssdcheck_latest.zip" class="btn-download">⬇ Download v1.5.0</a>
       <a href="https://github.com/sattlerit/sit-ssd-check/releases" class="btn-secondary">Alle Versionen</a>
     </div>
     <div class="hero-screenshot">
@@ -416,6 +416,11 @@
       <p>Liest Restlebensdauer, Betriebsstunden, Temperatur, TBW, Reserveblöcke (NVMe), CRC-Fehler, umgesetzte Blöcke und Medienfehler aus.</p>
     </div>
     <div class="card">
+      <div class="card-icon">🔎</div>
+      <h3>Echtheits-Check <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
+      <p>Prüft die SMART-Werte auf Plausibilität und erkennt zurückgesetzte Zähler – etwa wenn ein gebrauchtes Laufwerk als „neu“ verkauft wird. Findet Widersprüche zwischen Laufzeit, Verschleiß und Schreibzyklen.</p>
+    </div>
+    <div class="card">
       <div class="card-icon">🏭</div>
       <h3>Hersteller-Erkennung</h3>
       <p>Erkennt automatisch den Hersteller aus dem Modellnamen: Samsung, Crucial, WD, Seagate, Kingston, SanDisk, LiteOn, InnovationIT u.v.m.</p>
@@ -453,6 +458,31 @@
     </div>
   </div>
 
+  <!-- WISSENSWERT / RATGEBER -->
+  <div class="section-title">📚 Wissenswert</div>
+  <div class="cards">
+    <a class="card" href="geschwindigkeit_ssd.html" style="display:block;text-decoration:none;color:inherit">
+      <div class="card-icon">💾</div>
+      <h3>Wie schnell ist eine SSD?</h3>
+      <p>SATA, M.2 und NVMe im Vergleich – welche Werte normal sind und warum Tempo nichts über die Gesundheit aussagt.</p>
+    </a>
+    <a class="card" href="geschwindigkeit_hdd.html" style="display:block;text-decoration:none;color:inherit">
+      <div class="card-icon">🖴</div>
+      <h3>Wie schnell ist eine Festplatte?</h3>
+      <p>Warum 140 MB/s für eine HDD ein guter Wert sind – Drehzahl, Datendichte und typische Werte nach Bauart.</p>
+    </a>
+    <a class="card" href="erlaeuterung_ssd.html" style="display:block;text-decoration:none;color:inherit">
+      <div class="card-icon">📖</div>
+      <h3>Tool-Zweck &amp; Grenzen</h3>
+      <p>Wofür der S-IT SSD-Check gedacht ist, welche Adapter geeignet sind und wo die Grenzen der SMART-Auswertung liegen.</p>
+    </a>
+    <a class="card" href="lebensdauer.html" style="display:block;text-decoration:none;color:inherit">
+      <div class="card-icon">⏳</div>
+      <h3>Wie lange hält ein Laufwerk?</h3>
+      <p>Badewannenkurve, echte Ausfallraten (Backblaze) – und warum auch eine gesunde alte Platte regelmäßige Backups braucht.</p>
+    </a>
+  </div>
+
   <!-- INFO-BOX -->
   <div class="info-box">
     <strong>ℹ Voraussetzungen:</strong> Das Programm benötigt <strong>smartctl.exe</strong> aus dem
@@ -478,6 +508,17 @@
   <!-- CHANGELOG -->
   <div class="section-title">📋 Changelog</div>
   <div class="changelog">
+    <div class="changelog-entry">
+      <div class="changelog-version">v1.5.0 <span>Juni 2026</span></div>
+      <ul>
+        <li>Neuer Reiter „🔎 Echtheit“: Plausibilitätsprüfung der SMART-Werte – erkennt zurückgesetzte Zähler bzw. „gebraucht als neu verkauft“ aus Widersprüchen zwischen Laufzeit, Verschleiß und Schreibzyklen</li>
+        <li>Unerwartete Stromausfälle (Unsafe Shutdowns) werden neben den Einschaltzyklen angezeigt – z. B. „99 (davon 59 nach Stromausfall)“</li>
+        <li>Echte 0 Betriebsstunden werden als „0 Std“ ausgewiesen; neue Bewertungsstufe „Praktisch neu / unbenutzt“ für fabrikneue Laufwerke</li>
+        <li>RAID-/Intel-RST-Laufwerke: ehrliche Windows-Gesundheitseinschätzung statt „FAILED“; Modell, Seriennummer und Kapazität werden über Windows nachgezogen</li>
+        <li>Windows-TRIM-Status, Lade-/Parkzyklen mit Hinweis auf aggressives Kopfparken (idle3), Einschaltzyklen jetzt auch im SSD-Bericht</li>
+        <li>NVMe-Temperaturkorrektur, HDD-Bewertung über echte Defekt-Indikatoren statt Flash-Verschleiß, zahlreiche Detailverbesserungen</li>
+      </ul>
+    </div>
     <div class="changelog-entry">
       <div class="changelog-version">v1.4.10 <span>Juni 2026</span></div>
       <ul>

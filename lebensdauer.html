@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wie lange hält eine Festplatte oder SSD? – S-IT SSD-Check</title>
+<meta name="description" content="Lebensdauer von Festplatten und SSDs: die Badewannenkurve, echte Ausfallraten aus den Backblaze-Daten und warum auch eine gesunde alte Platte regelmäßige Backups braucht.">
+<style>
+  :root{
+    --primary:#2C3E50; --success:#27AE60; --info:#3498DB;
+    --warning:#F39C12; --secondary:#E74C3C;
+    --info-bg:#EBF5FB; --info-fg:#1A5276;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Segoe UI',Arial,sans-serif;margin:0;padding:20px;
+       background:#f5f5f5;color:var(--primary);line-height:1.55}
+  .box{max-width:860px;margin:0 auto;background:#fff;border-radius:8px;
+       box-shadow:0 2px 10px rgba(0,0,0,.12);overflow:hidden}
+  .hdr{background:var(--primary);color:#fff;padding:20px 24px}
+  .hdr h1{margin:0;font-size:21px}
+  .hdr p{margin:6px 0 0;opacity:.85;font-size:13px}
+  .content{padding:22px 24px}
+  .lead{font-size:14px;margin:0 0 22px}
+  .sec{margin-bottom:20px;border:1px solid #e0e0e0;border-radius:6px;overflow:hidden}
+  .sec-hdr{background:#ECF0F1;padding:9px 16px;font-weight:bold;font-size:13px;
+           border-bottom:1px solid #e0e0e0}
+  .sec-body{padding:14px 18px;font-size:13.5px}
+  .sec-body p{margin:0 0 10px}
+  .sec-body p:last-child{margin-bottom:0}
+  table.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:4px 0}
+  table.tbl th,table.tbl td{padding:8px 10px;border-bottom:1px solid #e8e8e8;text-align:left}
+  table.tbl th{background:#F8F9F9;color:#34495E;font-weight:bold}
+  table.tbl td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+  .info{background:var(--info-bg);color:var(--info-fg);padding:14px 18px;
+        border-radius:6px;font-size:13px;margin-top:4px}
+  .info strong{color:var(--info-fg)}
+  .tip{border-left:4px solid var(--info);background:#F4F9FD;padding:10px 14px;
+       font-size:13px;border-radius:0 4px 4px 0;margin:4px 0}
+  .curve-wrap{text-align:center;margin:6px 0 2px}
+  .curve-wrap svg{max-width:100%;height:auto}
+  .curve-cap{font-size:11px;color:#7F8C8D;margin-top:4px}
+  .crumbs{font-size:12px;margin:0 0 14px}
+  .crumbs a{color:var(--info);text-decoration:none}
+  .crumbs a:hover{text-decoration:underline}
+  .ftr{background:var(--primary);color:#BDC3C7;text-align:center;padding:12px;font-size:11px}
+  .ftr a{color:#BDC3C7}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="hdr">
+    <h1>⏳ Wie lange hält eine Festplatte oder SSD?</h1>
+    <p>Lebensdauer, Ausfallrate und die Badewannenkurve – was die Statistik wirklich sagt</p>
+  </div>
+  <div class="content">
+    <p class="crumbs"><a href="index.html">← Zurück zur Übersicht</a></p>
+
+    <p class="lead">„Wie lange hält das noch?" ist beim Gebrauchtkauf die zentrale Frage –
+    und sie hat keine einfache Zahl als Antwort. Laufwerke fallen nicht zu einem festen
+    Stichtag aus, sondern folgen einem statistischen Muster. Wer das kennt, kann ein
+    Ergebnis viel besser einordnen als mit dem Bauchgefühl „alt = gleich kaputt".</p>
+
+    <div class="sec">
+      <div class="sec-hdr">🛁 Die Badewannenkurve</div>
+      <div class="sec-body">
+        <p>Die Ausfallrate eines Laufwerks über die Zeit hat die Form einer Badewanne –
+        daher der Name. Sie verläuft in drei Phasen:</p>
+        <div class="curve-wrap">
+          <svg viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" role="img"
+               aria-label="Badewannenkurve: hohe Frühausfälle, niedrige stabile Mitte, ansteigender Verschleiß">
+            <!-- Phasen-Hintergründe -->
+            <rect x="55" y="30" width="135" height="180" fill="#FDEDEC"/>
+            <rect x="190" y="30" width="270" height="180" fill="#EAF7EF"/>
+            <rect x="460" y="30" width="165" height="180" fill="#FCF3E6"/>
+            <!-- Achsen -->
+            <line x1="55" y1="210" x2="625" y2="210" stroke="#BDC3C7" stroke-width="1.5"/>
+            <line x1="55" y1="30"  x2="55"  y2="210" stroke="#BDC3C7" stroke-width="1.5"/>
+            <!-- Kurve -->
+            <path d="M 60,55 C 120,150 165,182 220,185 L 400,187 C 470,188 545,150 615,62"
+                  fill="none" stroke="#2C3E50" stroke-width="3"/>
+            <!-- Achsenbeschriftung -->
+            <text x="60"  y="24"  font-size="11" fill="#7F8C8D" font-family="Segoe UI,Arial">Ausfallrate</text>
+            <text x="500" y="234" font-size="11" fill="#7F8C8D" font-family="Segoe UI,Arial">Betriebszeit / Alter →</text>
+            <!-- Phasen-Labels -->
+            <text x="122" y="202" font-size="11.5" fill="#A93226" text-anchor="middle" font-family="Segoe UI,Arial" font-weight="bold">Frühausfälle</text>
+            <text x="325" y="202" font-size="11.5" fill="#1E8449" text-anchor="middle" font-family="Segoe UI,Arial" font-weight="bold">stabiler Normalbetrieb</text>
+            <text x="542" y="202" font-size="11.5" fill="#B9770E" text-anchor="middle" font-family="Segoe UI,Arial" font-weight="bold">Verschleiß</text>
+          </svg>
+          <div class="curve-cap">Schematischer Verlauf der Ausfallrate über die Lebensdauer</div>
+        </div>
+        <p><b>1. Frühausfälle</b> – In den ersten Wochen und Monaten fallen überdurchschnittlich
+        viele Geräte aus. Ursache sind meist Fertigungsfehler, die sich früh zeigen. Wer diese
+        Phase übersteht, hat eine gute Platte erwischt.</p>
+        <p><b>2. Stabiler Normalbetrieb</b> – Die lange Mitte. Die Ausfallrate ist niedrig und
+        bleibt über Jahre ungefähr gleich. Ausfälle passieren hier zwar, aber zufällig und selten.</p>
+        <p><b>3. Verschleiß</b> – Mit zunehmendem Alter steigt die Rate wieder an: bei Festplatten
+        durch mechanischen Verschleiß (Lager, Köpfe), bei SSDs durch alternde Elektronik und
+        nachlassende Datenhaltefähigkeit.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-hdr">📊 Wie oft fallen Laufwerke wirklich aus?</div>
+      <div class="sec-body">
+        <p>Der Cloud-Anbieter Backblaze betreibt über <b>340.000 Laufwerke</b> und
+        veröffentlicht ihre Ausfallraten seit 2013 offen – die größte frei zugängliche
+        Datenbasis dieser Art. Die wichtigste Kennzahl ist die <b>jährliche Ausfallrate
+        (AFR)</b>: der Anteil der Laufwerke, der pro Jahr ausfällt.</p>
+        <table class="tbl">
+          <tr><th>Kennzahl</th><th>Größenordnung</th></tr>
+          <tr><td>Ausfallrate über die gesamte Lebensdauer (Flotte)</td><td class="num">rund 1,3 % pro Jahr</td></tr>
+          <tr><td>Typische Jahres-Ausfallrate</td><td class="num">etwa 1,5 %</td></tr>
+          <tr><td>Spanne zwischen einzelnen Modellen</td><td class="num">unter 0,5 % bis über 5 %</td></tr>
+        </table>
+        <p>Im Klartext: In einem typischen Jahr fällt nur etwa <b>jede 60. bis 70. Platte</b>
+        aus. Das ist beruhigend niedrig – aber es ist ein <b>Flottenwert</b>. Für ein einzelnes
+        Laufwerk ist es trotzdem entweder „läuft" oder „ausgefallen"; eine Garantie gibt die
+        Statistik nie.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-hdr">🕰️ Alt heißt nicht kaputt</div>
+      <div class="sec-body">
+        <p>Eine verbreitete Faustregel veranschlagt für ein Laufwerk grob <b>fünf Jahre</b>
+        (rund 43.800 Betriebsstunden im Dauerlauf) – so lange wird viel Hardware ausgelegt und
+        gewährleistet. Das ist aber kein Ablaufdatum: In den Backblaze-Daten laufen ganze
+        Baureihen <b>neun bis zehn Jahre</b> mit Ausfallraten unter 1 %.</p>
+        <p>Eine gesunde Platte mit hoher Laufzeit ist also kein Grund zur Panik – sie ist nur
+        weiter rechts auf der Kurve. Umgekehrt gilt: Auch junge Laufwerke fallen aus (siehe
+        Frühausfälle). <b>Das Alter allein sagt wenig</b> – entscheidend ist das Gesamtbild aus
+        SMART-Werten, Fehlerzählern und Verschleiß, das der S-IT SSD-Check zusammenträgt.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-hdr">💾 Festplatte und SSD altern unterschiedlich</div>
+      <div class="sec-body">
+        <p><b>Festplatte (HDD):</b> Sie verschleißt mechanisch. Lager, Motor und Köpfe nutzen
+        sich ab – die klassische Badewannenkurve trifft hier am besten zu. Aussagekräftig sind
+        umgesetzte und schwebende Sektoren sowie die Betriebsstunden.</p>
+        <p><b>SSD:</b> Hier nutzt sich der Flash-Speicher durch Schreibvorgänge ab (Angabe als
+        TBW bzw. verbrauchte Lebensdauer). Für normale Nutzung wird diese Grenze aber fast nie
+        erreicht – die allermeisten SSDs werden ausgetauscht, lange bevor der Flash verbraucht
+        ist. Relevanter sind im Alter die Elektronik (Controller) und die Datenhaltefähigkeit:
+        Eine lange stromlos gelagerte SSD kann mit der Zeit Daten verlieren, auch wenn sie
+        „gesund" ist.</p>
+      </div>
+    </div>
+
+    <div class="info">
+      <strong>Das Wichtigste: Eine Prüfung ersetzt kein Backup.</strong> Ein „gesundes"
+      Ergebnis heißt „aktuell keine Warnzeichen" – nicht „garantiert sicher". Ein erheblicher
+      Teil der Ausfälle kündigt sich in den SMART-Werten <b>gar nicht</b> vorher an; manche
+      Laufwerke sterben von einem Tag auf den anderen. Der S-IT SSD-Check zeigt dir ehrlich,
+      was die Werte hergeben – aber die einzige echte Sicherheit gegen Datenverlust ist und
+      bleibt ein <b>aktuelles Backup</b>, unabhängig von Alter, Ampelfarbe oder Prüfergebnis.
+    </div>
+  </div>
+  <div class="ftr">© 2026 Sattler IT-Service, Greifenstein&nbsp; •&nbsp; Autor: Hans Udo Sattler</div>
+</div>
+</body>
+</html>

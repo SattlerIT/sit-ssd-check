@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wie schnell ist eine Festplatte? – S-IT SSD-Check</title>
+<meta name="description" content="Was die Geschwindigkeitswerte einer Festplatte (HDD) bedeuten: Drehzahl, Datendichte, typische Werte und warum 140 MB/s für eine HDD völlig normal sind.">
+<style>
+  :root{
+    --primary:#2C3E50; --success:#27AE60; --info:#3498DB;
+    --warning:#F39C12; --secondary:#E74C3C;
+    --info-bg:#EBF5FB; --info-fg:#1A5276;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Segoe UI',Arial,sans-serif;margin:0;padding:20px;
+       background:#f5f5f5;color:var(--primary);line-height:1.55}
+  .box{max-width:860px;margin:0 auto;background:#fff;border-radius:8px;
+       box-shadow:0 2px 10px rgba(0,0,0,.12);overflow:hidden}
+  .hdr{background:var(--primary);color:#fff;padding:20px 24px}
+  .hdr h1{margin:0;font-size:21px}
+  .hdr p{margin:6px 0 0;opacity:.85;font-size:13px}
+  .content{padding:22px 24px}
+  .lead{font-size:14px;margin:0 0 22px}
+  .sec{margin-bottom:20px;border:1px solid #e0e0e0;border-radius:6px;overflow:hidden}
+  .sec-hdr{background:#ECF0F1;padding:9px 16px;font-weight:bold;font-size:13px;
+           border-bottom:1px solid #e0e0e0}
+  .sec-body{padding:14px 18px;font-size:13.5px}
+  .sec-body p{margin:0 0 10px}
+  .sec-body p:last-child{margin-bottom:0}
+  table.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:4px 0}
+  table.tbl th,table.tbl td{padding:8px 10px;border-bottom:1px solid #e8e8e8;text-align:left}
+  table.tbl th{background:#F8F9F9;color:#34495E;font-weight:bold}
+  table.tbl td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+  .info{background:var(--info-bg);color:var(--info-fg);padding:14px 18px;
+        border-radius:6px;font-size:13px;margin-top:4px}
+  .info strong{color:var(--info-fg)}
+  .crumbs{font-size:12px;margin:0 0 14px}
+  .crumbs a{color:var(--info);text-decoration:none}
+  .crumbs a:hover{text-decoration:underline}
+  .ftr{background:var(--primary);color:#BDC3C7;text-align:center;padding:12px;font-size:11px}
+  .ftr a{color:#BDC3C7}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="hdr">
+    <h1>🖴 Wie schnell ist eine Festplatte?</h1>
+    <p>Festplatten (HDD) – warum 140 MB/s ein guter Wert sind</p>
+  </div>
+  <div class="content">
+    <p class="crumbs"><a href="index.html">← Zurück zur Übersicht</a></p>
+
+    <p class="lead">Eine klassische Festplatte arbeitet mechanisch: Eine rotierende
+    Scheibe und ein Schreib-/Lesekopf. Das setzt dem Tempo physikalische Grenzen, die
+    eine HDD nie überschreiten kann – und macht sie nach SSD-Maßstab langsam. Das ist
+    aber völlig normal und sagt nichts über ihre Gesundheit aus.</p>
+
+    <div class="sec">
+      <div class="sec-hdr">⚙️ Was das Tempo bestimmt</div>
+      <div class="sec-body">
+        <p>Zwei Dinge entscheiden, wie schnell eine Festplatte sequenziell liest oder
+        schreibt: die <b>Drehzahl</b> (5400 oder 7200 Umdrehungen pro Minute) und die
+        <b>Datendichte</b> auf den Scheiben. Je schneller die Scheibe dreht und je mehr
+        Daten pro Spur passen, desto mehr fließt pro Sekunde unter dem Kopf hindurch.</p>
+        <p>Wichtig: Das Tempo schwankt <b>je nach Position auf der Scheibe</b>. Außen
+        ist eine Platte rund doppelt so schnell wie innen, weil außen pro Umdrehung
+        mehr Fläche am Kopf vorbeizieht. Ein gemessener Wert ist deshalb immer eine
+        Momentaufnahme irgendwo zwischen außen und innen.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-hdr">📊 Typische Werte nach Drehzahl</div>
+      <div class="sec-body">
+        <table class="tbl">
+          <tr><th>Drehzahl</th><th>Sequenzielles Lesen (Richtwert)</th></tr>
+          <tr><td>5400 U/min</td><td class="num">ca. 80–140 MB/s (Mittel ~100)</td></tr>
+          <tr><td>7200 U/min</td><td class="num">ca. 80–160 MB/s (Mittel ~120)</td></tr>
+          <tr><td>7200 U/min, Außenspur (Spitze)</td><td class="num">bis ~200–220 MB/s</td></tr>
+        </table>
+        <p>Ein Wert von <b>140 MB/s</b> liegt damit klar im gesunden Bereich – für eine
+        7200er ein normaler Mittelwert, für eine 5400er sogar richtig gut. Verdächtig
+        langsam wird es erst deutlich darunter.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-hdr">🐌 Wann ist es wirklich zu langsam?</div>
+      <div class="sec-body">
+        <p>Echte Warnsignale für einen Engpass – nicht für eine kranke Platte – sind:</p>
+        <p>• <b>USB-2.0-Anschluss:</b> riegelt bei rund 25–30 MB/s ab. Dann bremst das
+        Kabel, nicht die Platte.<br>
+        • <b>Starke Fragmentierung</b> oder ein fast voller Datenträger, sodass nur noch
+        die langsamen inneren Spuren beschrieben werden.<br>
+        • <b>Werte deutlich unter 60–70 MB/s</b> bei einer internen 3,5″-Platte ohne
+        diese Ursachen lohnen einen zweiten Blick (Kabel, Anschluss, SATA-Modus).</p>
+        <p>Der angezeigte <b>„Lesen mit Cache"</b>-Wert ist bei Festplatten übrigens nur
+        ein kurzer Spitzenwert aus dem kleinen Laufwerks-Cache und kein echtes
+        Platten-Tempo – er wird daher nur angezeigt, aber nicht bewertet.</p>
+      </div>
+    </div>
+
+    <div class="info">
+      <strong>Wichtig: Tempo ist nicht gleich Gesundheit.</strong> Eine kerngesunde
+      ältere Festplatte ist nach SSD-Maßstab einfach langsam – das ist kein Mangel.
+      Umgekehrt kann eine Platte mit beginnenden Problemen durchaus noch schnell lesen.
+      Den Zustand verraten die SMART-Werte (umgesetzte und schwebende Sektoren,
+      Betriebsstunden), nicht die Geschwindigkeit. Der S-IT SSD-Check bewertet das
+      Tempo einer Festplatte deshalb nach einem eigenen, drehzahlgerechten Maßstab –
+      und nie nach den Erwartungen an eine SSD.
+    </div>
+  </div>
+  <div class="ftr">© 2026 Sattler IT-Service, Greifenstein&nbsp; •&nbsp; Autor: Hans Udo Sattler</div>
+</div>
+</body>
+</html>

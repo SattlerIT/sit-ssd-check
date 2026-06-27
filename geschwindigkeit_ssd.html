@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wie schnell ist eine SSD? – S-IT SSD-Check</title>
+<meta name="description" content="Was die Geschwindigkeitswerte einer SSD bedeuten: SATA, M.2 und NVMe im Vergleich, typische Werte und warum Tempo nichts über die Gesundheit aussagt.">
+<style>
+  :root{
+    --primary:#2C3E50; --success:#27AE60; --info:#3498DB;
+    --warning:#F39C12; --secondary:#E74C3C;
+    --info-bg:#EBF5FB; --info-fg:#1A5276;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Segoe UI',Arial,sans-serif;margin:0;padding:20px;
+       background:#f5f5f5;color:var(--primary);line-height:1.55}
+  .box{max-width:860px;margin:0 auto;background:#fff;border-radius:8px;
+       box-shadow:0 2px 10px rgba(0,0,0,.12);overflow:hidden}
+  .hdr{background:var(--primary);color:#fff;padding:20px 24px}
+  .hdr h1{margin:0;font-size:21px}
+  .hdr p{margin:6px 0 0;opacity:.85;font-size:13px}
+  .content{padding:22px 24px}
+  .lead{font-size:14px;margin:0 0 22px}
+  .sec{margin-bottom:20px;border:1px solid #e0e0e0;border-radius:6px;overflow:hidden}
+  .sec-hdr{background:#ECF0F1;padding:9px 16px;font-weight:bold;font-size:13px;
+           border-bottom:1px solid #e0e0e0}
+  .sec-body{padding:14px 18px;font-size:13.5px}
+  .sec-body p{margin:0 0 10px}
+  .sec-body p:last-child{margin-bottom:0}
+  table.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:4px 0}
+  table.tbl th,table.tbl td{padding:8px 10px;border-bottom:1px solid #e8e8e8;text-align:left}
+  table.tbl th{background:#F8F9F9;color:#34495E;font-weight:bold}
+  table.tbl td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+  .info{background:var(--info-bg);color:var(--info-fg);padding:14px 18px;
+        border-radius:6px;font-size:13px;margin-top:4px}
+  .info strong{color:var(--info-fg)}
+  .tip{border-left:4px solid var(--info);background:#F4F9FD;padding:10px 14px;
+       font-size:13px;border-radius:0 4px 4px 0;margin:4px 0}
+  .crumbs{font-size:12px;margin:0 0 14px}
+  .crumbs a{color:var(--info);text-decoration:none}
+  .crumbs a:hover{text-decoration:underline}
+  .ftr{background:var(--primary);color:#BDC3C7;text-align:center;padding:12px;font-size:11px}
+  .ftr a{color:#BDC3C7}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="hdr">
+    <h1>💾 Wie schnell ist eine SSD?</h1>
+    <p>SATA · M.2 · NVMe – was die Zahlen im S-IT SSD-Check bedeuten</p>
+  </div>
+  <div class="content">
+    <p class="crumbs"><a href="index.html">← Zurück zur Übersicht</a></p>
+
+    <p class="lead">Der Geschwindigkeitstest zeigt drei Werte an: <b>Lesen mit Cache</b>,
+    <b>Lesen ohne Cache</b> und <b>Schreiben</b>. Damit die Zahlen einzuordnen sind,
+    hier in Kürze, was sie messen, welche Werte für welche Bauart normal sind und
+    warum Tempo allein nichts über die Gesundheit eines Laufwerks aussagt.</p>
+
+    <div class="sec">
+      <div class="sec-hdr">📖 Mit Cache, ohne Cache – wo ist der Unterschied?</div>
+      <div class="sec-body">
+        <p>Der Wert <b>„Lesen mit Cache"</b> ist ein kurzer Spitzenwert. Dabei werden
+        Daten gelesen, die das Betriebssystem oder der Laufwerks-Cache gerade im
+        schnellen Zwischenspeicher hält – nicht von den eigentlichen Speicherzellen.
+        Solche Burst-Werte können weit über dem echten Dauer-Tempo liegen.</p>
+        <p>Aussagekräftig für die tatsächliche Leistung sind deshalb <b>„Lesen ohne Cache"</b>
+        und <b>„Schreiben"</b>. Diese beiden Werte spiegeln wider, was das Laufwerk
+        nachhaltig liefert.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-hdr">📊 Typische Werte nach Bauart</div>
+      <div class="sec-body">
+        <p>Entscheidend ist nicht die Marke, sondern die Anbindung. Eine SATA-SSD ist
+        durch die Schnittstelle begrenzt, eine NVMe nutzt die deutlich schnelleren
+        PCIe-Leitungen:</p>
+        <table class="tbl">
+          <tr><th>Bauart / Anbindung</th><th>Sequenzielles Lesen (Richtwert)</th></tr>
+          <tr><td>SATA-SSD (2,5″ oder M.2 im SATA-Modus)</td><td class="num">ca. 500–560 MB/s</td></tr>
+          <tr><td>NVMe M.2 · PCIe Gen 3</td><td class="num">ca. 2.000–3.500 MB/s</td></tr>
+          <tr><td>NVMe M.2 · PCIe Gen 4</td><td class="num">ca. 5.000–7.000 MB/s</td></tr>
+          <tr><td>NVMe M.2 · PCIe Gen 5</td><td class="num">ca. 9.000–14.000 MB/s</td></tr>
+        </table>
+        <p>Die SATA-Schnittstelle (6 Gbit/s) deckelt jede daran angeschlossene SSD bei
+        rund 550 MB/s – egal wie modern sie ist. Wer mehr will, braucht eine NVMe in
+        einem passenden M.2-Steckplatz mit genügend PCIe-Leitungen.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-hdr">🔌 Warum dein Messwert abweichen kann</div>
+      <div class="sec-body">
+        <p>Mehrere Faktoren beeinflussen das Ergebnis, ohne dass mit dem Laufwerk
+        etwas nicht stimmt:</p>
+        <p>• <b>Steckplatz und Leitungen:</b> Manche M.2-Slots sind nur mit zwei statt
+        vier PCIe-Leitungen oder mit einer älteren PCIe-Generation angebunden.<br>
+        • <b>Temperatur:</b> NVMe-SSDs drosseln bei Hitze (Throttling), um sich zu
+        schützen – unter Dauerlast sinkt das Tempo dann zwischenzeitlich.<br>
+        • <b>Füllstand und Hintergrundlast:</b> Eine fast volle SSD oder gleichzeitige
+        andere Zugriffe können die Messung drücken.</p>
+      </div>
+    </div>
+
+    <div class="info">
+      <strong>Wichtig: Tempo ist nicht gleich Gesundheit.</strong> Eine SSD kann
+      blitzschnell sein und trotzdem stark abgenutzt – oder langsamer angebunden und
+      kerngesund. Der Verschleiß zeigt sich an der <b>verbrauchten Lebensdauer</b>
+      (Wear) und der bisher <b>geschriebenen Datenmenge (TBW)</b>, nicht am
+      Geschwindigkeitswert. Der S-IT SSD-Check bewertet die Geschwindigkeit deshalb
+      getrennt vom Gesundheitszustand und nach SSD-gerechtem Maßstab.
+    </div>
+  </div>
+  <div class="ftr">© 2026 Sattler IT-Service, Greifenstein&nbsp; •&nbsp; Autor: Hans Udo Sattler</div>
+</div>
+</body>
+</html>
