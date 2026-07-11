@@ -1,0 +1,48 @@
+﻿============================================================
+ S-IT SSD-Check – Haftungsausschluss (Disclaimer)
+ © 2026 Sattler IT-Service, Greifenstein · Hans Udo Sattler
+============================================================
+
+Alle Angaben ohne Gewähr. Irrtümer vorbehalten.
+
+S-IT SSD-Check ist ein kostenloses Diagnose-Werkzeug. Die
+angezeigten Bewertungen ("Sehr gut", "Noch gut", "Beobachten",
+"Tauschen" usw.) werden automatisch aus den SMART-Werten des
+Laufwerks berechnet. Diese Werte sind herstellerspezifisch
+benannt und skaliert und können unvollständig oder fehlerhaft
+gemeldet werden – eine Fehleinschätzung ist deshalb nie ganz
+auszuschließen.
+
+1. Unverbindliche Schätzung
+   Die Ergebnisse sind unverbindliche Anhaltspunkte und eine
+   Momentaufnahme zum Zeitpunkt der Prüfung. Sie sind keine
+   Zusicherung über den tatsächlichen Zustand oder die
+   verbleibende Lebensdauer eines Laufwerks und ersetzen weder
+   eine fachliche Prüfung noch eine professionelle Datenrettung.
+
+2. Keine Ausfallgarantie
+   Ein Laufwerk kann trotz guter Bewertung jederzeit und ohne
+   Vorwarnung ausfallen. Ebenso kann ein kritisch bewertetes
+   Laufwerk noch lange fehlerfrei funktionieren.
+
+3. Nutzung auf eigene Verantwortung
+   Die Verwendung des Tools und seiner Ergebnisse erfolgt auf
+   eigene Verantwortung. Für Entscheidungen (z. B. Kauf, Verkauf,
+   Weiternutzung oder Austausch eines Laufwerks), die auf Basis
+   der Bewertung getroffen werden, wird keine Verantwortung
+   übernommen.
+
+4. Haftungsausschluss
+   Eine Haftung für Schäden, Datenverluste oder Vermögens-
+   schäden, die aus der Nutzung des Tools oder seiner Ergebnisse
+   entstehen, ist – soweit gesetzlich zulässig – ausgeschlossen.
+
+5. Backups bleiben unerlässlich
+   Erstellen Sie unabhängig vom Prüfergebnis regelmäßig
+   Sicherungskopien Ihrer Daten. Kein Diagnose-Tool kann einen
+   plötzlichen Datenträger-Ausfall verhindern.
+
+------------------------------------------------------------
+Kontakt:       tool-entwicklung@sattler-it.de
+Projektseite:  https://sattlerit.github.io/sit-ssd-check/
+------------------------------------------------------------
