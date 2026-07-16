@@ -151,6 +151,15 @@
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 12px;
     }
+    .ampel-note {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--light);
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+    .ampel-note strong { color: var(--text); }
     .ampel-item {
       display: flex;
       align-items: center;
@@ -344,12 +353,12 @@
   <div class="hero-inner">
     <div>
       <h1>Wie fit ist deine SSD?<br>Schnell prüfen – ohne Herstellertools</h1>
-      <p>S-IT SSD-Check zeigt dir in Sekunden, wie es um die Gesundheit deiner SSD steht – egal ob im eigenen PC, Laptop oder einer gebrauchten SSD vor dem Kauf. Ampel-Bewertung, SMART-Details und ein druckfertiger Kundenbericht auf Knopfdruck. Jetzt auch mit HDD Check.</p>
-      <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.5.3/sit-ssdcheck_latest.zip" class="btn-download">⬇ Download v1.5.3</a>
+      <p>S-IT SSD-Check zeigt dir in Sekunden, wie es um die Gesundheit deiner SSD oder Festplatte steht – im eigenen PC, im Laptop oder bei einer gebrauchten SSD vor dem Kauf. Ampel-Bewertung, SMART-Details und ein druckfertiger Kundenbericht auf Knopfdruck. Und jeder Wert ist nachvollziehbar: Das Tool legt offen, worauf sein Urteil beruht.</p>
+      <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.5.4/sit-ssdcheck_latest.zip" class="btn-download">⬇ Download v1.5.4</a>
       <a href="https://github.com/sattlerit/sit-ssd-check/releases" class="btn-secondary">Alle Versionen</a>
     </div>
     <div class="hero-screenshot">
-      <img src="screenshots/screenshot-result.png" alt="S-IT SSD-Check – Laufwerksauswahl und Übersicht">
+      <img src="screenshots/screenshot-result.jpg" alt="S-IT SSD-Check – Laufwerksauswahl und Übersicht">
     </div>
   </div>
 </div>
@@ -363,8 +372,15 @@
       <div class="ampel-item">
         <div class="ampel-dot" style="background:#27AE60"></div>
         <div class="ampel-item-text">
-          <strong>Sehr gut (≥ 80 %)</strong>
-          <span>Problemlos kaufen / weiterverwenden</span>
+          <strong>Sehr gut (≥ 95 %)</strong>
+          <span>Kaum Verschleiß – problemlos kaufen / weiterverwenden</span>
+        </div>
+      </div>
+      <div class="ampel-item">
+        <div class="ampel-dot" style="background:#27AE60"></div>
+        <div class="ampel-item-text">
+          <strong>Gut (80 – 94 %)</strong>
+          <span>Gut erhalten – ebenfalls uneingeschränkt geeignet</span>
         </div>
       </div>
       <div class="ampel-item">
@@ -396,6 +412,13 @@
         </div>
       </div>
     </div>
+    <p class="ampel-note"><strong>Sehr gut</strong> und <strong>Gut</strong> sind beide grün und beide
+    uneingeschränkt geeignet – die Stufen sagen nur, wie viel Lebensdauer schon verbraucht ist. Der
+    Bewertungstext nennt den Anteil im Klartext, damit man selbst urteilen kann. Und unabhängig
+    davon: Ein <strong>nachgewiesener Defekt</strong> – schwebende oder nicht korrigierbare Sektoren,
+    Medienfehler – schaltet die Ampel immer auf Rot, auch wenn das Laufwerk „100 % Restlebensdauer"
+    meldet. Bei Festplatten heißt es <strong>SMART o.k.</strong>, <strong>SMART o.k. – beobachten</strong>
+    oder <strong>Fehler – prüfen</strong>: Eine HDD verschleißt mechanisch, nicht am Flash.</p>
   </div>
 
   <!-- FEATURES -->
@@ -418,8 +441,13 @@
     </div>
     <div class="card">
       <div class="card-icon">🔎</div>
-      <h3>Echtheits-Check <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
+      <h3>Echtheits-Check</h3>
       <p>Prüft die SMART-Werte auf Plausibilität und erkennt zurückgesetzte Zähler – etwa wenn ein gebrauchtes Laufwerk als „neu“ verkauft wird. Findet Widersprüche zwischen Laufzeit, Verschleiß und Schreibzyklen.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🧭</div>
+      <h3>Nachvollziehbare Bewertung <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
+      <p>Kein Urteil ohne Grundlage: Ein rotes Ergebnis verlangt einen belegten Defekt, der Text nennt den verbrauchten Anteil, und unglaubwürdige Werte werden offen als „k.A.“ ausgewiesen statt behauptet. Wie das Tool bewertet, steht in der Hilfe.</p>
     </div>
     <div class="card">
       <div class="card-icon">🏭</div>
@@ -434,7 +462,7 @@
     <div class="card">
       <div class="card-icon">🖥</div>
       <h3>DPI-Skalierung</h3>
-      <p>Unterstützt Windows-Skalierung von 100 % bis 200 %. Skalierung per INI-Datei voreinstellbar – startet sofort korrekt auf jedem Monitor.</p>
+      <p>Passt sich automatisch dem verfügbaren Bildschirmplatz an, statt stur der Windows-Einstellung zu folgen. Feste Werte von 80 % bis 200 % bleiben wählbar und werden gespeichert – startet sofort korrekt auf jedem Monitor.</p>
     </div>
   </div>
 
@@ -442,20 +470,28 @@
   <div class="section-title">📸 Screenshots</div>
   <div class="gallery">
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="screenshots/screenshot-overview.png" alt="Laufwerksauswahl und Übersicht">
-      <div class="gallery-caption">Laufwerksauswahl mit Typ, Größe und Laufwerksbuchstaben</div>
+      <img src="screenshots/screenshot-auswahl.jpg" alt="Laufwerksauswahl">
+      <div class="gallery-caption">Laufwerksauswahl mit Typ, Medienart, Größe und Laufwerksbuchstaben</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="screenshots/screenshot-result.png" alt="Ergebnis und Übersicht-Tab">
-      <div class="gallery-caption">Ampel-Ergebnis mit SMART-Detailwerten</div>
+      <img src="screenshots/screenshot-overview.png" alt="Übersicht-Tab mit Identität, Zustand und Fehlerzählern">
+      <div class="gallery-caption">Übersicht: Identität, Zustand und Fehlerzähler getrennt – gelbe Ziffer für Zusatzbefunde</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="screenshots/screenshot-speed.png" class="shot-speed" alt="Geschwindigkeitstest mit Lese- und Schreibwerten">
-      <div class="gallery-caption">Geschwindigkeitstest: Lesen &amp; Schreiben mit Ampelbewertung</div>
+      <img src="screenshots/screenshot-bewertung.png" alt="Bewertungs-Tab mit Gebraucht-Einschätzung">
+      <div class="gallery-caption">Bewertung: Klartext-Einschätzung mit verbrauchtem Anteil und Schreibreserve-Prognose</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="screenshots/screenshot-details.png" alt="SMART-Details im Volltext">
+      <div class="gallery-caption">SMART-Details: alle ausgelesenen Werte im Volltext</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
       <img src="screenshots/screenshot-echtheit.png" alt="Echtheits-Check mit Plausibilitätsprüfung">
       <div class="gallery-caption">Echtheits-Check: Plausibilitätsprüfung der SMART-Werte</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="screenshots/screenshot-speed.png" class="shot-speed" alt="Geschwindigkeitstest mit Lese- und Schreibwerten">
+      <div class="gallery-caption">Geschwindigkeitstest: Lesen &amp; Schreiben mit Ampelbewertung</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
       <img src="screenshots/screenshot-report.png" alt="HTML-Kundenbericht">
@@ -529,6 +565,19 @@
   <!-- CHANGELOG -->
   <div class="section-title">📋 Changelog</div>
   <div class="changelog">
+    <div class="changelog-entry">
+      <div class="changelog-version">v1.5.4 <span>Juli 2026</span></div>
+      <ul>
+        <li>Ein nachgewiesener Defekt schlägt jetzt jeden Verschleißwert: Schwebende oder nicht korrigierbare Sektoren und Medienfehler führen immer zu einem roten Urteil – auch wenn das Laufwerk selbst „100&nbsp;% Restlebensdauer“ meldet</li>
+        <li>Neue grüne Stufe „Gut“ (80–94&nbsp;%), „Sehr gut“ ab 95&nbsp;%: beide uneingeschränkt geeignet, aber der Text nennt jetzt den bereits verbrauchten Anteil – beim Gebrauchtkauf gehört er in die Preisfindung</li>
+        <li>Schreibreserve-Prognose als Spanne statt Scheinwert („noch etwa 416–701&nbsp;TB“ statt „noch ca. 523&nbsp;TB“) – die Breite zeigt selbst, wie belastbar die Schätzung ist</li>
+        <li>Der Bericht zeigt jetzt die Werte, die zur Abwertung führen, und widerspricht sich nicht mehr: ein rot bewertetes Laufwerk meldet keine „lange Lebensdauer“ mehr; Zähler, die ein Laufwerk gar nicht meldet, erscheinen als „k.A.“ statt als „0“</li>
+        <li>Übersicht dreispaltig (Identität, Zustand, Fehlerzähler) mit anklickbarer gelber Ziffer für Zusatzbefunde – Stromausfälle, auffälliges Kopfparken, Schreibdurchläufe im Verhältnis zur Kapazität</li>
+        <li>Skalierung richtet sich automatisch nach dem verfügbaren Bildschirmplatz; feste Werte von 80&nbsp;% bis 200&nbsp;% bleiben wählbar</li>
+        <li>Behoben: falsche Kapazität auf deutschem Windows (1&nbsp;TB wurde als „2000&nbsp;GB“ angezeigt), doppelt gelistete USB-Laufwerke, „FAILED“ bei USB-Sticks und Kartenlesern ohne SMART, Ampeltext gegen Ampelfarbe</li>
+        <li>Hilfe überarbeitet mit neuem Abschnitt „Wie das Tool bewertet – die Strategie“; Haftungsausschluss liegt bei und steht im Berichtsfuß</li>
+      </ul>
+    </div>
     <div class="changelog-entry">
       <div class="changelog-version">v1.5.3 <span>Juli 2026</span></div>
       <ul>

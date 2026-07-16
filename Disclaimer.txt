@@ -1,4 +1,4 @@
-﻿============================================================
+============================================================
  S-IT SSD-Check – Haftungsausschluss (Disclaimer)
  © 2026 Sattler IT-Service, Greifenstein · Hans Udo Sattler
 ============================================================
@@ -6,12 +6,19 @@
 Alle Angaben ohne Gewähr. Irrtümer vorbehalten.
 
 S-IT SSD-Check ist ein kostenloses Diagnose-Werkzeug. Die
-angezeigten Bewertungen ("Sehr gut", "Noch gut", "Beobachten",
-"Tauschen" usw.) werden automatisch aus den SMART-Werten des
-Laufwerks berechnet. Diese Werte sind herstellerspezifisch
-benannt und skaliert und können unvollständig oder fehlerhaft
-gemeldet werden – eine Fehleinschätzung ist deshalb nie ganz
-auszuschließen.
+angezeigten Bewertungen werden automatisch aus den SMART-Werten
+des Laufwerks berechnet:
+
+  bei SSDs   "Sehr gut", "Gut", "Noch gut", "Vorsicht",
+             "Tauschen!" bzw. "DEFEKT – SOFORT TAUSCHEN!"
+  bei HDDs   "SMART o.k.", "SMART o.k. – beobachten",
+             "Fehler – prüfen"
+  sowie      "Keine Daten", wenn das Laufwerk keine SMART-Werte
+             herausgibt
+
+Diese Werte sind herstellerspezifisch benannt und skaliert und
+können unvollständig oder fehlerhaft gemeldet werden – eine
+Fehleinschätzung ist deshalb nie ganz auszuschließen.
 
 1. Unverbindliche Schätzung
    Die Ergebnisse sind unverbindliche Anhaltspunkte und eine
@@ -43,6 +50,9 @@ auszuschließen.
    plötzlichen Datenträger-Ausfall verhindern.
 
 ------------------------------------------------------------
+Wie das Tool zu seinem Urteil kommt, ist in der Hilfe-Datei
+(S-IT-SSD-Check-Hilfe.html, Abschnitt 4) offengelegt.
+
 Kontakt:       tool-entwicklung@sattler-it.de
 Projektseite:  https://sattlerit.github.io/sit-ssd-check/
 ------------------------------------------------------------
