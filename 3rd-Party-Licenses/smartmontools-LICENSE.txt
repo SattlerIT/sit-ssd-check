@@ -1,0 +1,3 @@
+Dieses Programm enthält smartctl.exe aus dem smartmontools-Projekt.
+smartmontools ist lizenziert unter der GNU General Public License v2.
+Siehe: https://www.smartmontools.org
