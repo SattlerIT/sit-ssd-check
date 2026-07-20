@@ -98,6 +98,35 @@
       transition: background .2s;
     }
     .btn-download:hover { background: #219a52; }
+    .btn-download-alt {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-left: 12px;
+      transition: background .2s;
+    }
+    .btn-download-alt:hover { background: #219a52; }
+    .btn-row-download { display: flex; gap: 12px; }
+    .btn-row-download .btn-download,
+    .btn-row-download .btn-download-alt {
+      flex: 1 1 0;
+      margin-left: 0;
+      text-align: center;
+      max-width: 260px;
+    }
+    .btn-hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--light);
+      opacity: .75;
+    }
     .btn-secondary {
       display: inline-block;
       background: transparent;
@@ -354,8 +383,14 @@
     <div>
       <h1>Wie fit ist deine SSD?<br>Schnell prüfen – ohne Herstellertools</h1>
       <p>S-IT SSD-Check zeigt dir in Sekunden, wie es um die Gesundheit deiner SSD oder Festplatte steht – im eigenen PC, im Laptop oder bei einer gebrauchten SSD vor dem Kauf. Ampel-Bewertung, SMART-Details und ein druckfertiger Kundenbericht auf Knopfdruck. Und jeder Wert ist nachvollziehbar: Das Tool legt offen, worauf sein Urteil beruht.</p>
-      <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.5.4/sit-ssdcheck_latest.zip" class="btn-download">⬇ Download v1.5.4.1</a>
-      <a href="https://github.com/sattlerit/sit-ssd-check/releases" class="btn-secondary">Alle Versionen</a>
+      <div class="btn-row-download">
+        <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.5.4/sit-ssdcheck_latest.zip" class="btn-download">⬇ Download (portabel)</a>
+        <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.5.4/sit-ssdcheck_setup.zip" class="btn-download-alt">⬇ Download (mit Setup)</a>
+      </div>
+      <div style="margin-top:16px;">
+        <a href="https://github.com/sattlerit/sit-ssd-check/releases" class="btn-secondary" style="margin-left:0;">Alle Versionen</a>
+      </div>
+      <span class="btn-hint">Version 1.5.4.1 · „Portabel“ direkt starten, kein Setup nötig · „Mit Setup“ installiert das Tool mit Eintrag in der Windows-Programmliste (auch portabel möglich)</span>
     </div>
     <div class="hero-screenshot">
       <img src="screenshots/screenshot-overview.png" alt="S-IT SSD-Check – Übersicht mit Ampel-Ergebnis">
@@ -631,59 +666,12 @@
         <li>Dateiname des Berichts von Sonderzeichen bereinigt (z. B. Anführungszeichen im Modellnamen)</li>
       </ul>
     </div>
-    <div class="changelog-entry">
-      <div class="changelog-version">v1.4.6 <span>Mai 2026</span></div>
-      <ul>
-        <li>Geschwindigkeitstest-Tab: Scrollbar per Mausrad bedienbar</li>
-        <li>Info-Box: Symbol und Text sauber zweispaltig ausgerichtet</li>
-      </ul>
-    </div>
-    <div class="changelog-entry">
-      <div class="changelog-version">v1.4.x <span>Mai 2026</span></div>
-      <ul>
-        <li>Neuer Tab ⚡ Geschwindigkeit: sequenzieller Lese-/Schreibtest mit Ampelbewertung</li>
-        <li>Temperatur-Bewertungsstufen: optimal / warm / heiß / kritisch mit Farbindikator</li>
-        <li>CRC-Fehler im Bericht: Hinweis dass Fehler auf Kabel/Adapter hinweisen, nicht die SSD selbst</li>
-        <li>Betriebsstunden-Plausibilitätscheck: Hinweis bei mögl. zurückgesetztem Counter</li>
-        <li>HTML-Bericht: k.A.-Felder mit erklärenden Hinweisen und USB-Adapter-Notiz</li>
-        <li>Druckoptimierung (@media print) für HTML-Bericht</li>
-      </ul>
-    </div>
-    <div class="changelog-entry">
-      <div class="changelog-version">v1.3.0 <span>Mai 2026</span></div>
-      <ul>
-        <li>SSD/HDD-Erkennung in der Laufwerksliste via smartctl Rotation Rate</li>
-        <li>Programm-Icon auf s-it-ssd-check.ico umgestellt</li>
-        <li>Tag-Breite in Combobox auf feste 7 Zeichen normiert (kein Flattersatz)</li>
-      </ul>
-    </div>
-    <div class="changelog-entry">
-      <div class="changelog-version">v1.2.9 <span>Mai 2026</span></div>
-      <ul>
-        <li>NVMe available_spare (Reserveblöcke) + Schwellwert-Warnung</li>
-        <li>CRC Error Count (Attr. 199) – Kabel-/Adapterqualität sichtbar</li>
-        <li>Hilfe-Fenster vergrößerbar</li>
-        <li>Optionaler UsbSetup-Button im Footer (wenn S-IT-UsbSetup.exe vorhanden)</li>
-      </ul>
-    </div>
-    <div class="changelog-entry">
-      <div class="changelog-version">v1.2.8 <span>Mai 2026</span></div>
-      <ul>
-        <li>UnicodeDecodeError behoben (encoding=utf-8, errors=replace für alle subprocess-Aufrufe)</li>
-        <li>_detect_vendor: HP, LiteOn, InnovationIT, Intenso ergänzt – Reihenfolge korrigiert</li>
-        <li>Attr. 190 als Temperatur-Fallback (Samsung 840/850 EVO)</li>
-        <li>NVMe-Temperatur Plausibilitätscheck: nur 0–100 °C akzeptiert</li>
-      </ul>
-    </div>
-    <div class="changelog-entry">
-      <div class="changelog-version">v1.2.7 <span>Mai 2026</span></div>
-      <ul>
-        <li>USB-Erkennung dreistufig: --scan + smartctl -i Transport protocol + wmic InterfaceType</li>
-        <li>Hersteller-Erkennung aus Modellname (21 Hersteller)</li>
-        <li>Laufwerksliste mit Consolas-Font und │-Trennzeichen bündig ausgerichtet</li>
-        <li>HTML-Bericht mit dl/dt/dd-Layout – luftig und strukturiert</li>
-      </ul>
-    </div>
+    <p style="text-align:center; font-size:13px; color:var(--muted); margin-top:16px;">
+      Frühere Versionen (bis 1.4.x) brachten die Basisfunktionen und ihre
+      Erweiterungen: SSD-/HDD- und Herstellererkennung, SMART-Analyse mit
+      Ampelbewertung, den Geschwindigkeitstest, den HTML-Prüfbericht sowie
+      Unterstützung für SATA, NVMe und USB-Adapter.
+    </p>
   </div>
 
   <!-- COMMUNITY -->

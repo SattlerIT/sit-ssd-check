@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>S-IT SSD-Check – ChangeLog</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #F5F5F5;
+         color: #2C3E50; font-size: 14px; }
+  header { background: #2C3E50; color: #fff; padding: 24px 36px 18px 36px; }
+  header h1 { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+  header p  { font-size: 12px; color: #BDC3C7; }
+  .container { max-width: 860px; margin: 28px auto; padding: 0 20px 60px 20px; }
+  .version-block { background: #fff; border-radius: 8px; margin-bottom: 24px;
+                   box-shadow: 0 2px 6px rgba(0,0,0,.08); overflow: hidden; }
+  .version-header { padding: 14px 22px; display: flex; align-items: center; gap: 14px; }
+  .version-header.current { background: #2C3E50; color: #fff; }
+  .version-header.older   { background: #ECF0F1; color: #2C3E50; }
+  .v-badge { font-size: 18px; font-weight: 700; min-width: 90px; }
+  .v-date  { font-size: 12px; opacity: .7; }
+  .v-tag   { font-size: 11px; background: #27AE60; color: #fff;
+             padding: 2px 10px; border-radius: 12px; font-weight: 600; }
+  .v-tag.older { background: #95A5A6; }
+  .section { padding: 16px 22px; border-top: 1px solid #ECF0F1; }
+  .section h3 { font-size: 11px; font-weight: 700; text-transform: uppercase;
+                letter-spacing: .08em; color: #7F8C8D; margin-bottom: 10px; }
+  ul { padding-left: 0; list-style: none; }
+  li { padding: 5px 0 5px 22px; position: relative; line-height: 1.5; }
+  li::before { content: '✓'; position: absolute; left: 0;
+               color: #27AE60; font-weight: 700; }
+  li.fix::before  { content: '⚑'; color: #E74C3C; }
+  li.new::before  { content: '★'; color: #3498DB; }
+  li.note::before { content: '●'; color: #F39C12; }
+  .highlight { color: #2980B9; font-weight: 600; }
+  .tag-user { display: inline-block; font-size: 10px; background: #D6EAF8;
+              color: #1A5276; padding: 1px 7px; border-radius: 10px;
+              margin-left: 6px; font-weight: 600; vertical-align: middle; }
+  .legend { font-size: 12px; color: #7F8C8D; margin-bottom: 22px; line-height: 1.9; }
+  .legend span { margin-right: 18px; white-space: nowrap; }
+  footer { background: #2C3E50; color: #95A5A6; text-align: center;
+           padding: 14px; font-size: 11px; }
+  .intro { background: #EBF5FB; border-left: 4px solid #3498DB;
+           padding: 14px 18px; border-radius: 4px; margin-bottom: 24px;
+           font-size: 13px; line-height: 1.6; color: #1A252F; }
+</style>
+</head>
+<body>
+<header>
+  <h1>S-IT SSD-Check – ChangeLog</h1>
+  <p>Aktuell: Version 1.5.4.1 &nbsp;•&nbsp;
+     © 2026 Hans Udo Sattler &nbsp;•&nbsp; Sattler IT-Service, Greifenstein</p>
+</header>
+
+<div class="container">
+
+  <div class="intro">
+    S-IT SSD-Check bewertet die Gesundheit von SSDs und Festplatten anhand ihrer
+    SMART-Werte – mit einer Ampel, die nur dann auf Rot springt, wenn ein Defekt
+    tatsächlich belegt ist. Vielen Dank an alle Nutzer bei
+    <strong>deskmodder.de</strong>, <strong>wintotal.de</strong> und
+    <strong>chip.de</strong> für das wertvolle Feedback.
+    <br><br>
+    Ein besonderer Dank gilt den <strong>SSD-Testern</strong>, die mit ihren
+    Diagnose-Dateien zur Weiterentwicklung beigetragen haben. Jedes eingeschickte
+    Laufwerk – ob kerngesund, verschlissen oder mit widersprüchlichen Werten –
+    hat geholfen, die Bewertung genauer und verlässlicher zu machen. Gerade die
+    ungewöhnlichen Fälle waren dabei am wertvollsten: Sie haben Schwächen
+    sichtbar gemacht, die sich an gesunden Laufwerken allein nie gezeigt hätten.
+  </div>
+
+  <div class="legend">
+    <span>✓ Verbesserung</span>
+    <span>⚑ Fehlerbehebung</span>
+    <span>★ Neu</span>
+    <span>● Hinweis</span>
+    <span><span class="tag-user">Nutzer-Feedback</span> von Anwendern angeregt</span>
+  </div>
+
+  <!-- v1.5.4.1 -->
+  <div class="version-block">
+    <div class="version-header current">
+      <div class="v-badge">v1.5.4.1</div>
+      <div class="v-date">Juli 2026</div>
+      <div class="v-tag">Aktuell</div>
+    </div>
+    <div class="section">
+      <h3>Bewertung &amp; Bericht</h3>
+      <ul>
+        <li class="fix"><span class="highlight">Widersprüchliche Verschleiß-Angaben werden erkannt.</span>
+            Manche SSDs melden ihren Abnutzungsgrad an zwei Stellen mit
+            unterschiedlichen Werten. Das Tool hält beide jetzt gegeneinander,
+            wählt die belastbarere Angabe und weist den Widerspruch offen aus –
+            statt einer der Zahlen blind zu folgen und dadurch ein zu gutes oder
+            zu schlechtes Urteil zu fällen.</li>
+        <li class="fix"><span class="highlight">Reserveblöcke werden bei mehr Modellen korrekt angezeigt.</span>
+            Bei einigen Samsung-SSDs stand bisher „k.A.“, obwohl das Laufwerk den
+            Wert meldet. Jetzt erscheint der tatsächliche Zustand – bei intakten
+            Laufwerken „100 % – intakt“. <span class="tag-user">Nutzer-Feedback</span></li>
+        <li class="fix">Prüfbericht aufgeräumt: Der erklärende Hinweis zu
+            Übertragungsfehlern (CRC) erschien im Bericht doppelt und wird jetzt
+            nur noch einmal ausgegeben. <span class="tag-user">Nutzer-Feedback</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- v1.5.4 -->
+  <div class="version-block">
+    <div class="version-header older">
+      <div class="v-badge">v1.5.4</div>
+      <div class="v-date">Juli 2026</div>
+      <div class="v-tag older">Vorversion</div>
+    </div>
+    <div class="section">
+      <h3>Bewertung</h3>
+      <ul>
+        <li class="fix"><span class="highlight">Ein belegter Defekt schlägt jeden Verschleißwert.</span>
+            Schwebende oder nicht korrigierbare Sektoren und Medienfehler führen
+            immer zu einem roten Urteil – auch wenn das Laufwerk selbst noch
+            „100 % Restlebensdauer“ meldet.</li>
+        <li class="new"><span class="highlight">Neue grüne Stufe „Gut“ (80–94 %).</span>
+            „Sehr gut“ gilt jetzt ab 95 %. Beide Stufen sind grün und
+            uneingeschränkt geeignet – der Bewertungstext nennt zusätzlich den
+            bereits verbrauchten Anteil, damit man beim Gebrauchtkauf den Preis
+            richtig einschätzen kann.</li>
+        <li>Schreibreserve-Prognose als Spanne statt Scheinwert
+            („noch etwa 416–701 TB“ statt „noch ca. 523 TB“): Die Breite zeigt
+            selbst an, wie belastbar die Schätzung ist.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h3>Bericht &amp; Bedienung</h3>
+      <ul>
+        <li class="fix">Der Bericht zeigt jetzt die Werte, die zur Abwertung
+            führen, und widerspricht sich nicht mehr: Ein rot bewertetes Laufwerk
+            meldet keine „lange Lebensdauer“ mehr; nicht gemeldete Zähler
+            erscheinen als „k.A.“ statt als „0“.</li>
+        <li>Übersicht dreispaltig (Identität, Zustand, Fehlerzähler) mit
+            anklickbarer gelber Ziffer für Zusatzbefunde wie Stromausfälle oder
+            auffälliges Kopfparken.</li>
+        <li>Fensterskalierung richtet sich automatisch nach dem verfügbaren
+            Bildschirmplatz; feste Werte von 80 % bis 200 % bleiben wählbar.</li>
+        <li class="fix">Behoben: falsche Kapazität auf deutschem Windows
+            (1 TB wurde als „2000 GB“ angezeigt), doppelt gelistete
+            USB-Laufwerke, „FAILED“ bei USB-Sticks und Kartenlesern ohne SMART.</li>
+        <li>Hilfe überarbeitet mit neuem Abschnitt „Wie das Tool bewertet – die
+            Strategie“; Haftungsausschluss liegt bei und steht im Berichtsfuß.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- v1.5.3 -->
+  <div class="version-block">
+    <div class="version-header older">
+      <div class="v-badge">v1.5.3</div>
+      <div class="v-date">Juli 2026</div>
+    </div>
+    <div class="section">
+      <h3>Zuverlässigere Bewertung</h3>
+      <ul>
+        <li class="fix">Sicherheitsnetz gegen Fehlbewertungen: Ein kritisches
+            Urteil verlangt jetzt einen belegten Defekt – ein einzelner,
+            herstellerspezifisch skalierter Zahlenwert reicht nicht mehr aus.</li>
+        <li>Die Verschleißprüfung funktioniert auch dann, wenn die geschriebene
+            Datenmenge nicht auslesbar ist (etwa bei manchen USB-Gehäusen und
+            OEM-SSDs); ein nicht überprüfbarer Wert wird offen so ausgewiesen,
+            statt eine Warnung auszulösen.</li>
+        <li>Hohe Betriebsstunden allein führen nicht mehr zu einem kritischen
+            Urteil – Betriebszeit ist kein Schaden.</li>
+        <li class="fix">Unplausible Rohwerte (z. B. −128 °C) werden verworfen und
+            benannt, statt die Bewertung zu verfälschen.</li>
+        <li>Prognose ohne Scheingenauigkeit: Bei sehr geringem Verschleiß
+            erscheint „rechnerisch weit über der üblichen Nutzungsdauer“ statt
+            einer Extremzahl.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- v1.5.2 -->
+  <div class="version-block">
+    <div class="version-header older">
+      <div class="v-badge">v1.5.2</div>
+      <div class="v-date">Juli 2026</div>
+    </div>
+    <div class="section">
+      <h3>Fenster &amp; Anzeige</h3>
+      <ul>
+        <li class="new">Fenstergröße lässt sich über das „Ansicht“-Menü speichern
+            und wird beim nächsten Start wiederhergestellt – so passt jeder das
+            Fenster an seinen Bildschirm an.</li>
+        <li>Fenster startet vollständig sichtbar über der Taskleiste; die
+            Startgröße zeigt die Übersicht sofort komplett.</li>
+        <li class="fix">NVMe-Systemlaufwerke: Der von Windows blockierte
+            Medienfehler-Wert wird nicht mehr als echter Fehler gewertet –
+            Anzeige „nicht auslesbar (Systemlaufwerk)“ statt falscher Warnung.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- v1.5.0 -->
+  <div class="version-block">
+    <div class="version-header older">
+      <div class="v-badge">v1.5.0</div>
+      <div class="v-date">Juni 2026</div>
+    </div>
+    <div class="section">
+      <h3>Echtheitsprüfung &amp; neue Auswertungen</h3>
+      <ul>
+        <li class="new"><span class="highlight">Neuer Reiter „🔎 Echtheit“:</span>
+            Plausibilitätsprüfung der SMART-Werte – erkennt zurückgesetzte Zähler
+            bzw. „gebraucht als neu verkauft“ aus Widersprüchen zwischen Laufzeit,
+            Verschleiß und Schreibzyklen.</li>
+        <li>Unerwartete Stromausfälle werden neben den Einschaltzyklen angezeigt
+            – z. B. „99 (davon 59 nach Stromausfall)“.</li>
+        <li class="new">Echte 0 Betriebsstunden werden als „0 Std“ ausgewiesen;
+            neue Bewertungsstufe „Praktisch neu / unbenutzt“ für fabrikneue
+            Laufwerke.</li>
+        <li class="fix">RAID-/Intel-RST-Laufwerke: ehrliche
+            Windows-Gesundheitseinschätzung statt „FAILED“; Modell, Seriennummer
+            und Kapazität werden über Windows nachgezogen.</li>
+        <li>Windows-TRIM-Status, Lade-/Parkzyklen mit Hinweis auf aggressives
+            Kopfparken, Einschaltzyklen jetzt auch im SSD-Bericht.</li>
+        <li>NVMe-Temperaturkorrektur, HDD-Bewertung über echte
+            Defekt-Indikatoren statt Flash-Verschleiß, zahlreiche
+            Detailverbesserungen.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- v1.4.10 -->
+  <div class="version-block">
+    <div class="version-header older">
+      <div class="v-badge">v1.4.10</div>
+      <div class="v-date">Juni 2026</div>
+    </div>
+    <div class="section">
+      <h3>Kompatibilität &amp; Stabilität</h3>
+      <ul>
+        <li class="fix">Laufwerkserkennung komplett auf Windows-PowerShell
+            umgestellt – läuft jetzt auch auf neuen Windows-11-Systemen.</li>
+        <li>RAID-/Intel-RST-Laufwerke werden klar als „SMART nicht verfügbar“
+            ausgewiesen – mit Hinweis auf direkten SATA-Anschluss.</li>
+        <li class="fix">Geschwindigkeitstest: Abbruch mit Hinweis bei hängendem
+            Laufwerk (Hardware-/USB-Problem) statt Einfrieren.</li>
+        <li>Betriebsstunden-Plausibilität: korrekte Auswertung
+            herstellerspezifischer Roh-Werte (u. a. Seagate).</li>
+        <li>Geschwindigkeits-Ergebnisse werden bei Laufwerkswechsel
+            zurückgesetzt; farbige, deutlich sichtbare Reiter; Darstellung bei
+            125 %-Skalierung korrigiert.</li>
+        <li class="fix">Dateiname des Berichts von Sonderzeichen bereinigt
+            (z. B. Anführungszeichen im Modellnamen).</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="text-align:center; font-size:12px; color:#95A5A6; margin-top:10px;">
+    Frühere Versionen (bis 1.4.x) brachten die Basisfunktionen und ihre
+    Erweiterungen: SSD-/HDD- und Herstellererkennung, SMART-Analyse mit
+    Ampelbewertung, den Geschwindigkeitstest, den HTML-Prüfbericht sowie
+    Unterstützung für SATA, NVMe und USB-Adapter.
+  </p>
+
+
+</div>
+
+<footer>
+  © 2026 Sattler IT-Service, Greifenstein · Hans Udo Sattler ·
+  S-IT SSD-Check ist Freeware. Alle Angaben ohne Gewähr.
+</footer>
+</body>
+</html>
