@@ -354,7 +354,7 @@
     <div>
       <h1>Wie fit ist deine SSD?<br>Schnell prüfen – ohne Herstellertools</h1>
       <p>S-IT SSD-Check zeigt dir in Sekunden, wie es um die Gesundheit deiner SSD oder Festplatte steht – im eigenen PC, im Laptop oder bei einer gebrauchten SSD vor dem Kauf. Ampel-Bewertung, SMART-Details und ein druckfertiger Kundenbericht auf Knopfdruck. Und jeder Wert ist nachvollziehbar: Das Tool legt offen, worauf sein Urteil beruht.</p>
-      <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.5.4/sit-ssdcheck_latest.zip" class="btn-download">⬇ Download v1.5.4</a>
+      <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.5.4/sit-ssdcheck_latest.zip" class="btn-download">⬇ Download v1.5.4.1</a>
       <a href="https://github.com/sattlerit/sit-ssd-check/releases" class="btn-secondary">Alle Versionen</a>
     </div>
     <div class="hero-screenshot">
@@ -569,6 +569,14 @@
   <!-- CHANGELOG -->
   <div class="section-title">📋 Changelog</div>
   <div class="changelog">
+    <div class="changelog-entry">
+      <div class="changelog-version">v1.5.4.1 <span>Juli 2026</span></div>
+      <ul>
+        <li>Widersprüchliche Verschleiß-Angaben werden erkannt: Meldet eine SSD ihren Abnutzungsgrad an zwei Stellen unterschiedlich, hält das Tool beide Werte gegeneinander, wählt den belastbareren und weist auf den Widerspruch hin – statt einer Zahl blind zu folgen</li>
+        <li>Reserveblöcke werden bei mehr SSD-Modellen korrekt angezeigt – bei einigen Samsung-Laufwerken stand zuvor „k.A.“, obwohl der Wert vorlag</li>
+        <li>Prüfbericht aufgeräumt: Der Hinweis zu Übertragungsfehlern (CRC) erscheint nicht mehr doppelt</li>
+      </ul>
+    </div>
     <div class="changelog-entry">
       <div class="changelog-version">v1.5.4 <span>Juli 2026</span></div>
       <ul>
