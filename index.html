@@ -384,13 +384,13 @@
       <h1>Wie fit ist deine SSD?<br>Schnell prüfen – ohne Herstellertools</h1>
       <p>S-IT SSD-Check zeigt dir in Sekunden, wie es um die Gesundheit deiner SSD oder Festplatte steht – im eigenen PC, im Laptop oder bei einer gebrauchten SSD vor dem Kauf. Ampel-Bewertung, SMART-Details und ein druckfertiger Kundenbericht auf Knopfdruck. Und jeder Wert ist nachvollziehbar: Das Tool legt offen, worauf sein Urteil beruht.</p>
       <div class="btn-row-download">
-        <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.5.4/sit-ssdcheck_latest.zip" class="btn-download">⬇ Download (portabel)</a>
-        <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.5.4/sit-ssdcheck_setup.zip" class="btn-download-alt">⬇ Download (mit Setup)</a>
+        <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.5.4.5/sit-ssdcheck_latest.zip" class="btn-download">⬇ Download (portabel)</a>
+        <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.5.4.5/sit-ssdcheck_setup.zip" class="btn-download-alt">⬇ Download (mit Setup)</a>
       </div>
       <div style="margin-top:16px;">
         <a href="https://github.com/sattlerit/sit-ssd-check/releases" class="btn-secondary" style="margin-left:0;">Alle Versionen</a>
       </div>
-      <span class="btn-hint">Version 1.5.4.1 · „Portabel“ direkt starten, kein Setup nötig · „Mit Setup“ installiert das Tool mit Eintrag in der Windows-Programmliste (auch portabel möglich)</span>
+      <span class="btn-hint">Version 1.5.4.5 · „Portabel“ direkt starten, kein Setup nötig · „Mit Setup“ installiert das Tool mit Eintrag in der Windows-Programmliste (auch portabel möglich)</span>
     </div>
     <div class="hero-screenshot">
       <img src="screenshots/screenshot-overview.png" alt="S-IT SSD-Check – Übersicht mit Ampel-Ergebnis">
@@ -412,7 +412,7 @@
         </div>
       </div>
       <div class="ampel-item">
-        <div class="ampel-dot" style="background:#27AE60"></div>
+        <div class="ampel-dot" style="background:#2ECC71"></div>
         <div class="ampel-item-text">
           <strong>Gut (80 – 94 %)</strong>
           <span>Gut erhalten – ebenfalls uneingeschränkt geeignet</span>
@@ -448,7 +448,8 @@
       </div>
     </div>
     <p class="ampel-note"><strong>Sehr gut</strong> und <strong>Gut</strong> sind beide grün und beide
-    uneingeschränkt geeignet – die Stufen sagen nur, wie viel Lebensdauer schon verbraucht ist. Der
+    uneingeschränkt geeignet – <strong>Gut</strong> in einem etwas helleren Ton, damit die beiden Stufen
+    auf einen Blick unterscheidbar sind. Die Stufen sagen nur, wie viel Lebensdauer schon verbraucht ist. Der
     Bewertungstext nennt den Anteil im Klartext, damit man selbst urteilen kann. Und unabhängig
     davon: Ein <strong>nachgewiesener Defekt</strong> – schwebende oder nicht korrigierbare Sektoren,
     Medienfehler – schaltet die Ampel immer auf Rot, auch wenn das Laufwerk „100 % Restlebensdauer"
@@ -472,7 +473,7 @@
     <div class="card">
       <div class="card-icon">📊</div>
       <h3>SMART-Analyse</h3>
-      <p>Liest Restlebensdauer, Betriebsstunden, Temperatur, TBW, Reserveblöcke (NVMe), CRC-Fehler, umgesetzte Blöcke und Medienfehler aus.</p>
+      <p>Liest Restlebensdauer, Betriebsstunden, Temperatur, TBW, Reserveblöcke (NVMe), CRC-Fehler, umgesetzte Blöcke, gemeldete Lesefehler und Medienfehler aus.</p>
     </div>
     <div class="card">
       <div class="card-icon">🔎</div>
@@ -492,7 +493,7 @@
     <div class="card">
       <div class="card-icon">📄</div>
       <h3>HTML-Bericht</h3>
-      <p>Exportiert einen übersichtlichen Prüfbericht als HTML-Datei – für die eigene Dokumentation, zur Weitergabe an Kunden oder als Nachweis beim Gebrauchtkauf.</p>
+      <p>Exportiert einen übersichtlichen Prüfbericht als HTML-Datei – für die eigene Dokumentation, zur Weitergabe an Kunden oder als Nachweis beim Gebrauchtkauf. Für A4 hochkant bei 100&nbsp;% eingerichtet, mit sauberem Seitenumbruch.</p>
     </div>
     <div class="card">
       <div class="card-icon">🖥</div>
@@ -604,6 +605,15 @@
   <!-- CHANGELOG -->
   <div class="section-title">📋 Changelog</div>
   <div class="changelog">
+    <div class="changelog-entry">
+      <div class="changelog-version">v1.5.4.5 <span>August 2026</span></div>
+      <ul>
+        <li>Gemeldete Lesefehler werden ausgewertet: Das Tool liest jetzt zusätzlich, wie oft ein Laufwerk einen Bereich lesen sollte und ihn nicht liefern konnte. Notwendig, weil ein Laufwerk schadhafte Bereiche erst beim Schreiben ersetzt – bei Daten, die nur gelesen werden, bleiben die umgesetzten Blöcke auf 0, obwohl längst Bereiche fehlen. Ab zehn gemeldeten Lesefehlern gilt das als Defektbeleg</li>
+        <li>Zwei unterscheidbare Grüntöne: „Gut“ (80–94&nbsp;%) erscheint heller als „Sehr gut“ (ab 95&nbsp;%) – beide bleiben grün und uneingeschränkt geeignet</li>
+        <li>Prüfbericht mit sauberem Seitenumbruch: eingerichtet für A4 hochkant bei 100&nbsp;%, Verkleinern im Browser entfällt. Reicht der Platz nicht, wandert ein Abschnitt vollständig auf die nächste Seite statt zerrissen zu werden</li>
+        <li>Hilfe und Changelog aktualisiert; Ampel-Legende im Hilfe-Reiter richtiggestellt</li>
+      </ul>
+    </div>
     <div class="changelog-entry">
       <div class="changelog-version">v1.5.4.1 <span>Juli 2026</span></div>
       <ul>
