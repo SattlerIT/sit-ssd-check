@@ -384,13 +384,13 @@
       <h1>Wie fit ist deine SSD?<br>Schnell prüfen – ohne Herstellertools</h1>
       <p>S-IT SSD-Check zeigt dir in Sekunden, wie es um die Gesundheit deiner SSD oder Festplatte steht – im eigenen PC, im Laptop oder bei einer gebrauchten SSD vor dem Kauf. Ampel-Bewertung, SMART-Details und ein druckfertiger Kundenbericht auf Knopfdruck. Und jeder Wert ist nachvollziehbar: Das Tool legt offen, worauf sein Urteil beruht.</p>
       <div class="btn-row-download">
-        <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.5.4.5/sit-ssdcheck_latest.zip" class="btn-download">⬇ Download (portabel)</a>
-        <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.5.4.5/sit-ssdcheck_setup.zip" class="btn-download-alt">⬇ Download (mit Setup)</a>
+        <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.7.0/sit-ssdcheck_latest.zip" class="btn-download">⬇ Download (portabel)</a>
+        <a href="https://github.com/SattlerIT/sit-ssd-check/releases/download/v1.7.0/sit-ssdcheck_setup.zip" class="btn-download-alt">⬇ Download (mit Setup)</a>
       </div>
       <div style="margin-top:16px;">
         <a href="https://github.com/sattlerit/sit-ssd-check/releases" class="btn-secondary" style="margin-left:0;">Alle Versionen</a>
       </div>
-      <span class="btn-hint">Version 1.5.4.5 · „Portabel“ direkt starten, kein Setup nötig · „Mit Setup“ installiert das Tool mit Eintrag in der Windows-Programmliste (auch portabel möglich)</span>
+      <span class="btn-hint">Version 1.7.0 · „Portabel“ direkt starten, kein Setup nötig · „Mit Setup“ installiert das Tool mit Eintrag in der Windows-Programmliste (auch portabel möglich)</span>
     </div>
     <div class="hero-screenshot">
       <img src="screenshots/screenshot-overview.png" alt="S-IT SSD-Check – Übersicht mit Ampel-Ergebnis">
@@ -471,6 +471,22 @@
       <p>Zeigt alle angeschlossenen Laufwerke mit Typ (INT/USB), Medienart (SSD/HDD), Größe, Laufwerksbuchstaben und Modellname – sortiert nach Größe.</p>
     </div>
     <div class="card">
+      <div class="card-icon">📈</div>
+      <h3>Messungsverlauf <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
+      <p>Hält bei jeder Prüfung die Kennzahlen fest. Aus mehreren Messungen
+         entsteht ein Verlauf, der zeigt, was sich verändert hat – und was
+         nicht: „CRC-Fehler: seit 95 Tagen kein neuer.“ Frühere Berichte und
+         Diagnosedateien lassen sich einlesen, der Verlauf muss nicht bei null
+         anfangen.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌐</div>
+      <h3>Drei Sprachen <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
+      <p>Oberfläche, Erklärtexte, Meldungen und der HTML-Bericht auf Deutsch,
+         Englisch und Niederländisch. Umgestellt wird unter „Einstellungen“;
+         Deutsch ist fest eingebaut und braucht keine Beilage.</p>
+    </div>
+    <div class="card">
       <div class="card-icon">📊</div>
       <h3>SMART-Analyse</h3>
       <p>Liest Restlebensdauer, Betriebsstunden, Temperatur, TBW, Reserveblöcke (NVMe), CRC-Fehler, umgesetzte Blöcke, gemeldete Lesefehler und Medienfehler aus.</p>
@@ -502,6 +518,163 @@
     </div>
   </div>
 
+
+  <!-- MESSUNGSVERLAUF -->
+  <div class="section-title">📈 Neu: Der Messungsverlauf</div>
+  <div class="card" style="margin-bottom:26px">
+    <p style="margin:0 0 14px">Eine einzelne Prüfung ist eine Momentaufnahme.
+       Mehrere Prüfungen ergeben einen Verlauf – und der beantwortet Fragen,
+       die eine Momentaufnahme nicht beantworten kann. Bei CRC-Fehlern etwa
+       zählt nicht der Stand, sondern ob neue hinzukommen. Ein Zähler, der
+       seit Monaten stillsteht, spricht für eine einwandfreie Verbindung.</p>
+
+    <div style="overflow-x:auto">
+    <table style="width:100%;border-collapse:collapse;font-size:14px">
+      <tr style="background:var(--light);text-align:left">
+        <th style="padding:7px 10px">Wert</th>
+        <th style="padding:7px 10px;text-align:right">erste Messung</th>
+        <th style="padding:7px 10px;text-align:right">jetzt</th>
+        <th style="padding:7px 10px;text-align:right">Änderung</th>
+        <th style="padding:7px 10px">Einordnung</th>
+      </tr>
+      <tr style="border-top:1px solid var(--border)">
+        <td style="padding:6px 10px">Lade-/Parkzyklen</td>
+        <td style="padding:6px 10px;text-align:right">82.155</td>
+        <td style="padding:6px 10px;text-align:right">85.482</td>
+        <td style="padding:6px 10px;text-align:right;color:#B9770E;font-weight:700">+3.327</td>
+        <td style="padding:6px 10px;color:#5D6D7E">52 am Tag – jetzt bei 28 % der
+            Auslegungsgrenze, noch rund 11 Jahre</td>
+      </tr>
+      <tr style="border-top:1px solid var(--border)">
+        <td style="padding:6px 10px">Betriebsstunden</td>
+        <td style="padding:6px 10px;text-align:right">26.977</td>
+        <td style="padding:6px 10px;text-align:right">28.105</td>
+        <td style="padding:6px 10px;text-align:right;color:#5D6D7E">+1.128</td>
+        <td style="padding:6px 10px;color:#5D6D7E">17,9 Stunden am Tag – Dauerbetrieb</td>
+      </tr>
+      <tr style="border-top:1px solid var(--border)">
+        <td style="padding:6px 10px">Umgesetzte Blöcke</td>
+        <td style="padding:6px 10px;text-align:right">0</td>
+        <td style="padding:6px 10px;text-align:right">0</td>
+        <td style="padding:6px 10px;text-align:right;color:#1E8449;font-weight:700">unverändert</td>
+        <td style="padding:6px 10px;color:#5D6D7E">keine Sektorverluste in 63 Tagen</td>
+      </tr>
+      <tr style="border-top:1px solid var(--border)">
+        <td style="padding:6px 10px">CRC-Fehler</td>
+        <td style="padding:6px 10px;text-align:right">0</td>
+        <td style="padding:6px 10px;text-align:right">0</td>
+        <td style="padding:6px 10px;text-align:right;color:#1E8449;font-weight:700">unverändert</td>
+        <td style="padding:6px 10px;color:#5D6D7E">Verbindung stabil</td>
+      </tr>
+      <tr style="border-top:1px solid var(--border)">
+        <td style="padding:6px 10px">Temperatur</td>
+        <td style="padding:6px 10px;text-align:right">37 °C</td>
+        <td style="padding:6px 10px;text-align:right">31 °C</td>
+        <td style="padding:6px 10px;text-align:right;color:#5D6D7E">29 – 39 °C</td>
+        <td style="padding:6px 10px;color:#5D6D7E">Spanne über alle Messungen –
+            durchgehend unbedenklich</td>
+      </tr>
+    </table>
+    </div>
+    <p style="font-size:13px;color:#7F8C8D;margin:10px 0 0">
+       Echte Werte einer Festplatte über 15 Messungen in 63 Tagen. Die letzte
+       Spalte ist der eigentliche Gewinn: Ein Zahlenpaar sagt wenig, erst die
+       Einordnung macht daraus eine Aussage.</p>
+  </div>
+
+  <!-- DIAGRAMMFORMEN -->
+  <div class="card" style="margin-bottom:26px">
+    <h3 style="margin:0 0 6px">Drei Darstellungen für drei Fragen</h3>
+    <p style="margin:0 0 16px;color:#5D6D7E;font-size:14px">Die Form richtet
+       sich nach dem Wert – das Programm wählt sie selbst.</p>
+
+    <div style="margin-bottom:20px">
+      <strong style="font-size:14px">Wohin läuft das?</strong>
+      <span style="color:#7F8C8D;font-size:13px"> – Betriebsstunden,
+        Schreibmenge, Verschleiß, Zyklen</span>
+      <svg viewBox="0 0 900 130" style="width:100%;height:auto;margin-top:8px">
+        <line x1="62" y1="12" x2="62" y2="100" stroke="#D5DBDB"/>
+        <line x1="62" y1="100" x2="560" y2="100" stroke="#D5DBDB"/>
+        <text x="6" y="16" font-size="11" fill="#7F8C8D">86.000</text>
+        <text x="6" y="104" font-size="11" fill="#7F8C8D">82.000</text>
+        <polyline fill="none" stroke="#B9770E" stroke-width="2.5"
+          points="62,94 170,80 200,74 250,65 560,24"/>
+        <circle cx="62" cy="94" r="3.5" fill="#B9770E"/>
+        <circle cx="170" cy="80" r="3.5" fill="#B9770E"/>
+        <circle cx="200" cy="74" r="3.5" fill="#B9770E"/>
+        <circle cx="250" cy="65" r="3.5" fill="#B9770E"/>
+        <circle cx="560" cy="24" r="5" fill="#B9770E"/>
+        <text x="62" y="118" font-size="11" fill="#7F8C8D">27.06.</text>
+        <text x="512" y="118" font-size="11" fill="#7F8C8D">26.08.</text>
+        <text x="630" y="20" font-size="11" fill="#7F8C8D">Weg bis zur Grenze</text>
+        <rect x="630" y="30" width="250" height="26" fill="#EAEDED" stroke="#D5DBDB"/>
+        <rect x="630" y="30" width="70" height="26" fill="#B9770E"/>
+        <text x="638" y="48" font-size="12" fill="#fff" font-weight="bold">28 %</text>
+        <text x="630" y="72" font-size="11" fill="#7F8C8D">0</text>
+        <text x="880" y="72" font-size="11" fill="#7F8C8D" text-anchor="end">300.000</text>
+        <text x="630" y="96" font-size="13" fill="#B9770E" font-weight="bold">noch rund 11 Jahre</text>
+      </svg>
+      <p style="font-size:13px;color:#7F8C8D;margin:2px 0 0">Die Kurve zeigt,
+         wie gleichmäßig es läuft; der Balken, wie weit es bis zur Grenze noch
+         ist.</p>
+    </div>
+
+    <div style="margin-bottom:20px">
+      <strong style="font-size:14px">Ist etwas passiert?</strong>
+      <span style="color:#7F8C8D;font-size:13px"> – CRC, Sektoren, Lesefehler</span>
+      <svg viewBox="0 0 900 70" style="width:100%;height:auto;margin-top:8px">
+        <rect x="62" y="18" width="800" height="20" rx="3" fill="#D5F5E3" stroke="#A9DFBF"/>
+        <g fill="#1E8449">
+          <circle cx="62" cy="28" r="3.5"/><circle cx="82" cy="28" r="3.5"/>
+          <circle cx="102" cy="28" r="3.5"/><circle cx="130" cy="28" r="3.5"/>
+          <circle cx="262" cy="28" r="3.5"/><circle cx="298" cy="28" r="3.5"/>
+          <circle cx="330" cy="28" r="3.5"/><circle cx="348" cy="28" r="3.5"/>
+          <circle cx="366" cy="28" r="3.5"/><circle cx="478" cy="28" r="3.5"/>
+          <circle cx="496" cy="28" r="3.5"/><circle cx="506" cy="28" r="3.5"/>
+          <circle cx="524" cy="28" r="3.5"/><circle cx="566" cy="28" r="3.5"/>
+          <circle cx="836" cy="28" r="3.5"/><circle cx="854" cy="28" r="3.5"/>
+          <circle cx="862" cy="28" r="5"/>
+        </g>
+        <text x="62" y="56" font-size="11" fill="#7F8C8D">23.05.</text>
+        <text x="862" y="56" font-size="11" fill="#7F8C8D" text-anchor="end">26.08.</text>
+      </svg>
+      <p style="font-size:13px;color:#7F8C8D;margin:2px 0 0">Ein Punkt je
+         Messung. Eine Kurve wäre hier eine flache Linie auf null – richtig,
+         aber nichtssagend, dabei ist genau das die beste Nachricht. Kommt
+         etwas hinzu, färbt sich der Balken ab dieser Stelle: So sieht man
+         sofort, ob ein Vorfall frisch ist oder längst zurückliegt.</p>
+    </div>
+
+    <div>
+      <strong style="font-size:14px">In welchem Bereich bewegt sich das?</strong>
+      <span style="color:#7F8C8D;font-size:13px"> – Temperatur</span>
+      <svg viewBox="0 0 900 110" style="width:100%;height:auto;margin-top:8px">
+        <rect x="62" y="8" width="800" height="14" fill="#FADBD8"/>
+        <text x="868" y="19" font-size="10" fill="#A93226">ab 65 °C</text>
+        <rect x="62" y="22" width="800" height="16" fill="#FCF3CF"/>
+        <text x="868" y="35" font-size="10" fill="#B9770E">ab 50 °C</text>
+        <rect x="62" y="38" width="800" height="46" fill="#E9F7EF"/>
+        <rect x="62" y="58" width="800" height="18" fill="#AED6F1" opacity=".6"/>
+        <line x1="62" y1="58" x2="862" y2="58" stroke="#2E86C1" stroke-width="1.5"/>
+        <line x1="62" y1="76" x2="862" y2="76" stroke="#2E86C1" stroke-width="1.5"/>
+        <text x="16" y="62" font-size="11" fill="#2E86C1">39 °C</text>
+        <text x="16" y="80" font-size="11" fill="#2E86C1">29 °C</text>
+        <g fill="#1B4F72">
+          <circle cx="62" cy="62" r="3"/><circle cx="100" cy="70" r="3"/>
+          <circle cx="140" cy="58" r="3"/><circle cx="330" cy="75" r="3"/>
+          <circle cx="380" cy="70" r="3"/><circle cx="440" cy="66" r="3"/>
+          <circle cx="560" cy="76" r="3"/><circle cx="830" cy="78" r="3"/>
+          <circle cx="862" cy="73" r="4"/>
+        </g>
+        <text x="62" y="100" font-size="11" fill="#7F8C8D">23.06.</text>
+        <text x="862" y="100" font-size="11" fill="#7F8C8D" text-anchor="end">26.08.</text>
+      </svg>
+      <p style="font-size:13px;color:#7F8C8D;margin:2px 0 0">Ein Trend wäre bei
+         schwankenden Werten Scheingenauigkeit. Das Band zeigt die Spanne vor
+         den Warnschwellen – hier bleiben 26 Grad Luft bis zur ersten Stufe.</p>
+    </div>
+  </div>
+
   <!-- SCREENSHOTS -->
   <div class="section-title">📸 Screenshots</div>
   <div class="gallery">
@@ -510,8 +683,8 @@
       <div class="gallery-caption">Übersicht: Identität, Zustand und Fehlerzähler nebeneinander – die gelbe Ziffer öffnet einen Zusatzbefund</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="screenshots/screenshot-bewertung.png" alt="Gebraucht-Bewertung mit Klartext-Einschätzung">
-      <div class="gallery-caption">Gebraucht-Bewertung: Klartext-Urteil mit Restlebensdauer, Schreibmenge und Prognose</div>
+      <img src="screenshots/screenshot-zustand.png" alt="Zustand &amp; Empfehlung mit Klartext-Einschätzung">
+      <div class="gallery-caption">Zustand &amp; Empfehlung: Klartext-Urteil mit Restlebensdauer, Schreibmenge und Prognose</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
       <img src="screenshots/screenshot-details.png" alt="SMART-Details im Volltext">
@@ -526,12 +699,16 @@
       <div class="gallery-caption">Geschwindigkeitstest: Lesen mit und ohne Cache, Schreiben – je mit Einordnung</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="screenshots/screenshot-auswahl.jpg" alt="Ansicht-Menü mit Skalierung und Fenstergröße">
-      <div class="gallery-caption">Ansicht-Menü: Skalierung von 80 % bis 200 % oder automatisch, Fenstergröße speichern</div>
+      <img src="screenshots/screenshot-einstellungen.png" alt="Einstellungen-Menü mit Sprache, Prüfung und Verlauf">
+      <div class="gallery-caption">Einstellungen: Sprache, automatischer Geschwindigkeitstest, DIAG-Menü und Messungsverlauf – jeder Bereich mit eigener Erklärung</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
       <img src="screenshots/screenshot-result.jpg" alt="DIAG-Menü für Tester">
       <div class="gallery-caption">DIAG-Menü: erzeugt auf Wunsch ein verschlüsseltes Diagnose-Archiv – standardmäßig ausgeblendet</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="screenshots/screenshot-verlauf.png" alt="Verlaufs-Reiter mit Werteliste und Diagramm">
+      <div class="gallery-caption">Verlauf: Urteil über alle Messungen, die Werte mit ihrer Veränderung – und das Diagramm zur angeklickten Zeile</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
       <img src="screenshots/screenshot-report.png" alt="HTML-Kundenbericht">
@@ -605,6 +782,21 @@
   <!-- CHANGELOG -->
   <div class="section-title">📋 Changelog</div>
   <div class="changelog">
+    <div class="changelog-entry">
+      <div class="changelog-version">v1.7.0 <span>August 2026</span></div>
+      <ul>
+        <li><strong>Messungsverlauf:</strong> Das Tool hält bei jeder Prüfung die Kennzahlen fest. Aus mehreren Messungen entsteht ein Verlauf, der zeigt, was sich verändert hat – und was nicht. Ein eigener Reiter fasst das zusammen: Urteil über den Zeitraum, die Werte mit ihrer Veränderung, dazu ein Diagramm</li>
+        <li><strong>Frühere Messungen einlesen:</strong> Vorhandene Berichte und Diagnosedateien lassen sich importieren – der Verlauf muss nicht bei null anfangen. Werte, die nicht zur Messreihe passen, werden dabei ausgelassen und benannt</li>
+        <li><strong>Drei Sprachen:</strong> Oberfläche, Erklärtexte, Meldungen und HTML-Bericht auf Deutsch, Englisch und Niederländisch; umgestellt wird unter „Einstellungen“</li>
+        <li><strong>Neuer Knopf „Einstellungen“:</strong> Sprache, automatischer Geschwindigkeitstest, DIAG-Menü und Verlauf stehen beisammen. „Ansicht“ enthält nur noch, was das Fenster betrifft</li>
+        <li><strong>Sicherung der Messdaten:</strong> Der Verlauf lässt sich sichern; nach einer Neuinstallation bietet das Tool die Rückholung von selbst an</li>
+        <li>100&nbsp;% Restlebensdauer bei nachgewiesenem Defekt wird entwertet – der Wert stand bisher unkommentiert neben einem roten Urteil</li>
+        <li>Der Bericht weist den geprüften Datenträgertyp aus: SSD (SATA), SSD (NVMe), Festplatte mit Drehzahl oder USB-Datenträger</li>
+        <li>Berichte lassen sich wieder auf Netzwerkfreigaben speichern</li>
+        <li>Der Reiter heißt jetzt „Zustand &amp; Empfehlung“ – der alte Name benannte einen Anlass, beurteilt wird längst jedes Laufwerk</li>
+        <li>Hinweis im Berichtsfuß auf den Weg zum PDF; Hilfe dreisprachig, Lizenzen und Haftungsausschluss ebenso</li>
+      </ul>
+    </div>
     <div class="changelog-entry">
       <div class="changelog-version">v1.5.4.5 <span>August 2026</span></div>
       <ul>

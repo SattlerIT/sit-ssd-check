@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S-IT SSD-Check – Help (Nederlands)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #F5F5F5;
+         color: #2C3E50; font-size: 14px; line-height: 1.6; }
+  header { background: #2C3E50; color: #fff; padding: 24px 36px 18px 36px; }
+  header h1 { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+  header p  { font-size: 12px; color: #BDC3C7; }
+  nav { background: #34495E; padding: 0 36px; display: flex; flex-wrap: wrap; gap: 2px; }
+  nav a { color: #BDC3C7; text-decoration: none; padding: 10px 16px;
+          font-size: 13px; display: block; }
+  nav a:hover { background: #2C3E50; color: #fff; }
+  .container { max-width: 920px; margin: 28px auto; padding: 0 20px 60px 20px; }
+  h2 { font-size: 20px; color: #2C3E50; border-bottom: 3px solid #3498DB;
+       padding-bottom: 6px; margin: 36px 0 16px 0; }
+  h3 { font-size: 15px; color: #2980B9; margin: 20px 0 8px 0; }
+  h4 { font-size: 13px; color: #7F8C8D; margin: 14px 0 6px 0;
+       text-transform: uppercase; letter-spacing: .06em; }
+  p  { margin-bottom: 10px; }
+  ul, ol { padding-left: 22px; margin-bottom: 12px; }
+  li { margin-bottom: 5px; }
+  .box { background: #fff; border-radius: 8px; padding: 18px 22px;
+         box-shadow: 0 2px 6px rgba(0,0,0,.07); margin-bottom: 16px; }
+  .info  { background: #EBF5FB; border-left: 4px solid #3498DB;
+           padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
+  .warn  { background: #FEF9E7; border-left: 4px solid #F39C12;
+           padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
+  .tip   { background: #EAFAF1; border-left: 4px solid #27AE60;
+           padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
+  .danger{ background: #FDEDEC; border-left: 4px solid #E74C3C;
+           padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
+  code   { background: #ECF0F1; padding: 2px 6px; border-radius: 3px;
+           font-family: Consolas, monospace; font-size: 12px; }
+  table  { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  th     { background: #2C3E50; color: #fff; padding: 8px 12px; text-align: left; }
+  td     { padding: 7px 12px; border-bottom: 1px solid #ECF0F1; vertical-align: top; }
+  tr:nth-child(even) td { background: #F8F9FA; }
+  .btn-demo { display: inline-block; padding: 4px 12px; border-radius: 4px;
+              font-size: 12px; font-weight: 600; color: #fff; margin: 2px;
+              white-space: nowrap; }
+  .btn-green  { background: #27AE60; }
+  .btn-blue   { background: #3498DB; }
+  .btn-orange { background: #E67E22; }
+  .btn-dark   { background: #2C3E50; }
+  .btn-red    { background: #E74C3C; }
+  .btn-grey   { background: #7F8C8D; }
+  footer { background: #2C3E50; color: #95A5A6; text-align: center;
+           padding: 14px; font-size: 11px; margin-top: 40px; }
+  .toc { background: #fff; border-radius: 8px; padding: 16px 22px;
+         box-shadow: 0 2px 6px rgba(0,0,0,.07); margin-bottom: 28px; }
+  .toc h3 { color: #2C3E50; margin-bottom: 10px; }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin: 4px 0; }
+  .toc a  { color: #3498DB; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .ampel { display:inline-block; width:13px; height:13px; border-radius:50%;
+           vertical-align:middle; margin-right:6px; }
+  .ziffer { display:inline-block; min-width:17px; height:17px; border-radius:50%;
+            background:#F1C40F; color:#2C3E50; border:1px solid #B7950B;
+            text-align:center; font-size:11px; font-weight:bold; line-height:15px;
+            padding:0 2px; vertical-align:-3px; }
+  .grundsatz { background:#fff; border-left:5px solid #2980B9; border-radius:0 6px 6px 0;
+               padding:14px 20px; margin:14px 0; box-shadow:0 2px 6px rgba(0,0,0,.07); }
+  .grundsatz h3 { margin-top:0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>📖 S-IT SSD-Check &ndash; Help</h1>
+  <p class="sub">Versie 1.7.0 &nbsp;&bull;&nbsp; &copy; 2026 Hans Udo Sattler &nbsp;&bull;&nbsp;
+     Sattler IT-Service, Greifenstein</p>
+
+  <div class="info">
+    <strong>Over deze vertaling:</strong> Wij hebben ons best gedaan op een
+    goede Nederlandse tekst, maar wij zijn geen professionele vertalers.
+    Klopt er iets niet of leest een zin krom? Laat het ons weten &ndash;
+    <code>tool-entwicklung@sattler-it.de</code>. De Duitse en Engelse versie
+    van deze help staan naast het programma.
+  </div>
+
+  <div class="toc">
+    <h3>Inhoud</h3>
+    <ol>
+      <li><a href="#snelstart">Snel aan de slag</a></li>
+      <li><a href="#venster">Het programmavenster in het kort</a></li>
+      <li><a href="#tabbladen">De tabbladen in detail</a></li>
+      <li><a href="#strategie">Hoe het programma beoordeelt &ndash; de strategie</a></li>
+      <li><a href="#waarden">De belangrijkste waarden uitgelegd</a></li>
+      <li><a href="#echtheid">Echtheidscontrole</a></li>
+      <li><a href="#geschiedenis">Metinggeschiedenis</a></li>
+      <li><a href="#aansluiting">Aansluiting &amp; uitleesbaarheid</a></li>
+      <li><a href="#bestanden">DIAG, rapport &amp; bestanden</a></li>
+      <li><a href="#faq">Veelgestelde vragen</a></li>
+      <li><a href="#licenties">Programma's van derden &amp; licenties</a></li>
+    </ol>
+  </div>
+
+  <!-- SNELSTART -->
+  <h2 id="snelstart">1. Snel aan de slag</h2>
+  <div class="box">
+    <h3>Een schijf controleren in 3 stappen</h3>
+    <ol>
+      <li><strong>Programma starten</strong> &ndash; dubbelklik op
+          <code>S-IT-SSD-Check.exe</code>. Beheerdersrechten worden
+          automatisch gevraagd (die zijn nodig om de waarden uit te lezen).</li>
+      <li><strong>Schijf kiezen</strong> &ndash; kies bovenin het vak de schijf
+          die u wilt controleren (aansluiting, grootte, stationsletter en model
+          worden getoond).</li>
+      <li><strong>Controleren</strong> &ndash; klik op
+          <span class="btn-demo btn-green">&#9654; Nu controleren</span>. De
+          tabbladen vullen zich daarna met de resultaten.</li>
+    </ol>
+    <div class="tip">
+      <strong>Tip:</strong> Bij tweedehands schijven loont het om na de
+      controle het tabblad
+      <span class="btn-demo btn-blue">&#128270; Echtheid</span> te bekijken
+      &ndash; dat herkent de gebruikelijke trucs zoals gereset tellers.
+    </div>
+  </div>
+
+  <!-- VENSTER -->
+  <h2 id="venster">2. Het programmavenster in het kort</h2>
+  <div class="box">
+    <h3>Knoppen onder de schijfkeuze</h3>
+    <table>
+      <tr><th style="width:220px">Knop</th><th>Functie</th></tr>
+      <tr><td><span class="btn-demo btn-blue">&#8635; Vernieuwen</span></td>
+          <td>Leest de lijst met aangesloten schijven opnieuw in</td></tr>
+      <tr><td><span class="btn-demo btn-green">&#9654; Nu controleren</span></td>
+          <td>Start het uitlezen en beoordelen van de gekozen schijf. Het
+              scherm vult zich binnen enkele seconden.</td></tr>
+      <tr><td><span class="btn-demo btn-dark">&#128196; Rapport</span></td>
+          <td>Slaat het resultaat op als HTML-bestand &ndash; om te bewaren,
+              af te drukken of door te geven. Het rapport is opgemaakt voor A4;
+              met Ctrl+P in de browser en bestemming &bdquo;Opslaan als
+              PDF&rdquo; krijgt u een nette PDF.</td></tr>
+    </table>
+
+    <h3>Knoppen in de kopregel (altijd zichtbaar)</h3>
+    <table>
+      <tr><th style="width:220px">Knop</th><th>Functie</th></tr>
+      <tr><td><span class="btn-demo" style="background:#5D6D7E;">&#9881; Instellingen</span></td>
+          <td>Alles wat het <em>gedrag</em> van het programma betreft: taal
+              (Deutsch, English, Nederlands), automatische snelheidstest,
+              DIAG-menu en de metinggeschiedenis. Bij elk onderdeel staat een
+              <span class="badge">&#9432;</span> met uitleg. Na het wisselen
+              van taal start het programma opnieuw.</td></tr>
+      <tr><td><span class="btn-demo" style="background:#5D6D7E;">&#128421; Weergave</span></td>
+          <td>Alles wat het <em>venster</em> betreft: weergavegrootte
+              (80&nbsp;%&ndash;200&nbsp;% of <em>&#8635; Automatisch</em>) en
+              de venstergrootte opslaan. Na het wijzigen van de grootte start
+              het programma opnieuw.</td></tr>
+      <tr><td><span class="btn-demo" style="background:#1A5276;">? Help</span></td>
+          <td>Opent deze help</td></tr>
+    </table>
+    <p>Met <strong>ESC</strong> sluit u het programma.</p>
+
+    <div class="info">
+      <strong>Over de weergavegrootte:</strong> Het programma kiest die bij de
+      eerste start zelf zo, dat het venster met werkruimte ernaast op het
+      scherm past. De achtergrond: het venster heeft een vaste indeling, en op
+      een klein notebookscherm zou het bij 100&nbsp;% onderaan wegvallen. Lijkt
+      alles te klein of te groot, stel de grootte dan met de hand in via
+      <span class="btn-demo" style="background:#5D6D7E;">&#128421; Weergave</span>
+      &ndash; de instelling wordt onthouden.
+    </div>
+
+    <div class="info">
+      <strong>Over de taal:</strong> Duits zit vast in het programma en heeft
+      geen extra bestand nodig. Engels en Nederlands komen als taalpakket naast
+      het programma. De afkorting met vlag rechtsonder toont welke taal actief
+      is.
+    </div>
+  </div>
+
+  <!-- TABBLADEN -->
+  <h2 id="tabbladen">3. De tabbladen in detail</h2>
+  <div class="box">
+    <h3>&#128202; Overzicht</h3>
+    <p>Alle meetwaarden in &eacute;&eacute;n oogopslag, in drie kolommen:</p>
+    <ul>
+      <li><strong>Schijf</strong> &ndash; model, fabrikant, serienummer,
+          firmware, interface, capaciteit</li>
+      <li><strong>Toestand</strong> &ndash; SMART-status, resterende
+          levensduur, reserveblokken, bedrijfsuren, temperatuur, geschreven
+          data, Windows-TRIM</li>
+      <li><strong>Fouttellers</strong> &ndash; omgewisselde sectoren, zwevende
+          sectoren, offline oncorrigeerbare sectoren, gemelde leesfouten,
+          mediafouten, CRC-fouten en de cyclustellers</li>
+    </ul>
+    <p>Wie wil weten &bdquo;is dit ding stuk?&rdquo;, kijkt in de derde kolom.
+       Waarden boven 0 staan daar rood.</p>
+
+    <h3>&#128295; SMART-details</h3>
+    <p>De uitgelezen SMART-waarden in detail, precies zoals de schijf ze meldt
+       &ndash; om na te kijken en voor vakmensen.</p>
+
+    <h3>&#128161; Toestand &amp; advies</h3>
+    <p>Het oordeel in gewone taal, met de onderbouwing, de dragende
+       meetwaarden en een aanbeveling. De beoordeling betekent:</p>
+    <ul>
+      <li><span class="ampel" style="background:#27AE60;"></span><strong>Zeer goed</strong>
+          &ndash; vanaf 95&nbsp;% resterende levensduur: nauwelijks slijtage,
+          geen fouten; zonder beperking bruikbaar</li>
+      <li><span class="ampel" style="background:#2ECC71;"></span><strong>Goed</strong>
+          &ndash; 80 tot 94&nbsp;% resterende levensduur: goed bewaard
+          gebleven, geen fouten; eveneens zonder beperking bruikbaar. De tekst
+          noemt het al verbruikte deel &ndash; dat hoort bij een tweedehands
+          aankoop in de prijs mee te tellen</li>
+      <li><span class="ampel" style="background:#F1C40F;"></span><strong>Nog goed</strong>
+          &ndash; merkbaar gebruikt, maar zonder fouten; prima voor dagelijks
+          werk</li>
+      <li><span class="ampel" style="background:#E67E22;"></span><strong>Voorzichtig</strong>
+          &ndash; duidelijk versleten; alleen nog voor niet-kritieke
+          gegevens</li>
+      <li><span class="ampel" style="background:#E74C3C;"></span><strong>Vervangen!</strong>
+          &ndash; aangetoond defect of levensduur op; vervangen</li>
+      <li><span class="ampel" style="background:#95A5A6;"></span><strong>Geen gegevens</strong>
+          &ndash; de schijf levert geen SMART-waarden; geen oordeel
+          mogelijk</li>
+    </ul>
+    <div class="info">
+      <strong>Zeer goed</strong> en <strong>Goed</strong> zijn allebei groen en
+      allebei zonder beperking geschikt &ndash; <em>Goed</em> in een iets
+      lichtere tint, zodat de twee stappen ook in &eacute;&eacute;n oogopslag te
+      onderscheiden zijn. Het verschil zegt alleen hoeveel levensduur al
+      verbruikt is. Een gezonde SSD vervangen vanwege <em>Goed</em> zou
+      onzinnig zijn.
+    </div>
+    <p>Bij harde schijven luidt het &bdquo;SMART o.k.&rdquo; of &bdquo;SMART
+       o.k. &ndash; in de gaten houden&rdquo;, omdat daar andere maatstaven
+       gelden (zie <a href="#strategie">hoofdstuk 4</a>).</p>
+
+    <h3>&#128270; Echtheid</h3>
+    <p>Controleert of de gemelde waarden bij elkaar passen &ndash; zie
+       <a href="#echtheid">hoofdstuk 6</a>.</p>
+
+    <h3>&#9889; Snelheid</h3>
+    <p>Schrijft een testbestand naar de schijf en leest het terug: lezen met
+       cache, lezen zonder cache, sequentieel schrijven. &bdquo;Zonder
+       cache&rdquo; is de realistische waarde, schrijven de betrouwbaarste.</p>
+    <p>Harde schijven worden met een eigen maatstaf beoordeeld &ndash; een
+       gezonde oudere SSD of harde schijf is naar moderne maatstaven gewoon
+       trager, zonder dat er iets stuk is. Via USB liggen de waarden van nature
+       lager dan bij een directe aansluiting.</p>
+    <div class="tip">
+      Onder <span class="btn-demo" style="background:#5D6D7E;">&#9881; Instellingen</span>
+      kunt u de test zo instellen dat hij na elke controle automatisch meeloopt
+      (<em>&#9889; Automatische snelheidstest</em>).
+    </div>
+
+    <h3>&#128200; Geschiedenis</h3>
+    <p>Toont hoe de waarden van deze schijf zich over eerdere controles hebben
+       ontwikkeld &ndash; bovenaan een oordeel over de hele periode, daaronder
+       de waarden met hun verandering, onderaan een diagram. Het tabblad is bij
+       de eerste start leeg en vult zich met elke controle; bestaande rapporten
+       en DIAG-archieven kunt u inlezen.</p>
+    <p>Uitvoerig beschreven in <a href="#geschiedenis">hoofdstuk 7</a>.</p>
+  </div>
+
+  <!-- STRATEGIE -->
+  <h2 id="strategie">4. Hoe het programma beoordeelt &ndash; de strategie</h2>
+  <div class="box">
+    <p>Vijf uitgangspunten bepalen wat het programma zegt. Ze staan hier, zodat
+       elk oordeel te begrijpen &ndash; en te bevragen &ndash; is.</p>
+
+    <div class="grundsatz">
+      <strong>Uitgangspunt 1: Slijtage en defect zijn twee verschillende dingen</strong>
+      <p>De resterende levensduur geeft alleen het rekenkundig resterende
+         flashleven aan &ndash; hoeveel er over is van de schrijfhoeveelheid
+         waarvoor de fabrikant de schijf ontworpen heeft. Hij zegt niets over de
+         vraag of de schijf op dit moment sectoren verliest. Een schijf kan
+         100&nbsp;% melden en toch defect zijn. Daarom tellen de fouttellers los
+         van de slijtagewaarde: wijzen zij op een defect, dan is het oordeel
+         rood, hoe goed de slijtagewaarde er ook uitziet.</p>
+    </div>
+
+    <div class="grundsatz">
+      <strong>Uitgangspunt 2: Rood alleen met bewijs</strong>
+      <p>Een rood oordeel vraagt hard bewijs: omgewisselde sectoren, zwevende
+         sectoren, oncorrigeerbare sectoren, gemelde leesfouten, mediafouten,
+         een mislukte SMART-zelftest of reserveblokken onder de fabrieksdrempel.
+         Een enkel lage slijtagewaarde volstaat niet. Dat is met opzet zo: een
+         vals alarm kost een werkende schijf.</p>
+    </div>
+
+    <div class="grundsatz">
+      <strong>Uitgangspunt 3: Onwaarschijnlijke waarden worden verworpen, niet beweerd</strong>
+      <p>Schijven melden soms onzin &ndash; een hoeveelheid geschreven data die
+         in de gegeven bedrijfstijd onmogelijk is, een temperatuur van
+         &minus;128&nbsp;&deg;C, een omgekeerd gemelde slijtagewaarde. Zulke
+         waarden worden verworpen en met reden als &bdquo;n.v.t.&rdquo; getoond,
+         in plaats van als getal doorgegeven. Een eerlijke leemte is beter dan
+         een zelfverzekerd verkeerd getal.</p>
+    </div>
+
+    <div class="grundsatz">
+      <strong>Uitgangspunt 4: SSD en harde schijf worden anders beoordeeld</strong>
+      <p>Harde schijven hebben geen flashslijtage, dus is er voor hen geen
+         resterende levensduur in procenten. Beoordeeld wordt de werkelijke
+         fouttoestand &ndash; SMART-status en sectorwaarden. Een hoge
+         bedrijfstijd leidt tot een geel oordeel, omdat back-ups vanaf dan
+         belangrijker worden; op zichzelf leidt hij nooit tot rood.</p>
+    </div>
+
+    <div class="grundsatz">
+      <strong>Uitgangspunt 5: Leemten in de gegevens worden benoemd</strong>
+      <p>Niet elke schijf meldt elke waarde, en niet elke adapter geeft alles
+         door. Waar iets ontbreekt, staat dat er &ndash; inclusief de reden. De
+         beoordeling steunt dan op wat er wel is, en dat wordt gezegd.</p>
+    </div>
+  </div>
+
+  <!-- WAARDEN -->
+  <h2 id="waarden">5. De belangrijkste waarden uitgelegd</h2>
+  <div class="box">
+    <table>
+      <tr><th style="width:210px">Waarde</th><th>Wat het betekent</th></tr>
+      <tr><td><strong>Resterende levensduur</strong></td>
+          <td>Bij SSD's het kerngetal. Verwijst naar de schrijfhoeveelheid
+              waarvoor de fabrikant de schijf ontworpen heeft. 100&nbsp;%
+              betekent: praktisch ongebruikt.</td></tr>
+      <tr><td><strong>Verbruikte levensduur</strong></td>
+          <td>De tegenhanger, door veel schijven rechtstreeks gemeld.</td></tr>
+      <tr><td><strong>Geschreven data</strong></td>
+          <td>Totale hoeveelheid die over het leven van de schijf is
+              weggeschreven. Alleen zinvol in verhouding tot de capaciteit:
+              10&nbsp;TB is op een 256&nbsp;GB SSD heel veel en op een
+              4&nbsp;TB SSD bijna niets.</td></tr>
+      <tr><td><strong>Bedrijfsuren</strong></td>
+          <td>Bij SSD's geen maat voor slijtage &ndash; een schijf kan jaren
+              draaien zonder versleten te zijn. Bij harde schijven stijgt het
+              uitvalpercentage statistisch met de uren.</td></tr>
+      <tr><td><strong>Omgewisselde sectoren</strong></td>
+          <td>Gebieden die de schijf uit zijn reserve heeft vervangen. Bij een
+              gezonde schijf 0.</td></tr>
+      <tr><td><strong>Zwevende sectoren</strong></td>
+          <td>Gebieden die de schijf niet betrouwbaar kon lezen en heeft
+              gemarkeerd. Boven 0 betekent: er zijn gegevens die de schijf op
+              dit moment niet betrouwbaar kan lezen.</td></tr>
+      <tr><td><strong>Offline oncorrigeerbaar</strong></td>
+          <td>Gebieden die zelfs met alle correctiemethoden niet te redden
+              waren. De gegevens daarin zijn al verloren.</td></tr>
+      <tr><td><strong>Gemelde leesfouten</strong></td>
+          <td>Hoe vaak de schijf gevraagd is een gebied te lezen en dat niet
+              kon leveren. Deze teller vult een leemte: een schijf kan een slecht
+              gebied pas <em>vervangen</em> als er weer naartoe wordt
+              <em>geschreven</em> &ndash; bij gegevens die alleen gelezen worden,
+              blijft de teller van omgewisselde sectoren op 0 staan, terwijl de
+              schijf allang bepaalde gebieden niet meer uitlevert.</td></tr>
+      <tr><td><strong>CRC-fouten</strong></td>
+          <td>Overdrachtsfouten op de verbinding, niet op de schijf zelf. De
+              teller is cumulatief en wordt nooit gereset, dus hij reist met de
+              schijf mee. Alleen een <em>stijgende</em> waarde wijst op een
+              actueel probleem &ndash; controleer dan kabel, adapter of
+              poort.</td></tr>
+      <tr><td><strong>Laad-/parkeercycli</strong></td>
+          <td>Alleen bij harde schijven: hoe vaak de koppen geparkeerd zijn.
+              Ongewoon vaak parkeren slijt de mechaniek; het telt niet mee in de
+              beoordeling.</td></tr>
+      <tr><td><strong>Temperatuur</strong></td>
+          <td>Normale bedrijfswaarden zijn 30 tot 50&nbsp;&deg;C. Boven
+              65&nbsp;&deg;C verschijnt een waarschuwing.</td></tr>
+    </table>
+
+    <h3>Het gele cijfer en de &#9432;</h3>
+    <p>Waar een waarde uitleg nodig heeft, markeert het programma dat: een
+       <span class="ziffer">1</span> achter een getal opent een beoordeling in
+       gewone taal van juist die waarde. De <span class="badge">&#9432;</span>
+       naast een aanduiding opent de algemene uitleg. Geen van beide verandert
+       het oordeel &ndash; ze verklaren het.</p>
+  </div>
+
+  <!-- ECHTHEID -->
+  <h2 id="echtheid">6. Echtheidscontrole</h2>
+  <div class="box">
+    <p>Deze controle vergelijkt de gemelde waarden met elkaar. Pas een paar uur
+       bedrijfstijd, maar al sectoren vervangen? Nauwelijks gedraaid, maar
+       terabytes geschreven? Zulke tegenstrijdigheden wijzen op gereset tellers
+       &ndash; gebruikte schijven die als nieuw worden verkocht.</p>
+    <div class="warn">
+      <strong>Wat deze controle niet kan:</strong> Een voorgewende capaciteit
+      &ndash; een gemanipuleerde controller die meer ruimte meldt dan de chip
+      bevat &ndash; is zo niet aan te tonen. Daarvoor is een volledige
+      schrijf- en leestest van de hele schijf nodig.
+    </div>
+  </div>
+
+  <!-- GESCHIEDENIS -->
+  <h2 id="geschiedenis">7. Metinggeschiedenis</h2>
+  <div class="box">
+    <p>E&eacute;n enkele controle is een momentopname. Meerdere controles vormen
+       een geschiedenis &ndash; en die beantwoordt vragen die een momentopname
+       niet kan beantwoorden.</p>
+    <p>Dat is geen bijzaak, maar vult een leemte: op meerdere plaatsen zegt dit
+       programma in feite &bdquo;let op de stijging&rdquo; &ndash; bij
+       CRC-fouten, bij omgewisselde sectoren, bij zwevende sectoren. Zien kon
+       het die stijging tot nu toe niet.</p>
+
+    <h3>Vastleggen</h3>
+    <p>Standaard legt het programma bij elke controle de kerngetallen vast.
+       Uitschakelen kan onder
+       <span class="btn-demo" style="background:#5D6D7E;">&#9881; Instellingen</span>
+       &rarr; <em>Metinggeschiedenis</em>. Wie het vastleggen niet doorlopend
+       wil, kan daar met <em>Deze meting nu opslaan</em> losse standen gericht
+       bewaren.</p>
+
+    <h3>Het tabblad &bdquo;Geschiedenis&rdquo;</h3>
+    <table>
+      <tr><th style="width:180px">Onderdeel</th><th>Wat er staat</th></tr>
+      <tr><td><strong>Oordeel bovenaan</strong></td>
+          <td>De kernuitspraak over alle metingen heen, met periode en aantal
+              &ndash; bijvoorbeeld &bdquo;Niets opvallends over 47
+              metingen&rdquo;.</td></tr>
+      <tr><td><strong>Waardenlijst</strong></td>
+          <td>Per kerngetal de eerste en de huidige waarde, de verandering en
+              &ndash; in de laatste kolom &ndash; wat dat betekent. Getoond
+              wordt alleen wat de schijf ook levert.</td></tr>
+      <tr><td><strong>Diagram</strong></td>
+          <td>Tekent het verloop van de regel waarop u klikt.</td></tr>
+    </table>
+    <div class="tip">
+      <strong>De laatste kolom is de eigenlijke winst.</strong> Twee getallen
+      zeggen weinig; pas de beoordeling maakt er een uitspraak van &ndash;
+      bijvoorbeeld &bdquo;52 per dag, nu op 28&nbsp;% van de ontwerpwaarde, nog
+      ongeveer 11 jaar&rdquo; of &bdquo;al 95 dagen geen nieuwe CRC-fout &ndash;
+      de verbinding is in orde&rdquo;.
+    </div>
+
+    <h3>Drie soorten diagram</h3>
+    <p>De vorm volgt de waarde, want de waarden beantwoorden verschillende
+       vragen. Het programma kiest zelf.</p>
+    <table>
+      <tr><th style="width:150px">Vorm</th><th>Waarvoor</th><th>Wat u ziet</th></tr>
+      <tr><td><strong>Lijn met balk</strong></td>
+          <td>Waarden die onvermijdelijk oplopen: bedrijfsuren, geschreven
+              data, slijtage, cycli</td>
+          <td>De lijn toont hoe gelijkmatig het gaat; de balk ernaast hoe ver
+              het nog is tot een grens</td></tr>
+      <tr><td><strong>Tijdbalk</strong></td>
+          <td>Waarden die nul horen te blijven: CRC, sectoren, leesfouten</td>
+          <td>E&eacute;n punt per meting. Is er iets gebeurd, dan verkleurt de
+              balk vanaf dat moment &ndash; zo ziet u meteen of een voorval
+              vers is of allang achter de rug</td></tr>
+      <tr><td><strong>Spreidingsband</strong></td>
+          <td>Waarden die schommelen: temperatuur</td>
+          <td>Het bereik waarin de waarde zich beweegt, tegen de
+              waarschuwingsdrempels van het programma</td></tr>
+    </table>
+    <p>Waar een lijn een grens heeft, staat achter de kop een
+       <span class="badge">&#9432;</span>. Daarachter is uitgelegd waar de grens
+       vandaan komt &ndash; en dat het een <em>waarschuwingsdrempel</em> is en
+       geen uitvalgrens.</p>
+
+    <h3>Eerdere metingen inlezen</h3>
+    <p>Wie het programma al langer gebruikt, heeft rapporten en DIAG-archieven
+       op de schijf staan &ndash; elk bestand is een meting. Via <em>Oude rapporten en DIAG-archieven inlezen</em> kiest u een map; submappen gaan
+       mee.</p>
+    <p>Waarden die niet bij de meetreeks passen, laat het programma weg. Een
+       teller kan niet kleiner worden, een resterende levensduur niet stijgen
+       &ndash; zulke sprongen komen uit correcties in oudere programmaversies en
+       zeggen niets over de schijf. Aan het eind staat wat is overgeslagen en
+       waarom.</p>
+
+    <h3>Reservekopie</h3>
+    <p>De geschiedenis is het enige wat dit programma maakt en wat
+       <em>niet</em> opnieuw te verkrijgen is: een rapport kunt u altijd opnieuw
+       afdrukken, een meting van drie maanden geleden niet.</p>
+    <p><em>Geschiedenis nu veiligstellen</em> plaatst een kopie in de map
+       <code>_Backups</code> naast de programma's, genoemd naar programma en
+       tijdstip. Vindt het programma later een lege geschiedenis terwijl daar
+       een reservekopie klaarstaat &ndash; de situatie na een herinstallatie
+       &ndash; dan biedt het uit zichzelf aan die terug te halen. Daarbij wordt
+       alleen aangevuld, nooit overschreven.</p>
+    <div class="tip">
+      <strong>Over het serienummer:</strong> De geschiedenisbestanden bevatten
+      het serienummer van de schijf &ndash; alleen dat wijst een meting
+      ondubbelzinnig aan hetzelfde apparaat toe; model en grootte volstaan niet
+      zodra er twee gelijke apparaten in gebruik zijn. De bestanden blijven op
+      uw computer. In DIAG-bestanden die u ons toestuurt, wordt het nummer zoals
+      altijd verwijderd.
+    </div>
+  </div>
+
+  <!-- AANSLUITING -->
+  <h2 id="aansluiting">8. Aansluiting &amp; uitleesbaarheid</h2>
+  <div class="box">
+    <p>Niet elke aansluiting geeft SMART-opdrachten door. Wat werkt:</p>
+    <table>
+      <tr><th style="width:220px">Aansluiting</th><th>SMART leesbaar?</th></tr>
+      <tr><td>SATA, rechtstreeks op het moederbord</td><td>Ja, volledig</td></tr>
+      <tr><td>NVMe (M.2-slot)</td><td>Ja, volledig</td></tr>
+      <tr><td>USB-adapter met SMART-doorgifte</td>
+          <td>Meestal wel (bijv. JMicron-, ASMedia-chips)</td></tr>
+      <tr><td>Eenvoudige USB-behuizingen en dockingstations</td>
+          <td>Vaak niet &ndash; de adapter slikt de opdrachten in</td></tr>
+      <tr><td>USB-sticks en geheugenkaarten</td>
+          <td>Nee, die hebben helemaal geen SMART</td></tr>
+      <tr><td>RAID / Intel RST-modus</td>
+          <td>Alleen beperkte gegevens via de Windows-interface</td></tr>
+    </table>
+    <p>Verschijnt &bdquo;Geen gegevens&rdquo;, dan loont het een andere adapter
+       te proberen of de schijf rechtstreeks via SATA aan te sluiten. Een
+       snelheidstest levert dan nog steeds bruikbare waarden op.</p>
+  </div>
+
+  <!-- BESTANDEN -->
+  <h2 id="bestanden">9. DIAG, rapport &amp; bestanden</h2>
+  <div class="box">
+    <h3>Rapport</h3>
+    <p>Met <span class="btn-demo btn-dark">&#128196; Rapport</span> slaat u het
+       resultaat op als HTML-bestand. Het opent in elke browser, is opgemaakt
+       voor A4 en wordt met Ctrl+P (bestemming &bdquo;Opslaan als PDF&rdquo;)
+       een PDF.</p>
+
+    <h3>DIAG (diagnose op afstand)</h3>
+    <p>Het DIAG-menu is bedoeld voor testers en voor de doorontwikkeling van dit
+       programma. Diagnosegegevens worden uitsluitend op uw uitdrukkelijke
+       verzoek aangemaakt &ndash; er worden geen bestanden automatisch
+       gemaakt.</p>
+    <p>Het resultaat is precies &eacute;&eacute;n versleuteld .7z-bestand. Stuur
+       dat ene bestand naar <code>tool-entwicklung@sattler-it.de</code>. Om uw
+       eigen gegevens in te zien: DIAG-menu &rarr; <em>DIAG-archief
+       uitpakken</em>. De versleuteling dient alleen voor veilig transport.</p>
+    <div class="info">
+      De SMART-dump bevat het serienummer en wordt daarom uitsluitend
+      versleuteld opgeslagen. Daarvoor is <code>7z.exe</code> in de programmamap
+      nodig. In het DIAG-bestand zelf wordt het serienummer verwijderd.
+    </div>
+
+    <h3>Bestanden in de programmamap</h3>
+    <table>
+      <tr><th style="width:250px">Bestand</th><th>Inhoud</th></tr>
+      <tr><td><code>S-IT-SSD-Check.exe</code></td><td>Hoofdprogramma</td></tr>
+      <tr><td><code>smartctl.exe</code></td>
+          <td>Uitleesprogramma (smartmontools, GPLv2) &ndash; strikt
+              noodzakelijk</td></tr>
+      <tr><td><code>drivedb.h</code></td>
+          <td>Schijvendatabase van smartctl &ndash; zorgt voor sprekende
+              attribuutnamen</td></tr>
+      <tr><td><code>7z.exe</code></td>
+          <td>Wordt gebruikt om de versleutelde diagnosebestanden van het
+              DIAG-menu te maken. Moet de opdrachtregelversie zijn; 7zG.exe
+              (venster) en 7zr.exe (miniversie) begrijpen de benodigde
+              opdrachten niet.</td></tr>
+      <tr><td><code>S-IT-SSD-Check-Help-nl.html</code></td>
+          <td>Dit helpbestand</td></tr>
+      <tr><td><code>S-IT-SSD-Check-Hilfe.html</code><br>
+              <code>S-IT-SSD-Check-Help.html</code></td>
+          <td>Dezelfde help in het Duits en het Engels</td></tr>
+      <tr><td><code>sit_ssdtexte_*.scl</code></td>
+          <td>Taalpakketten. Versleuteld meegeleverd &ndash; dat dient de
+              consistentie van de teksten, niet de geheimhouding: teksten die
+              niet meer bij de waarden passen, leiden tot vragen over fouten die
+              er geen zijn. Duits zit vast in het programma en heeft geen
+              bestand nodig.</td></tr>
+      <tr><td><code>S-IT-Verlauf\</code></td>
+          <td>Map met de vastgelegde metingen, per schijf &eacute;&eacute;n
+              bestand. Bevat kerngetallen, datum en serienummer. Wissen kan door
+              de map of losse bestanden te verwijderen.</td></tr>
+      <tr><td><code>..\_Backups\</code></td>
+          <td>Ligt een niveau hoger, gemeenschappelijk voor alle S-IT-tools: de
+              reservekopie&euml;n van de metinggeschiedenis, genoemd naar
+              programma en tijdstip.</td></tr>
+      <tr><td><code>Disclaimer.txt</code></td>
+          <td><a href="Disclaimer.txt">Uitsluiting van aansprakelijkheid</a>
+              &ndash; leest u die a.u.b. voor gebruik</td></tr>
+      <tr><td><code>Licenses.txt</code></td>
+          <td>Licenties van dit programma en van de gebruikte programma's van
+              derden</td></tr>
+    </table>
+  </div>
+
+  <!-- FAQ -->
+  <h2 id="faq">10. Veelgestelde vragen</h2>
+  <div class="box">
+    <h3>SmartScreen of het antivirusprogramma blokkeert het bestand</h3>
+    <p>Het programma is niet digitaal ondertekend &ndash; een certificaat kost
+       enkele honderden euro's per jaar, wat voor gratis software niet in
+       verhouding staat. Bij SmartScreen: <em>Meer informatie</em> &rarr;
+       <em>Toch uitvoeren</em>. Het programma vraagt bovendien
+       beheerdersrechten, wat sommige scanners op zichzelf al verdacht vinden;
+       zonder die rechten zijn de SMART-waarden niet uit te lezen.</p>
+
+    <h3>Er verschijnt &bdquo;SMART niet beschikbaar&rdquo;</h3>
+    <p>De aansluiting geeft de opdrachten niet door &ndash; zie
+       <a href="#aansluiting">hoofdstuk 8</a>. Een andere adapter of een directe
+       SATA-aansluiting helpt meestal.</p>
+
+    <h3>Bij &bdquo;Bedrijfsuren&rdquo; staat 0 &ndash; is dat een fout?</h3>
+    <p>Niet per se. Sommige schijven melden de teller helemaal niet, bij andere
+       is hij gereset. Ziet de waarde er naast de overige getallen
+       onwaarschijnlijk uit, dan zegt het tabblad Echtheid dat.</p>
+
+    <h3>Waarom staat er bij een waarde &bdquo;n.v.t.&rdquo; in plaats van een getal?</h3>
+    <p>Of de schijf meldt hem niet, of de gemelde waarde was onwaarschijnlijk en
+       is daarom verworpen (zie uitgangspunt 3 in
+       <a href="#strategie">hoofdstuk 4</a>). De reden staat er altijd bij.</p>
+
+    <h3>De resterende levensduur is hoog, het oordeel toch &bdquo;Vervangen!&rdquo; &ndash; een tegenspraak?</h3>
+    <p>Nee, en dit is het belangrijkste punt van de hele beoordeling: de
+       slijtagewaarde zegt alleen hoeveel flashleven er rekenkundig over is. Over
+       sectorfouten zegt hij niets. Verliest een schijf sectoren, dan is hij
+       defect &ndash; hoe goed de slijtagewaarde er ook uitziet. In dat geval
+       wordt de waarde in het scherm als vervallen gemarkeerd, met uitleg.</p>
+
+    <h3>CrystalDiskInfo toont iets anders &ndash; wie heeft gelijk?</h3>
+    <p>Beide lezen dezelfde ruwe waarden; ze wegen die anders. Dit programma
+       volgt uitgangspunt&nbsp;1: een aangetoond defect weegt zwaarder dan een
+       goede slijtagewaarde. Welke waarde het oordeel draagt, staat in het
+       tabblad <em>Toestand &amp; advies</em>.</p>
+
+    <h3>Ik heb het programma opnieuw ge&iuml;nstalleerd &ndash; zijn mijn metingen weg?</h3>
+    <p>Alleen als er geen reservekopie is. Vindt het programma bij de start een
+       lege geschiedenis terwijl in de map <code>_Backups</code> een
+       reservekopie staat, dan biedt het uit zichzelf aan die terug te halen.
+       Het kan ook later, via
+       <span class="btn-demo" style="background:#5D6D7E;">&#9881; Instellingen</span>
+       &rarr; <em>Geschiedenis uit een reservekopie halen</em>. Daarbij wordt
+       alleen aangevuld, nooit overschreven.</p>
+
+    <h3>Het tabblad &bdquo;Geschiedenis&rdquo; is leeg &ndash; wat ontbreekt er?</h3>
+    <p>Waarschijnlijk niets. Een geschiedenis ontstaat door te controleren: het
+       eerste meetpunt wordt bij de eerste controle vastgelegd, vergelijken
+       vraagt er minstens twee. Het tabblad zegt zelf wat er te doen is. Sneller
+       gaat het met bestaande rapporten of DIAG-archieven &ndash; die kunt u
+       inlezen, dan begint de geschiedenis niet bij nul.</p>
+
+    <h3>Waarom slaat het programma het serienummer op?</h3>
+    <p>Omdat alleen dat een meting ondubbelzinnig aan hetzelfde apparaat
+       toewijst. Model en grootte volstaan niet zodra er twee gelijke schijven in
+       gebruik zijn &ndash; hun metingen zouden anders in &eacute;&eacute;n
+       bestand samenlopen en de geschiedenis zou waardeloos zijn. De bestanden
+       blijven op uw computer; het programma verstuurt niets. In DIAG-bestanden
+       die u ons toestuurt, wordt het nummer zoals altijd verwijderd.</p>
+
+    <h3>Het programma lijkt op mijn scherm te klein of te groot</h3>
+    <p>Stel de weergavegrootte met de hand in via
+       <span class="btn-demo" style="background:#5D6D7E;">&#128421; Weergave</span>.
+       De instelling wordt onthouden.</p>
+
+    <h3>Kan ik het programma vanaf een USB-stick gebruiken?</h3>
+    <p>Ja. Het programma hoeft niet ge&iuml;nstalleerd te worden. Houd
+       <code>smartctl.exe</code> en <code>drivedb.h</code> ernaast; voor het
+       DIAG-menu ook <code>7z.exe</code>. De metinggeschiedenis wordt dan naast
+       het programma weggeschreven en reist met de stick mee.</p>
+
+    <h3>De schijf is oud maar &bdquo;gezond&rdquo; &ndash; kan ik daarop vertrouwen?</h3>
+    <p>Op de meting wel, op de toekomst niet. Elke beoordeling is een
+       momentopname op basis van wat de schijf over zichzelf meldt. Een schijf
+       kan ondanks goede waarden op elk moment uitvallen. Back-ups blijven
+       onmisbaar &ndash; en juist hier helpt de metinggeschiedenis: die laat zien
+       of waarden in beweging zijn, en in welke richting.</p>
+  </div>
+
+  <!-- LICENTIES -->
+  <h2 id="licenties">11. Programma's van derden &amp; licenties</h2>
+  <div class="box">
+    <p>S-IT SSD-Check is freeware. Gratis gebruik en verspreiding van het
+       ongewijzigde pakket is toegestaan; de broncode is niet openbaar.</p>
+    <table>
+      <tr><th style="width:190px">Programma</th><th>Doel</th><th>Licentie</th></tr>
+      <tr><td><strong>smartctl.exe</strong><br>(smartmontools)</td>
+          <td>Leest de SMART-waarden van de schijven uit &ndash; de basis van
+              elke beoordeling</td>
+          <td>GNU GPL v2<br><small>www.smartmontools.org</small></td></tr>
+      <tr><td><strong>7z.exe</strong><br>(7-Zip)</td>
+          <td>Maakt de versleutelde diagnosebestanden van het DIAG-menu. Delen
+              van het 7-Zip-programma van Igor Pavlov.</td>
+          <td>GNU LGPL<br><small>www.7-zip.org</small></td></tr>
+    </table>
+    <p>Beide worden ongewijzigd meegeleverd en behouden hun eigen licentie. De
+       volledige licentieteksten staan in de map
+       <code>3rd-Party-Licenses</code>.</p>
+    <p class="sub" style="margin-top:18px">
+      &copy; 2026 Sattler IT-Service, Greifenstein &nbsp;&bull;&nbsp;
+      Hans Udo Sattler &nbsp;&bull;&nbsp;
+      <code>tool-entwicklung@sattler-it.de</code></p>
+  </div>
+
+</div>
+</body>
+</html>

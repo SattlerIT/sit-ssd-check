@@ -1,31 +1,43 @@
 ============================================================
- S-IT SSD-Check – Haftungsausschluss (Disclaimer)
- © 2026 Sattler IT-Service, Greifenstein · Hans Udo Sattler
+ S-IT SSD-Check - Haftungsausschluss / Disclaimer
+ (c) 2026 Sattler IT-Service, Greifenstein - Hans Udo Sattler
 ============================================================
 
-Alle Angaben ohne Gewähr. Irrtümer vorbehalten.
+ DEUTSCH .......... Zeile   15
+ ENGLISH .......... Zeile   85
+ NEDERLANDS ....... Zeile  151
+
+ Kontakt:       tool-entwicklung@sattler-it.de
+ Projektseite:  https://sattlerit.github.io/sit-ssd-check/
+
+
+============================================================
+ DEUTSCH
+============================================================
+
+Alle Angaben ohne Gewaehr. Irrtuemer vorbehalten.
 
 S-IT SSD-Check ist ein kostenloses Diagnose-Werkzeug. Die
 angezeigten Bewertungen werden automatisch aus den SMART-Werten
 des Laufwerks berechnet:
 
   bei SSDs   "Sehr gut", "Gut", "Noch gut", "Vorsicht",
-             "Tauschen!" bzw. "DEFEKT – SOFORT TAUSCHEN!"
-  bei HDDs   "SMART o.k.", "SMART o.k. – beobachten",
-             "Fehler – prüfen"
+             "Tauschen!" bzw. "DEFEKT - SOFORT TAUSCHEN!"
+  bei HDDs   "SMART o.k.", "SMART o.k. - beobachten",
+             "Fehler - pruefen"
   sowie      "Keine Daten", wenn das Laufwerk keine SMART-Werte
              herausgibt
 
 Diese Werte sind herstellerspezifisch benannt und skaliert und
-können unvollständig oder fehlerhaft gemeldet werden – eine
-Fehleinschätzung ist deshalb nie ganz auszuschließen.
+koennen unvollstaendig oder fehlerhaft gemeldet werden - eine
+Fehleinschaetzung ist deshalb nie ganz auszuschliessen.
 
-1. Unverbindliche Schätzung
+1. Unverbindliche Schaetzung
    Die Ergebnisse sind unverbindliche Anhaltspunkte und eine
-   Momentaufnahme zum Zeitpunkt der Prüfung. Sie sind keine
-   Zusicherung über den tatsächlichen Zustand oder die
+   Momentaufnahme zum Zeitpunkt der Pruefung. Sie sind keine
+   Zusicherung ueber den tatsaechlichen Zustand oder die
    verbleibende Lebensdauer eines Laufwerks und ersetzen weder
-   eine fachliche Prüfung noch eine professionelle Datenrettung.
+   eine fachliche Pruefung noch eine professionelle Datenrettung.
 
 2. Keine Ausfallgarantie
    Ein Laufwerk kann trotz guter Bewertung jederzeit und ohne
@@ -34,25 +46,176 @@ Fehleinschätzung ist deshalb nie ganz auszuschließen.
 
 3. Nutzung auf eigene Verantwortung
    Die Verwendung des Tools und seiner Ergebnisse erfolgt auf
-   eigene Verantwortung. Für Entscheidungen (z. B. Kauf, Verkauf,
+   eigene Verantwortung. Fuer Entscheidungen (z. B. Kauf, Verkauf,
    Weiternutzung oder Austausch eines Laufwerks), die auf Basis
    der Bewertung getroffen werden, wird keine Verantwortung
-   übernommen.
+   uebernommen.
 
 4. Haftungsausschluss
-   Eine Haftung für Schäden, Datenverluste oder Vermögens-
-   schäden, die aus der Nutzung des Tools oder seiner Ergebnisse
-   entstehen, ist – soweit gesetzlich zulässig – ausgeschlossen.
+   Eine Haftung fuer Schaeden, Datenverluste oder Vermoegens-
+   schaeden, die aus der Nutzung des Tools oder seiner Ergebnisse
+   entstehen, ist - soweit gesetzlich zulaessig - ausgeschlossen.
 
-5. Backups bleiben unerlässlich
-   Erstellen Sie unabhängig vom Prüfergebnis regelmäßig
+5. Backups bleiben unerlaesslich
+   Erstellen Sie unabhaengig vom Pruefergebnis regelmaessig
    Sicherungskopien Ihrer Daten. Kein Diagnose-Tool kann einen
-   plötzlichen Datenträger-Ausfall verhindern.
+   ploetzlichen Datentraeger-Ausfall verhindern.
+
+6. Welche Daten das Programm speichert
+   Das Programm sendet nichts und verbindet sich mit keinem
+   Server. Alles bleibt auf Ihrem Rechner:
+     - Messungsverlauf: Wird die Aufzeichnung genutzt, legt das
+       Programm je Laufwerk eine Datei im Unterverzeichnis
+       "S-IT-Verlauf" an. Sie enthaelt Kennzahlen, Datum und die
+       SERIENNUMMER des Laufwerks - nur sie ordnet eine Messung
+       zweifelsfrei demselben Geraet zu.
+     - Sicherungen dieses Verlaufs im Verzeichnis "_Backups"
+       neben den Programmen.
+     - Berichte und DIAG-Dateien nur dort, wo Sie sie speichern.
+   Loeschen genuegt: Verzeichnis oder einzelne Dateien entfernen.
+   In DIAG-Dateien, die Sie uns einsenden, wird die Seriennummer
+   entfernt.
 
 ------------------------------------------------------------
 Wie das Tool zu seinem Urteil kommt, ist in der Hilfe-Datei
 (S-IT-SSD-Check-Hilfe.html, Abschnitt 4) offengelegt.
 
-Kontakt:       tool-entwicklung@sattler-it.de
-Projektseite:  https://sattlerit.github.io/sit-ssd-check/
+
+============================================================
+ ENGLISH
+============================================================
+
+All information without guarantee. Errors excepted.
+
+S-IT SSD-Check is a free diagnostic tool. The ratings shown are
+calculated automatically from the drive's SMART values:
+
+  for SSDs   "Very good", "Good", "Still good", "Caution",
+             "Replace!" or "DEFECTIVE - REPLACE IMMEDIATELY!"
+  for HDDs   "SMART o.k.", "SMART o.k. - watch",
+             "Errors - check"
+  and        "No data" if the drive supplies no SMART values
+
+These values are named and scaled differently by each
+manufacturer and may be reported incompletely or incorrectly -
+a misjudgement can therefore never be entirely ruled out.
+
+1. Non-binding estimate
+   The results are non-binding indications and a snapshot at the
+   time of the check. They are no assurance about the actual
+   condition or the remaining lifespan of a drive and replace
+   neither a professional examination nor professional data
+   recovery.
+
+2. No failure guarantee
+   A drive can fail at any time and without warning despite a
+   good rating. Likewise, a drive rated critical may keep
+   working faultlessly for a long time.
+
+3. Use at your own responsibility
+   Using the tool and its results is at your own responsibility.
+   No responsibility is accepted for decisions (e.g. buying,
+   selling, continued use or replacing a drive) made on the
+   basis of the rating.
+
+4. Exclusion of liability
+   Liability for damage, data loss or financial loss arising
+   from the use of the tool or its results is excluded as far as
+   legally permissible.
+
+5. Backups remain essential
+   Regardless of the test result, make regular backup copies of
+   your data. No diagnostic tool can prevent a sudden drive
+   failure.
+
+6. What data the program stores
+   The program sends nothing and connects to no server.
+   Everything stays on your computer:
+     - Measurement history: if recording is used, the program
+       creates one file per drive in the subfolder
+       "S-IT-Verlauf". It holds key figures, the date and the
+       drive's SERIAL NUMBER - only that assigns a measurement
+       unambiguously to the same device.
+     - Backups of this history in the folder "_Backups" next to
+       the programs.
+     - Reports and DIAG files only where you save them.
+   Deleting is enough: remove the folder or single files. In
+   DIAG files you send to us, the serial number is removed.
+
 ------------------------------------------------------------
+How the tool arrives at its verdict is disclosed in the help
+file (S-IT-SSD-Check-Help.html, section 4).
+
+
+============================================================
+ NEDERLANDS
+============================================================
+
+Alle informatie zonder garantie. Vergissingen voorbehouden.
+
+S-IT SSD-Check is een gratis diagnoseprogramma. De getoonde
+beoordelingen worden automatisch berekend uit de SMART-waarden
+van de schijf:
+
+  bij SSD's  "Zeer goed", "Goed", "Nog goed", "Voorzichtig",
+             "Vervangen!" of "DEFECT - ONMIDDELLIJK VERVANGEN!"
+  bij HDD's  "SMART o.k.", "SMART o.k. - in de gaten houden",
+             "Fouten - controleren"
+  en         "Geen gegevens", als de schijf geen SMART-waarden
+             levert
+
+Deze waarden worden door elke fabrikant anders benoemd en
+geschaald en kunnen onvolledig of foutief worden gemeld - een
+verkeerde inschatting is daarom nooit helemaal uit te sluiten.
+
+1. Vrijblijvende schatting
+   De resultaten zijn vrijblijvende aanwijzingen en een
+   momentopname op het tijdstip van de controle. Ze zijn geen
+   toezegging over de werkelijke toestand of de resterende
+   levensduur van een schijf en vervangen noch een vakkundig
+   onderzoek noch professionele gegevensredding.
+
+2. Geen uitvalgarantie
+   Een schijf kan ondanks een goede beoordeling op elk moment
+   en zonder waarschuwing uitvallen. Omgekeerd kan een als
+   kritiek beoordeelde schijf nog lang foutloos werken.
+
+3. Gebruik op eigen verantwoordelijkheid
+   Het gebruik van het programma en de resultaten is op eigen
+   verantwoordelijkheid. Voor beslissingen (bijv. kopen,
+   verkopen, verder gebruiken of vervangen van een schijf) die
+   op basis van de beoordeling worden genomen, wordt geen
+   verantwoordelijkheid aanvaard.
+
+4. Uitsluiting van aansprakelijkheid
+   Aansprakelijkheid voor schade, gegevensverlies of financiele
+   schade die voortvloeit uit het gebruik van het programma of
+   de resultaten is - voor zover wettelijk toegestaan -
+   uitgesloten.
+
+5. Back-ups blijven onmisbaar
+   Maak los van het testresultaat regelmatig reservekopieen van
+   uw gegevens. Geen enkel diagnoseprogramma kan een plotselinge
+   uitval van een gegevensdrager voorkomen.
+
+6. Welke gegevens het programma opslaat
+   Het programma verstuurt niets en maakt geen verbinding met
+   een server. Alles blijft op uw computer:
+     - Metinggeschiedenis: wordt het vastleggen gebruikt, dan
+       maakt het programma per schijf een bestand aan in de
+       submap "S-IT-Verlauf". Dat bevat kerngetallen, de datum
+       en het SERIENUMMER van de schijf - alleen dat wijst een
+       meting ondubbelzinnig aan hetzelfde apparaat toe.
+     - Reservekopieen van deze geschiedenis in de map
+       "_Backups" naast de programma's.
+     - Rapporten en DIAG-bestanden alleen daar waar u ze
+       opslaat.
+   Wissen volstaat: verwijder de map of losse bestanden. In
+   DIAG-bestanden die u ons toestuurt, wordt het serienummer
+   verwijderd.
+
+------------------------------------------------------------
+Hoe het programma tot zijn oordeel komt, staat in het
+helpbestand (S-IT-SSD-Check-Help.html, hoofdstuk 4).
+
+============================================================

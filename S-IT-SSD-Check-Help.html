@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S-IT SSD-Check – Help</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #F5F5F5;
+         color: #2C3E50; font-size: 14px; line-height: 1.6; }
+  header { background: #2C3E50; color: #fff; padding: 24px 36px 18px 36px; }
+  header h1 { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+  header p  { font-size: 12px; color: #BDC3C7; }
+  nav { background: #34495E; padding: 0 36px; display: flex; flex-wrap: wrap; gap: 2px; }
+  nav a { color: #BDC3C7; text-decoration: none; padding: 10px 16px;
+          font-size: 13px; display: block; }
+  nav a:hover { background: #2C3E50; color: #fff; }
+  .container { max-width: 920px; margin: 28px auto; padding: 0 20px 60px 20px; }
+  h2 { font-size: 20px; color: #2C3E50; border-bottom: 3px solid #3498DB;
+       padding-bottom: 6px; margin: 36px 0 16px 0; }
+  h3 { font-size: 15px; color: #2980B9; margin: 20px 0 8px 0; }
+  h4 { font-size: 13px; color: #7F8C8D; margin: 14px 0 6px 0;
+       text-transform: uppercase; letter-spacing: .06em; }
+  p  { margin-bottom: 10px; }
+  ul, ol { padding-left: 22px; margin-bottom: 12px; }
+  li { margin-bottom: 5px; }
+  .box { background: #fff; border-radius: 8px; padding: 18px 22px;
+         box-shadow: 0 2px 6px rgba(0,0,0,.07); margin-bottom: 16px; }
+  .info  { background: #EBF5FB; border-left: 4px solid #3498DB;
+           padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
+  .warn  { background: #FEF9E7; border-left: 4px solid #F39C12;
+           padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
+  .tip   { background: #EAFAF1; border-left: 4px solid #27AE60;
+           padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
+  .danger{ background: #FDEDEC; border-left: 4px solid #E74C3C;
+           padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
+  code   { background: #ECF0F1; padding: 2px 6px; border-radius: 3px;
+           font-family: Consolas, monospace; font-size: 12px; }
+  table  { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  th     { background: #2C3E50; color: #fff; padding: 8px 12px; text-align: left; }
+  td     { padding: 7px 12px; border-bottom: 1px solid #ECF0F1; vertical-align: top; }
+  tr:nth-child(even) td { background: #F8F9FA; }
+  .btn-demo { display: inline-block; padding: 4px 12px; border-radius: 4px;
+              font-size: 12px; font-weight: 600; color: #fff; margin: 2px;
+              white-space: nowrap; }
+  .btn-green  { background: #27AE60; }
+  .btn-blue   { background: #3498DB; }
+  .btn-orange { background: #E67E22; }
+  .btn-dark   { background: #2C3E50; }
+  .btn-red    { background: #E74C3C; }
+  .btn-grey   { background: #7F8C8D; }
+  footer { background: #2C3E50; color: #95A5A6; text-align: center;
+           padding: 14px; font-size: 11px; margin-top: 40px; }
+  .toc { background: #fff; border-radius: 8px; padding: 16px 22px;
+         box-shadow: 0 2px 6px rgba(0,0,0,.07); margin-bottom: 28px; }
+  .toc h3 { color: #2C3E50; margin-bottom: 10px; }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin: 4px 0; }
+  .toc a  { color: #3498DB; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .ampel { display:inline-block; width:13px; height:13px; border-radius:50%;
+           vertical-align:middle; margin-right:6px; }
+  .ziffer { display:inline-block; min-width:17px; height:17px; border-radius:50%;
+            background:#F1C40F; color:#2C3E50; border:1px solid #B7950B;
+            text-align:center; font-size:11px; font-weight:bold; line-height:15px;
+            padding:0 2px; vertical-align:-3px; }
+  .grundsatz { background:#fff; border-left:5px solid #2980B9; border-radius:0 6px 6px 0;
+               padding:14px 20px; margin:14px 0; box-shadow:0 2px 6px rgba(0,0,0,.07); }
+  .grundsatz h3 { margin-top:0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>📖 S-IT SSD-Check &ndash; Help</h1>
+  <p class="sub">Version 1.7.0 &nbsp;&bull;&nbsp; &copy; 2026 Hans Udo Sattler &nbsp;&bull;&nbsp;
+     Sattler IT-Service, Greifenstein</p>
+
+  <div class="toc">
+    <h3>Contents</h3>
+    <ol>
+      <li><a href="#quickstart">Quick start</a></li>
+      <li><a href="#interface">The program window at a glance</a></li>
+      <li><a href="#tabs">The tabs in detail</a></li>
+      <li><a href="#strategy">How the tool rates &ndash; the strategy</a></li>
+      <li><a href="#values">The most important values explained</a></li>
+      <li><a href="#authenticity">Authenticity check</a></li>
+      <li><a href="#history">Measurement history</a></li>
+      <li><a href="#connection">Connection &amp; readability</a></li>
+      <li><a href="#files">DIAG, report &amp; files</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+      <li><a href="#licences">Third-party programs &amp; licences</a></li>
+    </ol>
+  </div>
+
+  <!-- QUICK START -->
+  <h2 id="quickstart">1. Quick start</h2>
+  <div class="box">
+    <h3>Checking a drive in 3 steps</h3>
+    <ol>
+      <li><strong>Start the program</strong> &ndash; double-click
+          <code>S-IT-SSD-Check.exe</code>. Administrator rights are requested
+          automatically (they are needed for reading the values).</li>
+      <li><strong>Select a drive</strong> &ndash; choose the drive to be checked
+          in the box at the top (connection, size, drive letter and model are
+          shown).</li>
+      <li><strong>Check</strong> &ndash; click
+          <span class="btn-demo btn-green">&#9654; Check now</span>. The tabs
+          then fill with the results.</li>
+    </ol>
+    <div class="tip">
+      <strong>Tip:</strong> For second-hand drives it is worth looking at the
+      <span class="btn-demo btn-blue">&#128270; Authenticity</span> tab after
+      the check &ndash; it detects the usual second-hand tricks such as reset
+      counters.
+    </div>
+  </div>
+
+  <!-- INTERFACE -->
+  <h2 id="interface">2. The program window at a glance</h2>
+  <div class="box">
+    <h3>Buttons below the drive selection</h3>
+    <table>
+      <tr><th style="width:220px">Button</th><th>Function</th></tr>
+      <tr><td><span class="btn-demo btn-blue">&#8635; Refresh</span></td>
+          <td>Reads the list of connected drives again</td></tr>
+      <tr><td><span class="btn-demo btn-green">&#9654; Check now</span></td>
+          <td>Starts reading and rating the selected drive. The display fills
+              within a few seconds.</td></tr>
+      <tr><td><span class="btn-demo btn-dark">&#128196; Report</span></td>
+          <td>Saves the result as an HTML file &ndash; for keeping, printing or
+              passing on. The report is laid out for A4; Ctrl+P in the browser
+              with the destination &ldquo;Save as PDF&rdquo; produces a clean
+              PDF.</td></tr>
+    </table>
+
+    <h3>Buttons in the header (always visible)</h3>
+    <table>
+      <tr><th style="width:220px">Button</th><th>Function</th></tr>
+      <tr><td><span class="btn-demo" style="background:#5D6D7E;">&#9881; Settings</span></td>
+          <td>Everything concerning the <em>behaviour</em> of the program:
+              language (Deutsch, English, Nederlands), automatic speed test,
+              DIAG menu and the measurement history. Each area has an
+              <span class="badge">&#9432;</span> with an explanation. After
+              changing the language the program restarts.</td></tr>
+      <tr><td><span class="btn-demo" style="background:#5D6D7E;">&#128421; View</span></td>
+          <td>Everything concerning the <em>window</em>: display size
+              (80&nbsp;%&ndash;200&nbsp;% or <em>&#8635; Automatic</em>) and
+              saving the window size. After changing the size the program
+              restarts.</td></tr>
+      <tr><td><span class="btn-demo" style="background:#1A5276;">? Help</span></td>
+          <td>Opens this help</td></tr>
+    </table>
+    <p>Press <strong>ESC</strong> to close the program.</p>
+
+    <div class="info">
+      <strong>On the display size:</strong> The program chooses it at first
+      start so that the window fits on the screen with room to work beside it.
+      The background: the window has a fixed layout, and on a small notebook
+      screen at 100&nbsp;% it would be cut off at the bottom. If everything
+      looks too small or too large, set the size by hand in the
+      <span class="btn-demo" style="background:#5D6D7E;">&#128421; View</span>
+      menu &ndash; the setting is remembered.
+    </div>
+
+    <div class="info">
+      <strong>On the language:</strong> German is built into the program and
+      needs no additional file. English and Dutch come as language packs next
+      to the program. The code with the flag at the bottom right shows which
+      language is running.
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <h2 id="tabs">3. The tabs in detail</h2>
+  <div class="box">
+    <h3>&#128202; Overview</h3>
+    <p>All measured values at a glance, arranged in three columns:</p>
+    <ul>
+      <li><strong>Drive</strong> &ndash; model, manufacturer, serial number,
+          firmware, interface, capacity</li>
+      <li><strong>Condition</strong> &ndash; SMART status, remaining life, spare
+          blocks, power-on hours, temperature, data written, Windows TRIM</li>
+      <li><strong>Error counters</strong> &ndash; reallocated sectors, pending
+          sectors, offline uncorrectable sectors, reported read errors, media
+          errors, CRC errors and the cycle counters</li>
+    </ul>
+    <p>Anyone who wants to know &ldquo;is this thing broken?&rdquo; looks at the
+       third column. Values above 0 appear in red there.</p>
+
+    <h3>&#128295; SMART details</h3>
+    <p>The SMART values in detail, exactly as the drive reports them &ndash; for
+       checking and for specialists.</p>
+
+    <h3>&#128161; Condition &amp; advice</h3>
+    <p>The verdict in plain words, with its reasoning, the values it rests on
+       and a recommendation. The rating means:</p>
+    <ul>
+      <li><span class="ampel" style="background:#27AE60;"></span><strong>Very good</strong>
+          &ndash; from 95&nbsp;% remaining life: hardly any wear, no errors;
+          usable without limits</li>
+      <li><span class="ampel" style="background:#2ECC71;"></span><strong>Good</strong>
+          &ndash; 80 to 94&nbsp;% remaining life: well preserved, no errors;
+          likewise usable without limits. The text names the share already used
+          up &ndash; that belongs in the price when buying second-hand</li>
+      <li><span class="ampel" style="background:#F1C40F;"></span><strong>Still good</strong>
+          &ndash; noticeably used, but without errors; fine for everyday use</li>
+      <li><span class="ampel" style="background:#E67E22;"></span><strong>Caution</strong>
+          &ndash; clearly worn; only for non-critical data</li>
+      <li><span class="ampel" style="background:#E74C3C;"></span><strong>Replace!</strong>
+          &ndash; proven defect or life used up; replace it</li>
+      <li><span class="ampel" style="background:#95A5A6;"></span><strong>No data</strong>
+          &ndash; the drive supplies no SMART values; no verdict possible</li>
+    </ul>
+    <div class="info">
+      <strong>Very good</strong> and <strong>Good</strong> are both green and
+      both suitable without limits &ndash; <em>Good</em> in a slightly lighter
+      shade so the two steps can be told apart at a glance. The distinction only
+      says how much life has already been used. Removing a healthy SSD because
+      of <em>Good</em> would make no sense.
+    </div>
+    <p>For hard disks the wording is &ldquo;SMART o.k.&rdquo; or &ldquo;SMART
+       o.k. &ndash; watch&rdquo;, because different standards apply there (see
+       <a href="#strategy">section 4</a>).</p>
+
+    <h3>&#128270; Authenticity</h3>
+    <p>Checks whether the reported values fit together &ndash; see
+       <a href="#authenticity">section 6</a>.</p>
+
+    <h3>&#9889; Speed</h3>
+    <p>Writes a test file to the drive and reads it back: reading with cache,
+       reading without cache, sequential writing. &ldquo;Without cache&rdquo; is
+       the realistic figure, writing the most reliable one.</p>
+    <p>Hard disks are rated by their own standard &ndash; a healthy older SSD or
+       hard disk is simply slower by modern measures without anything being
+       wrong. Over USB the figures are naturally lower than with a direct
+       connection.</p>
+    <div class="tip">
+      Under <span class="btn-demo" style="background:#5D6D7E;">&#9881; Settings</span>
+      the test can be set to run automatically after every check
+      (<em>&#9889; Auto speed test</em>).
+    </div>
+
+    <h3>&#128200; History</h3>
+    <p>Shows how this drive's values have developed across earlier checks
+       &ndash; a verdict for the whole period at the top, the values with their
+       change below, a chart at the bottom. The tab is empty at first start and
+       fills with every check; existing reports and DIAG archives can be
+       imported.</p>
+    <p>Described in detail in <a href="#history">section 7</a>.</p>
+  </div>
+
+  <!-- STRATEGY -->
+  <h2 id="strategy">4. How the tool rates &ndash; the strategy</h2>
+  <div class="box">
+    <p>Five principles decide what the tool says. They are disclosed here so
+       that every verdict can be understood &ndash; and questioned.</p>
+
+    <div class="grundsatz">
+      <strong>Principle 1: Wear and defect are two different things</strong>
+      <p>The remaining life quantifies only the arithmetically remaining flash
+         life &ndash; how much of the write budget the manufacturer designed for
+         is left. It says nothing about whether the drive is losing sectors
+         right now. A drive can report 100&nbsp;% and still be defective.
+         Therefore the error counters count independently of the wear value: if
+         they show a defect, the verdict is red no matter how good the wear
+         value looks.</p>
+    </div>
+
+    <div class="grundsatz">
+      <strong>Principle 2: Red only with proof</strong>
+      <p>A red verdict needs hard evidence: reallocated sectors, pending
+         sectors, uncorrectable sectors, reported read errors, media errors, a
+         failed SMART self-test or spare blocks below the manufacturer's
+         threshold. A merely low wear value does not suffice. This is
+         deliberate: a false alarm costs a working drive.</p>
+    </div>
+
+    <div class="grundsatz">
+      <strong>Principle 3: Implausible values are discarded, not asserted</strong>
+      <p>Drives sometimes report nonsense &ndash; a write volume that is
+         impossible in the given running time, a temperature of &minus;128&nbsp;&deg;C,
+         a wear value reported the wrong way round. Such values are rejected and
+         shown as &ldquo;n/a&rdquo; with the reason, instead of being passed on
+         as a figure. An honest gap is better than a confident wrong number.</p>
+    </div>
+
+    <div class="grundsatz">
+      <strong>Principle 4: SSD and hard disk are rated differently</strong>
+      <p>Hard disks have no flash wear, so there is no remaining life in percent
+         for them. What is rated is the actual error state &ndash; SMART status
+         and sector values. A high running time leads to a yellow verdict,
+         because backups matter more from then on; it never leads to red on its
+         own.</p>
+    </div>
+
+    <div class="grundsatz">
+      <strong>Principle 5: Gaps in the data are disclosed</strong>
+      <p>Not every drive reports every value, and not every adapter passes
+         everything through. Where something is missing, it says so &ndash;
+         including why. The rating then rests on what is available, and that is
+         stated.</p>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <h2 id="values">5. The most important values explained</h2>
+  <div class="box">
+    <table>
+      <tr><th style="width:210px">Value</th><th>What it means</th></tr>
+      <tr><td><strong>Remaining life</strong></td>
+          <td>For SSDs the key figure. Refers to the write volume the
+              manufacturer designed for. 100&nbsp;% means: practically unused.</td></tr>
+      <tr><td><strong>Life used</strong></td>
+          <td>The counterpart, reported by many drives directly.</td></tr>
+      <tr><td><strong>Data written</strong></td>
+          <td>Total amount written over the drive's life. Only meaningful in
+              relation to capacity: 10&nbsp;TB is a great deal on a 256&nbsp;GB
+              SSD and almost nothing on a 4&nbsp;TB one.</td></tr>
+      <tr><td><strong>Power-on hours</strong></td>
+          <td>For SSDs no measure of wear &ndash; a drive can run for years
+              without being worn. For hard disks the failure rate rises
+              statistically with the hours.</td></tr>
+      <tr><td><strong>Reallocated sectors</strong></td>
+          <td>Areas the drive has replaced from its reserve. 0 on a healthy
+              drive.</td></tr>
+      <tr><td><strong>Pending sectors</strong></td>
+          <td>Areas the drive could not read reliably and has marked. Above 0
+              means: there is data the drive cannot currently read reliably.</td></tr>
+      <tr><td><strong>Offline uncorrectable</strong></td>
+          <td>Areas that could not be saved even with all correction methods.
+              The data in them is already lost.</td></tr>
+      <tr><td><strong>Reported read errors</strong></td>
+          <td>How often the drive was asked to read an area and could not
+              deliver it. This counter closes a gap: a drive can only
+              <em>replace</em> a bad area when it is <em>written to</em> again
+              &ndash; with data that is only ever read, the reallocated count
+              stays at 0 although areas have long stopped being delivered.</td></tr>
+      <tr><td><strong>CRC errors</strong></td>
+          <td>Transmission errors on the connection, not on the drive itself.
+              The counter is cumulative and never reset, so it travels with the
+              drive. Only a <em>rising</em> value indicates a current problem
+              &ndash; then check cable, adapter or port.</td></tr>
+      <tr><td><strong>Load/unload cycles</strong></td>
+          <td>Hard disks only: how often the heads have been parked. Unusually
+              frequent parking wears the mechanics; it does not enter the
+              rating.</td></tr>
+      <tr><td><strong>Temperature</strong></td>
+          <td>Normal operating values are 30 to 50&nbsp;&deg;C. A warning
+              appears above 65&nbsp;&deg;C.</td></tr>
+    </table>
+
+    <h3>The yellow figure and the &#9432;</h3>
+    <p>Where a value needs explaining, the tool marks it: a
+       <span class="ziffer">1</span> behind a figure opens a plain-language
+       assessment of exactly that value. The <span class="badge">&#9432;</span>
+       next to a label opens the general explanation. Neither changes the
+       verdict &ndash; they explain it.</p>
+  </div>
+
+  <!-- AUTHENTICITY -->
+  <h2 id="authenticity">6. Authenticity check</h2>
+  <div class="box">
+    <p>This check compares the reported values against each other. Only a few
+       hours of running time but sectors already replaced? Barely any operating
+       time but terabytes written? Such contradictions point to reset counters
+       &ndash; used drives sold as new.</p>
+    <div class="warn">
+      <strong>What this check cannot do:</strong> A faked capacity &ndash; a
+      manipulated controller reporting more space than the chip holds &ndash;
+      cannot be detected this way. That needs a full write and read test across
+      the whole drive.
+    </div>
+  </div>
+
+  <!-- HISTORY -->
+  <h2 id="history">7. Measurement history</h2>
+  <div class="box">
+    <p>A single check is a snapshot. Several checks make a history &ndash; and
+       that answers questions a snapshot cannot.</p>
+    <p>This is not decoration; it closes a gap. In several places this program
+       says in effect &ldquo;watch for the rise&rdquo; &ndash; with CRC errors,
+       with reallocated sectors, with pending sectors. Until now it could not
+       see the rise itself.</p>
+
+    <h3>Recording</h3>
+    <p>By default the program records the key figures with every check. It can
+       be switched off under
+       <span class="btn-demo" style="background:#5D6D7E;">&#9881; Settings</span>
+       &rarr; <em>Measurement history</em>. If you do not want continuous
+       recording, use <em>Save this measurement now</em> there to capture
+       individual readings.</p>
+
+    <h3>The &ldquo;History&rdquo; tab</h3>
+    <table>
+      <tr><th style="width:180px">Area</th><th>What it shows</th></tr>
+      <tr><td><strong>Verdict at the top</strong></td>
+          <td>The key statement across all measurements, with period and count
+              &ndash; for instance &ldquo;Unremarkable across 47
+              readings&rdquo;.</td></tr>
+      <tr><td><strong>Value list</strong></td>
+          <td>For each figure the first and the current value, the change, and
+              &ndash; in the last column &ndash; what that means. Only what the
+              drive actually supplies is shown.</td></tr>
+      <tr><td><strong>Chart</strong></td>
+          <td>Draws the history of the row you click.</td></tr>
+    </table>
+    <div class="tip">
+      <strong>The last column is the real gain.</strong> A pair of numbers says
+      little; only the assessment turns it into a statement &ndash; such as
+      &ldquo;52 a day, now at 28&nbsp;% of the design limit, about 11 years to
+      go&rdquo; or &ldquo;no new CRC error for 95 days &ndash; the connection is
+      sound&rdquo;.
+    </div>
+
+    <h3>Three kinds of chart</h3>
+    <p>The form follows the value, because the values answer different
+       questions. The program picks it itself.</p>
+    <table>
+      <tr><th style="width:150px">Form</th><th>For what</th><th>What you see</th></tr>
+      <tr><td><strong>Curve with bar</strong></td>
+          <td>Values that inevitably run: power-on hours, data written, wear,
+              cycles</td>
+          <td>The curve shows how steadily it goes; the bar beside it, how far
+              it still is to a limit</td></tr>
+      <tr><td><strong>Timeline</strong></td>
+          <td>Values that should stay at zero: CRC, sectors, read errors</td>
+          <td>One dot per reading. If something happened, the bar changes colour
+              from that point &ndash; so you see at once whether an incident is
+              fresh or long past</td></tr>
+      <tr><td><strong>Range band</strong></td>
+          <td>Values that fluctuate: temperature</td>
+          <td>The range the value moves in, against the program's warning
+              thresholds</td></tr>
+    </table>
+    <p>Where a curve has a limit, an <span class="badge">&#9432;</span> follows
+       the heading. Behind it is explained where the mark comes from &ndash; and
+       that it is a <em>warning threshold</em>, not a failure limit.</p>
+
+    <h3>Importing earlier measurements</h3>
+    <p>Anyone who has used the program for a while has reports and DIAG archives
+       on disk &ndash; every file is a measurement. Under <em>Import old reports
+       and DIAG archives</em> you choose a folder; subfolders are included.</p>
+    <p>Values that do not fit the series are left out. A counter cannot get
+       smaller, a remaining life cannot rise &ndash; such jumps come from
+       corrections to the evaluation in earlier program versions and say nothing
+       about the drive. At the end you are told what was skipped and why.</p>
+
+    <h3>Backup</h3>
+    <p>The history is the only thing this program produces that <em>cannot</em>
+       be obtained again: a report can be printed anew at any time, a
+       measurement from three months ago cannot.</p>
+    <p><em>Back up history now</em> places a copy in the folder
+       <code>_Backups</code> next to the programs, named after tool and time.
+       If the program later finds an empty history although a backup is waiting
+       there &ndash; the situation after a reinstallation &ndash; it offers to
+       restore it by itself. Restoring only adds; it never overwrites.</p>
+    <div class="tip">
+      <strong>On the serial number:</strong> The history files contain the
+      drive's serial number &ndash; only that assigns a measurement
+      unambiguously to the same device; model and size do not suffice as soon as
+      two identical devices are in use. The files stay on your computer. In DIAG
+      files you send to us, the number is removed as before.
+    </div>
+  </div>
+
+  <!-- CONNECTION -->
+  <h2 id="connection">8. Connection &amp; readability</h2>
+  <div class="box">
+    <p>Not every connection passes SMART commands through. What works:</p>
+    <table>
+      <tr><th style="width:220px">Connection</th><th>SMART readable?</th></tr>
+      <tr><td>SATA, directly on the mainboard</td><td>Yes, completely</td></tr>
+      <tr><td>NVMe (M.2 slot)</td><td>Yes, completely</td></tr>
+      <tr><td>USB adapter with SMART pass-through</td>
+          <td>Usually yes (e.g. JMicron, ASMedia chips)</td></tr>
+      <tr><td>Simple USB enclosures and docking stations</td>
+          <td>Often not &ndash; the adapter swallows the commands</td></tr>
+      <tr><td>USB sticks and memory cards</td>
+          <td>No, they have no SMART at all</td></tr>
+      <tr><td>RAID / Intel RST mode</td>
+          <td>Only limited data through the Windows interface</td></tr>
+    </table>
+    <p>If &ldquo;No data&rdquo; appears, it is worth trying another adapter or
+       connecting the drive directly via SATA. A speed test still yields useful
+       figures.</p>
+  </div>
+
+  <!-- FILES -->
+  <h2 id="files">9. DIAG, report &amp; files</h2>
+  <div class="box">
+    <h3>Report</h3>
+    <p>The <span class="btn-demo btn-dark">&#128196; Report</span> button saves
+       the result as an HTML file. It opens in any browser, is laid out for A4
+       and can be turned into a PDF with Ctrl+P (destination &ldquo;Save as
+       PDF&rdquo;).</p>
+
+    <h3>DIAG (remote diagnosis)</h3>
+    <p>The DIAG menu is meant for testers and for the further development of
+       this program. Diagnostic data is only ever created at your explicit
+       request &ndash; no files are made automatically.</p>
+    <p>The result is exactly one encrypted .7z file. Send that one file to
+       <code>tool-entwicklung@sattler-it.de</code>. To view your own data:
+       DIAG menu &rarr; <em>Extract DIAG archive</em>. The encryption serves
+       safe transport only.</p>
+    <div class="info">
+      The SMART dump contains the serial number and is therefore stored
+      encrypted only. This requires <code>7z.exe</code> in the program folder.
+      In the DIAG file itself the serial number is removed.
+    </div>
+
+    <h3>Files in the program folder</h3>
+    <table>
+      <tr><th style="width:250px">File</th><th>Content</th></tr>
+      <tr><td><code>S-IT-SSD-Check.exe</code></td><td>Main program</td></tr>
+      <tr><td><code>smartctl.exe</code></td>
+          <td>Reading program (smartmontools, GPLv2) &ndash; strictly
+              required</td></tr>
+      <tr><td><code>drivedb.h</code></td>
+          <td>Drive database of smartctl &ndash; provides meaningful attribute
+              names</td></tr>
+      <tr><td><code>7z.exe</code></td>
+          <td>Used to create the encrypted diagnostic files of the DIAG menu.
+              Must be the command-line version; 7zG.exe (interface) and 7zr.exe
+              (mini version) do not understand the required commands.</td></tr>
+      <tr><td><code>S-IT-SSD-Check-Help.html</code></td><td>This help file</td></tr>
+      <tr><td><code>S-IT-SSD-Check-Hilfe.html</code></td>
+          <td>The same help in German</td></tr>
+      <tr><td><code>sit_ssdtexte_*.scl</code></td>
+          <td>Language packs. Shipped encrypted &ndash; this serves text
+              consistency, not secrecy: texts that no longer match the values
+              cause queries about faults that are none. German is built in and
+              needs no file.</td></tr>
+      <tr><td><code>S-IT-Verlauf\</code></td>
+          <td>Folder with the recorded measurements, one file per drive. Holds
+              key figures, date and serial number. To delete, simply remove the
+              folder or single files.</td></tr>
+      <tr><td><code>..\_Backups\</code></td>
+          <td>One level up, shared by all S-IT tools: the backups of the
+              measurement history, named after tool and time.</td></tr>
+      <tr><td><code>Disclaimer.txt</code></td>
+          <td><a href="Disclaimer.txt">Disclaimer</a> &ndash; please read before
+              use</td></tr>
+      <tr><td><code>Licenses.txt</code></td>
+          <td>Licences of this program and the third-party programs used</td></tr>
+    </table>
+  </div>
+
+  <!-- FAQ -->
+  <h2 id="faq">10. Frequently asked questions</h2>
+  <div class="box">
+    <h3>SmartScreen or the antivirus program blocks the file</h3>
+    <p>The program is not digitally signed &ndash; a certificate costs several
+       hundred euros a year, which is out of proportion for free software. With
+       SmartScreen: <em>More info</em> &rarr; <em>Run anyway</em>. The tool also
+       requests administrator rights, which some scanners find suspicious in
+       itself; without them the SMART values cannot be read.</p>
+
+    <h3>It says &ldquo;SMART not available&rdquo;</h3>
+    <p>The connection does not pass the commands through &ndash; see
+       <a href="#connection">section 8</a>. Another adapter or a direct SATA
+       connection usually helps.</p>
+
+    <h3>&ldquo;Power-on hours&rdquo; shows 0 &ndash; is that an error?</h3>
+    <p>Not necessarily. Some drives do not report the counter at all, others
+       have had it reset. If the value looks implausible next to the other
+       figures, the Authenticity tab says so.</p>
+
+    <h3>Why does a value show &ldquo;n/a&rdquo; instead of a figure?</h3>
+    <p>Either the drive does not report it, or the reported value was
+       implausible and was therefore discarded (see principle 3 in
+       <a href="#strategy">section 4</a>). The reason is always given.</p>
+
+    <h3>Remaining life is high, the verdict is still &ldquo;Replace!&rdquo; &ndash; a contradiction?</h3>
+    <p>No, and this is the most important point of the whole rating: the wear
+       value only says how much flash life is left arithmetically. It says
+       nothing about sector errors. If a drive is losing sectors, it is
+       defective &ndash; regardless of how good the wear value looks. In that
+       case the value is marked as void in the display, with an
+       explanation.</p>
+
+    <h3>CrystalDiskInfo shows something different &ndash; who is right?</h3>
+    <p>Both read the same raw values; they weight them differently. This program
+       follows principle&nbsp;1: a proven defect outweighs a good wear value.
+       Which value carries the verdict is stated in the
+       <em>Condition &amp; advice</em> tab.</p>
+
+    <h3>I reinstalled the program &ndash; are my measurements gone?</h3>
+    <p>Only if there is no backup. If the program finds an empty history at
+       start although a backup is waiting in the <code>_Backups</code> folder,
+       it offers to restore it by itself. It can also be done later under
+       <span class="btn-demo" style="background:#5D6D7E;">&#9881; Settings</span>
+       &rarr; <em>Restore history from a backup</em>. Restoring only adds; it
+       never overwrites.</p>
+
+    <h3>The &ldquo;History&rdquo; tab is empty &ndash; what is missing?</h3>
+    <p>Probably nothing. A history comes from checking: the first measurement is
+       recorded at the first check, a comparison needs at least two. The tab
+       itself says what to do. It is quicker with existing reports or DIAG
+       archives &ndash; those can be imported, and then the history does not
+       start from zero.</p>
+
+    <h3>Why does the program store the serial number?</h3>
+    <p>Because only it assigns a measurement unambiguously to the same device.
+       Model and size do not suffice as soon as two identical drives are in use
+       &ndash; their measurements would end up in one file and the history would
+       be worthless. The files stay on your computer; the program sends nothing.
+       In DIAG files you send to us, the number is removed as before.</p>
+
+    <h3>The program looks too small or too large on my screen</h3>
+    <p>Set the display size by hand in the
+       <span class="btn-demo" style="background:#5D6D7E;">&#128421; View</span>
+       menu. The setting is remembered.</p>
+
+    <h3>Can I run the tool from a USB stick?</h3>
+    <p>Yes. The program needs no installation. Keep <code>smartctl.exe</code>
+       and <code>drivedb.h</code> next to it; for the DIAG menu also
+       <code>7z.exe</code>. The measurement history is then written next to the
+       program and travels with the stick.</p>
+
+    <h3>The drive is old but &ldquo;healthy&rdquo; &ndash; can I rely on that?</h3>
+    <p>On the measurement, yes; on the future, no. Every rating is a snapshot
+       based on what the drive reports about itself. A drive can fail at any
+       time despite good values. Backups remain essential &ndash; this is
+       exactly where the measurement history helps: it shows whether values are
+       moving, and in which direction.</p>
+  </div>
+
+  <!-- LICENCES -->
+  <h2 id="licences">11. Third-party programs &amp; licences</h2>
+  <div class="box">
+    <p>S-IT SSD-Check is freeware. Free use and distribution of the unchanged
+       package is permitted; the source code is not public.</p>
+    <table>
+      <tr><th style="width:190px">Program</th><th>Purpose</th><th>Licence</th></tr>
+      <tr><td><strong>smartctl.exe</strong><br>(smartmontools)</td>
+          <td>Reads the drives' SMART values &ndash; the basis of every
+              rating</td>
+          <td>GNU GPL v2<br><small>www.smartmontools.org</small></td></tr>
+      <tr><td><strong>7z.exe</strong><br>(7-Zip)</td>
+          <td>Creates the encrypted diagnostic files of the DIAG menu. Parts of
+              the 7-Zip program by Igor Pavlov.</td>
+          <td>GNU LGPL<br><small>www.7-zip.org</small></td></tr>
+    </table>
+    <p>Both are shipped unchanged and keep their respective licence. The full
+       licence texts are in the folder <code>3rd-Party-Licenses</code>.</p>
+    <p class="sub" style="margin-top:18px">
+      &copy; 2026 Sattler IT-Service, Greifenstein &nbsp;&bull;&nbsp;
+      Hans Udo Sattler &nbsp;&bull;&nbsp;
+      <code>tool-entwicklung@sattler-it.de</code></p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,7 +1,131 @@
-Lizenzen / Licenses
+============================================================
+ S-IT SSD-Check - Lizenzen / Licenses / Licenties
+ (c) 2026 Sattler IT-Service, Greifenstein - Hans Udo Sattler
+============================================================
+
+ DEUTSCH .......... Zeile   15
+ ENGLISH .......... Zeile   55
+ NEDERLANDS ....... Zeile   93
+
+ Die vollstaendigen Lizenztexte der Fremdprogramme liegen im
+ Ordner "3rd-Party-Licenses" im Programmordner.
+
+
+============================================================
+ DEUTSCH
+============================================================
+
 S-IT SSD-Check (S-IT-SSDCheck.exe)
 
-Freeware — © 2026 Hans Udo Sattler, Sattler IT-Service, Greifenstein
+Freeware - (c) 2026 Hans Udo Sattler, Sattler IT-Service,
+Greifenstein
 
-Kostenlose Nutzung und Weitergabe des unveränderten Pakets erlaubt.
-Der Quellcode ist nicht öffentlich. Änderungen und kommerzielle Nutzung sind nicht gestattet.
+Kostenlose Nutzung und Weitergabe des unveraenderten Pakets
+erlaubt. Der Quellcode ist nicht oeffentlich. Aenderungen und
+kommerzielle Nutzung sind nicht gestattet.
+
+VERWENDETE FREMDPROGRAMME
+-------------------------
+Beide werden unveraendert mitgeliefert und behalten ihre
+jeweilige Lizenz.
+
+  smartctl.exe (smartmontools)
+      Liest die SMART-Werte der Laufwerke aus - die Grundlage
+      jeder Bewertung.
+      Lizenz:    GNU GPL v2
+      Projekt:   www.smartmontools.org
+
+  7z.exe (7-Zip)
+      Erstellt die verschluesselten Diagnose-Dateien des
+      DIAG-Menues.
+      Teile des 7-Zip-Programms von Igor Pavlov.
+      Lizenz:    GNU LGPL
+      Projekt:   www.7-zip.org
+
+SPRACHPAKETE
+------------
+Die mitgelieferten Sprachdateien (*.scl) sind verschluesselt.
+Das dient der Textkonsistenz, nicht der Geheimhaltung: Texte,
+die nicht mehr zu den Werten passen, erzeugen Rueckfragen zu
+Fehlern, die keine sind. Weitere Sprachen kommen als gepruefte
+Pakete von Sattler IT-Service.
+
+
+============================================================
+ ENGLISH
+============================================================
+
+S-IT SSD-Check (S-IT-SSDCheck.exe)
+
+Freeware - (c) 2026 Hans Udo Sattler, Sattler IT-Service,
+Greifenstein, Germany
+
+Free use and distribution of the unchanged package is
+permitted. The source code is not public. Modifications and
+commercial use are not allowed.
+
+THIRD-PARTY PROGRAMS USED
+-------------------------
+Both are shipped unchanged and keep their respective licence.
+
+  smartctl.exe (smartmontools)
+      Reads the drives' SMART values - the basis of every
+      rating.
+      Licence:   GNU GPL v2
+      Project:   www.smartmontools.org
+
+  7z.exe (7-Zip)
+      Creates the encrypted diagnostic files of the DIAG menu.
+      Parts of the 7-Zip program by Igor Pavlov.
+      Licence:   GNU LGPL
+      Project:   www.7-zip.org
+
+LANGUAGE PACKS
+--------------
+The language files shipped with the program (*.scl) are
+encrypted. This serves text consistency, not secrecy: texts
+that no longer match the values cause queries about faults
+that are none. Further languages come as tested packs from
+Sattler IT-Service.
+
+
+============================================================
+ NEDERLANDS
+============================================================
+
+S-IT SSD-Check (S-IT-SSDCheck.exe)
+
+Freeware - (c) 2026 Hans Udo Sattler, Sattler IT-Service,
+Greifenstein, Duitsland
+
+Gratis gebruik en verspreiding van het ongewijzigde pakket is
+toegestaan. De broncode is niet openbaar. Wijzigingen en
+commercieel gebruik zijn niet toegestaan.
+
+GEBRUIKTE PROGRAMMA'S VAN DERDEN
+--------------------------------
+Beide worden ongewijzigd meegeleverd en behouden hun eigen
+licentie.
+
+  smartctl.exe (smartmontools)
+      Leest de SMART-waarden van de schijven uit - de basis
+      van elke beoordeling.
+      Licentie:  GNU GPL v2
+      Project:   www.smartmontools.org
+
+  7z.exe (7-Zip)
+      Maakt de versleutelde diagnosebestanden van het
+      DIAG-menu.
+      Delen van het 7-Zip-programma van Igor Pavlov.
+      Licentie:  GNU LGPL
+      Project:   www.7-zip.org
+
+TAALPAKKETTEN
+-------------
+De meegeleverde taalbestanden (*.scl) zijn versleuteld. Dat
+dient de consistentie van de teksten, niet de geheimhouding:
+teksten die niet meer bij de waarden passen, leiden tot vragen
+over fouten die er geen zijn. Verdere talen komen als geteste
+pakketten van Sattler IT-Service.
+
+============================================================

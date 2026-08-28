@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>S-IT SSD-Check – ChangeLog</title>
+<title>S-IT SSD-Check &ndash; ChangeLog</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Segoe UI', Arial, sans-serif; background: #F5F5F5;
@@ -46,26 +46,22 @@
 </head>
 <body>
 <header>
-  <h1>S-IT SSD-Check – ChangeLog</h1>
-  <p>Aktuell: Version 1.5.4.5 &nbsp;•&nbsp;
-     © 2026 Hans Udo Sattler &nbsp;•&nbsp; Sattler IT-Service, Greifenstein</p>
+  <h1>S-IT SSD-Check &ndash; ChangeLog</h1>
+  <p>Aktuell: Version 1.7.0 &nbsp;&bull;&nbsp;
+     © 2026 Hans Udo Sattler &nbsp;&bull;&nbsp; Sattler IT-Service, Greifenstein</p>
 </header>
 
 <div class="container">
 
   <div class="intro">
-    S-IT SSD-Check bewertet die Gesundheit von SSDs und Festplatten anhand ihrer
-    SMART-Werte – mit einer Ampel, die nur dann auf Rot springt, wenn ein Defekt
-    tatsächlich belegt ist. Vielen Dank an alle Nutzer bei
-    <strong>deskmodder.de</strong>, <strong>wintotal.de</strong> und
-    <strong>chip.de</strong> für das wertvolle Feedback.
-    <br><br>
-    Ein besonderer Dank gilt den <strong>SSD-Testern</strong>, die mit ihren
-    Diagnose-Dateien zur Weiterentwicklung beigetragen haben. Jedes eingeschickte
-    Laufwerk – ob kerngesund, verschlissen oder mit widersprüchlichen Werten –
-    hat geholfen, die Bewertung genauer und verlässlicher zu machen. Gerade die
-    ungewöhnlichen Fälle waren dabei am wertvollsten: Sie haben Schwächen
-    sichtbar gemacht, die sich an gesunden Laufwerken allein nie gezeigt hätten.
+      S-IT SSD-Check bewertet die Gesundheit von SSDs und Festplatten anhand 
+	  ihrer SMART-Werte &ndash; mit einer Ampel, die nur dann auf Rot springt, wenn 
+	  ein Defekt tats&auml;chlich belegt ist. <br>Vielen Dank an alle Nutzer f&uuml;r das wertvolle Feedback.
+    <br>Ein besonderer Dank gilt den <strong>SSD-Testern</strong>, die mit ihren
+	  <strong>Diagnose-Dateien </strong>zur Weiterentwicklung beigetragen haben. 
+	  Jedes eingeschickte Laufwerk &ndash; ob kerngesund, verschlissen oder mit 
+	  widerspr&uuml;chlichen Werten &ndash; hat geholfen, die Bewertung genauer und 
+	  verl&auml;sslicher zu machen.
   </div>
 
   <div class="legend">
@@ -76,47 +72,213 @@
     <span><span class="tag-user">Nutzer-Feedback</span> von Anwendern angeregt</span>
   </div>
 
-  <!-- v1.5.4.5 -->
+  <!-- v1.7.0 -->
   <div class="version-block">
     <div class="version-header current">
-      <div class="v-badge">v1.5.4.5</div>
+      <div class="v-badge">v1.7.0</div>
       <div class="v-date">August 2026</div>
       <div class="v-tag">Aktuell</div>
+    </div>
+
+    <div class="section">
+      <h3>Messungsverlauf &ndash; das Tool merkt sich, was war</h3>
+      <ul>
+        <li class="new"><span class="highlight">Jede Pr&uuml;fung legt einen Messpunkt an.</span>
+            Mehrere Erkl&auml;rtexte des Programms sagen sinngem&auml;&szlig; &bdquo;achte auf den 
+		Anstieg&ldquo; &ndash; bei CRC-Fehlern, umgesetzten Bl&ouml;cken, schwebenden Sektoren. 
+		Sehen konnte das Tool den Anstieg bisher gar nicht: Es kannte immer nur 
+		die Momentaufnahme. Erfasste Daten zeigen jetzt Entwicklungen an.</li>
+        <li class="new"><span class="highlight">Neuer Reiter &bdquo;Verlauf&ldquo;.</span>
+            Oben ein Urteil, darunter die Werte mit ihrer Ver&auml;nderung, unten ein
+            Diagramm. Die Liste zeigt automatisch nur, was das Laufwerk hat &ndash;
+            Restlebensdauer und Schreibmenge bei SSDs, Park- und Start/Stopp-Zyklen bei
+            Festplatten.</li>
+        <li><span class="highlight">Die Einordnung macht aus den Zahlen eine Aussage.</span>
+            Statt zweier Werte steht dort, was sie bedeuten: &bdquo;52 am Tag &ndash; jetzt bei
+            28&nbsp;% der Auslegungsgrenze, noch rund 11 Jahre&ldquo;. Und die Zeile, die das
+            Tool bisher nicht ausgeben konnte: &bdquo;CRC-Fehler: seit 95 Tagen kein neuer &ndash; die
+            Verbindung ist in Ordnung.&ldquo;</li>
+        <li class="note">Drei Darstellungsformen, weil die Werte drei verschiedene Fragen beantworten. Werte, die zwangsl&auml;ufig laufen, bekommen eine Kurve samt Balken
+            zur Grenze. Werte, die Null bleiben sollen, eine Zeitleiste mit einem Punkt je
+            Messung &ndash; eine Kurve w&auml;re hier eine flache Linie auf Null 
+		ohne Aussagekraft, obwohl dies die beste Nachricht ware. Die Temperatur bekommt
+            ein Spannenband vor den Warnschwellen.</li>
+        <li>Die Prognose rechnet damit aus <em>gemessener</em> Nutzung statt aus einer
+            Annahme.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Import fr&uuml;herer Messungen</h3>
+      <ul>
+        <li class="new"><span class="highlight">Alte Berichte und DIAG-Archive lassen sich
+            einlesen.</span> Wer das Tool schon l&auml;nger benutzt, hat Messungen auf der
+            Platte liegen &ndash; der Verlauf muss nicht bei null anfangen. Gew&auml;hlt wird ein
+            Ordner samt Unterordnern, nicht einzelne Dateien.</li>
+        <li class="note">Zwei Berichtsformate werden gelesen: Bis Mai&nbsp;2026 standen die
+            Werte in Tabellen, seither in Definitionslisten. Ohne den alten Zweig fiele die
+            &auml;lteste Historie weg &ndash; und genau die ist die wertvollste.</li>
+        <li><span class="highlight">Werte, die nicht zur Reihe passen, werden ausgelassen.</span>
+            Der Nutzer bekommt
+            am Ende aufgelistet, was &uuml;bersprungen wurde und warum.</li>
+        <li class="note">An &uuml;ber 200 Berichten und &uuml;ber 40 Archiven entwickelt und gepr&uuml;ft, 
+		Messpunkte &uuml;ber drei Monate wurden verarbeitet. Im Programm wurde 
+		ber&uuml;cksichtigt, dass ein zweiter Import keine Dublette erzeugt..</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Sicherung der Messdaten</h3>
+      <ul>
+        <li class="new">Der Verlauf ist das Einzige, was dieses Programm erzeugt und was
+            sich <em>nicht</em> wiederbeschaffen l&auml;sst: Ein Bericht kann jederzeit neu
+            gedruckt werden, eine Messung von vor drei Monaten nicht. Sicherungen landen
+            ab jetzt im Verzeichnis <code>_Backups</code> neben den Programmen, wie bei den anderen
+            S-IT-Tools.</li>
+        <li><span class="highlight">Nach einer Neuinstallation bietet das Programm die
+            R&uuml;ckholung von selbst an.</span> Findet es einen leeren Verlauf, obwohl eine
+            Sicherung bereitliegt, fragt es einmal nach. Eine Sicherung, an die niemand
+            denkt, ist keine.</li>
+        <li class="note">Zur&uuml;ckholen erg&auml;nzt, es &uuml;berschreibt nicht: Vorhandene Verl&auml;ufe
+            bleiben unangetastet.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Mehrsprachig &ndash; Deutsch, Englisch, Niederl&auml;ndisch</h3>
+      <ul>
+        <li class="new"><span class="highlight">Das gesamte Programm spricht jetzt drei
+            Sprachen.</span> Oberfl&auml;che, Erkl&auml;rtexte, Meldungen und der HTML-Bericht.
+            Umgestellt wird unter &bdquo;Einstellungen&ldquo;; das K&uuml;rzel mit Flagge unten rechts
+            zeigt, welche Sprache l&auml;uft.</li>
+        <li>Deutsch ist fest eingebaut und braucht keine Zusatzdatei &ndash; das Tool 
+		ben&ouml;tigt externe Dateien nur f&uuml;r weitere Sprachen.</li>
+        <li class="note">Die deutsche Ausgabe wurde dabei zeichengenau 
+		abgesichert: Alle 199 Laufwerke der Testsammlung wurden dazu vor und 
+		nach jedem Umbau verglichen. </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Neuer Knopf &bdquo;Einstellungen&ldquo;</h3>
+      <ul>
+        <li class="new">Unter &bdquo;Einstellungen&ldquo; steht jetzt beisammen: Sprache,
+            Auto-Speedtest, DIAG-Men&uuml;, Verlauf. &bdquo;Ansicht&ldquo; enth&auml;lt nur noch, was das
+            <em>Fenster</em> betrifft &ndash; Skalierung und Fenstergr&ouml;&szlig;e. Zu jedem Bereich gibt es eine
+            Erkl&auml;rung, in allen drei Sprachen.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Anzeige &amp; Bericht</h3>
+      <ul>
+        <li class="fix" ><span class="highlight">Ein nachgewiesener Defekt &uuml;berstimmt
+		die gemeldeten 100&nbsp;% Restlebensdauer.</span>
+            Ein Laufwerk kann einen tadellosen
+            Verschlei&szlig;wert melden und trotzdem Sektoren verlieren. Der Wert stand bisher
+            unkommentiert neben einem roten Urteil.
+            Jetzt steht dort &bdquo;100&nbsp;% (durch Defekt entwertet)&ldquo;, rot, mit Erkl&auml;rung.
+            <span class="tag-user">Nutzer-Feedback</span></li>
+        <li class="new"><span class="highlight">Der Bericht weist den Datentr&auml;gertyp aus.</span>
+            &Uuml;ber dem Bericht stand gro&szlig; &bdquo;SSD-Check&ldquo; &ndash; bei einer Festplatte war das
+            irref&uuml;hrend. Jetzt nennt eine eigene Zeile, was gepr&uuml;ft wurde: SSD (SATA),
+            SSD (NVMe), Festplatte mit Drehzahl oder USB-Datentr&auml;ger.
+            <span class="tag-user">Nutzer-Feedback</span></li>
+        <li class="fix"><em>Verbesserung: </em>Ein Zahlenwiderspruch im gr&uuml;nen Urteil ist behoben. Der Text
+            rechnete den verbrauchten Anteil aus der Restlebensdauer, die Tabelle daneben
+            zeigte den gemeldeten Wert &ndash; bei fast der H&auml;lfte der gepr&uuml;ften Laufwerke
+            wichen beide um ein bis drei Punkte ab. Jetzt gilt &uuml;berall einheitlich der gemeldete Wert.
+            <span class="tag-user">Nutzer-Feedback</span></li>
+        <li class="fix"><em>Bereinigung: </em>Der Bericht enthielt zwei 
+		Beschriftungen, die sich widersprachen: Bei Festplatten stand der Typ 
+		doppelt, im Englischen sogar unter demselben Namen.</li>
+        <li><em>PDF-Druckhinweis: </em>Ein Hinweis im Berichtsfu&szlig; nennt den Weg zum PDF (Strg+P, Ziel &bdquo;Als PDF
+            speichern&ldquo;). Die Druckaufbereitung gibt es seit 1.5.4.5 &ndash; bisher ohne jeden Hinweis darauf. (Im Ausdruck wird der Hinweis ausgeblendet.)
+            <span class="tag-user">Nutzer-Feedback</span></li>
+        <li class="fix"><em>Neue Bezeichnung: </em>Der Reiter hie&szlig; &bdquo;Gebraucht-Bewertung&ldquo;
+		und benannte damit einen
+            <em>Anlass</em> aus der Fr&uuml;hzeit des Tools. Er beurteilt aber l&auml;ngst jedes
+            Laufwerk &ndash; von &bdquo;praktisch neu&ldquo; bis &bdquo;defekt&ldquo;. Jetzt hei&szlig;t er &bdquo;Zustand &amp; Empfehlung&ldquo;. Ebenso in der Kopfzeile: Sie sprach von SSDs, obwohl Festplatten
+            vollwertig bewertet werden. <span class="tag-user">Nutzer-Feedback</span></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Behoben</h3>
+      <ul>
+        <li class="fix"><span class="highlight">Berichte lie&szlig;en sich nicht auf
+            Netzwerkfreigaben speichern.</span> Der Dateidialog liefert Pfade mit
+            Vorw&auml;rtsschr&auml;gstrichen; bei einer Freigabe wird daraus <code>//server/...</code>,
+            und das erkennt Windows nicht als Netzwerkpfad. Betraf alle Dateidialoge, auch
+            das &Ouml;ffnen. <span class="tag-user">Nutzer-Feedback</span></li>
+        <li class="fix">Die Kurzauskunft, die ohne Hilfedatei erscheint, war auf dem Stand
+            von vor mehreren Versionen: Sie sprach von drei Reitern (es sind sechs) und
+            erw&auml;hnte Festplatten mit keinem Wort. Nachgezogen und &uuml;bersetzt.
+            <span class="tag-user">Nutzer-Feedback</span></li>
+        <li class="fix">Der Hilfe-Knopf &ouml;ffnete immer dieselbe Datei, gleich welche Sprache
+            eingestellt war. Jetzt sprachabh&auml;ngig; gibt es die Hilfe in der eigenen Sprache
+            nicht, fragt das Programm einmal, ob die englische Fassung oder die Kurzfassung
+            gezeigt werden soll. <span class="tag-user">Nutzer-Feedback</span></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Hinweise</h3>
+      <ul>
+        <li class="note">Die Sprachdateien werden verschl&uuml;sselt ausgeliefert (*.scl). Das
+            dient der Textkonsistenz, nicht der Geheimhaltung: Texte, die nicht mehr zu den
+            Werten passen, erzeugen R&uuml;ckfragen zu Fehlern, die keine sind. Weitere Sprachen
+            kommen als gepr&uuml;fte Pakete.</li>
+        <li class="note">Der Messungsverlauf speichert die Seriennummer des Laufwerks &ndash; nur
+            sie ordnet eine Messung zweifelsfrei demselben Ger&auml;t zu. Die Dateien bleiben auf
+            dem Rechner; in eingesandten DIAG-Dateien wird die Nummer wie bisher entfernt.
+            Einzelheiten stehen im Haftungsausschluss, Abschnitt&nbsp;6.</li>
+        <li class="note">Die Aufzeichnung l&auml;sst sich in den Einstellungen abschalten. Wer
+            sie nicht dauerhaft m&ouml;chte, kann einzelne St&auml;nde gezielt sichern.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- v1.5.4.5 -->
+  <div class="version-block">
+    <div class="version-header">
+      <div class="v-badge">v1.5.4.5</div>
+      <div class="v-date">August 2026</div>
     </div>
     <div class="section">
       <h3>Bewertung</h3>
       <ul>
         <li class="new"><span class="highlight">Gemeldete Lesefehler werden ausgewertet.</span>
-            Das Tool liest jetzt zusätzlich, wie oft ein Laufwerk einen Bereich lesen sollte
-            und ihn nicht liefern konnte. Das schließt eine Lücke: Einen schadhaften Bereich
+            Das Tool liest jetzt zus&auml;tzlich, wie oft ein Laufwerk einen Bereich lesen sollte
+            und ihn nicht liefern konnte. Das schlie&szlig;t eine L&uuml;cke: Einen schadhaften Bereich
             <em>ersetzen</em> kann ein Laufwerk erst, wenn wieder darauf <em>geschrieben</em>
-            wird – bei Daten, die nur gelesen werden, bleibt die Zahl der umgesetzten Blöcke
-            deshalb bei 0, obwohl längst Bereiche nicht mehr herausgerückt werden. Ab zehn
-            gemeldeten Lesefehlern gilt das als Defektbeleg; einzelne Vorfälle darunter
-            führen zu keiner Abwertung.</li>
-        <li class="note">Nachgezählt an 141 Diagnosedatensätzen der Testsammlung: 79
-            Laufwerke melden diesen Wert überhaupt, 77 davon mit exakt 0. Der Zähler
-            schweigt bei gesunden Laufwerken – genau eine Festplatte der Sammlung wird durch
-            die neue Prüfung anders bewertet, und zwar zu Recht.</li>
+            wird &ndash; bei Daten, die nur gelesen werden, bleibt die Zahl der umgesetzten Bl&ouml;cke
+            deshalb bei 0, obwohl l&auml;ngst Bereiche nicht mehr herausger&uuml;ckt werden. Ab zehn
+            gemeldeten Lesefehlern gilt das als Defektbeleg; einzelne Vorf&auml;lle darunter
+            f&uuml;hren zu keiner Abwertung.</li>
+        <li class="note">Nachgez&auml;hlt an 141 Diagnosedatens&auml;tzen der Testsammlung: 79
+            Laufwerke melden diesen Wert &uuml;berhaupt, 77 davon mit exakt 0. Der Z&auml;hler
+            schweigt bei gesunden Laufwerken &ndash; genau eine Festplatte der Sammlung wird durch
+            die neue Pr&uuml;fung anders bewertet, und zwar zu Recht.</li>
       </ul>
     </div>
     <div class="section">
       <h3>Anzeige &amp; Bericht</h3>
       <ul>
-        <li><span class="highlight">Die grünen Stufen sind jetzt auseinanderzuhalten.</span>
-            „Gut“ (80–94 %) erscheint in einem helleren Grünton als „Sehr gut“ (ab 95 %).
-            Beide bleiben grün und uneingeschränkt geeignet – nur sieht man den Unterschied
+        <li><span class="highlight">Die gr&uuml;nen Stufen sind jetzt auseinanderzuhalten.</span>
+            &bdquo;Gut&ldquo; (80&ndash;94 %) erscheint in einem helleren Gr&uuml;nton als &bdquo;Sehr gut&ldquo; (ab 95 %).
+            Beide bleiben gr&uuml;n und uneingeschr&auml;nkt geeignet &ndash; nur sieht man den Unterschied
             jetzt auch, ohne den Text daneben zu lesen. <span class="tag-user">Nutzer-Feedback</span></li>
         <li><span class="highlight">Sauberer Seitenumbruch beim Ausdruck.</span>
-            Der Bericht ist für A4 hochkant bei 100 % eingerichtet – Verkleinern im Browser
-            ist nicht mehr nötig. Passt der Inhalt nicht auf ein Blatt, wandert ein Abschnitt
-            vollständig auf die nächste Seite, statt mittendrin zerrissen zu werden.
+            Der Bericht ist f&uuml;r A4 hochkant bei 100 % eingerichtet &ndash; Verkleinern im Browser
+            ist nicht mehr n&ouml;tig. Passt der Inhalt nicht auf ein Blatt, wandert ein Abschnitt
+            vollst&auml;ndig auf die n&auml;chste Seite, statt mittendrin zerrissen zu werden.
             <span class="tag-user">Nutzer-Feedback</span></li>
-        <li>Neue Zeile „Gemeldete Lesefehler“ in der Übersicht und im Prüfbericht, mit
-            Erklärung hinter dem ⓘ.</li>
+        <li>Neue Zeile &bdquo;Gemeldete Lesefehler&ldquo; in der &Uuml;bersicht und im Pr&uuml;fbericht, mit
+            Erkl&auml;rung hinter dem ⓘ.</li>
         <li class="fix">Die Ampel-Legende im Hilfe-Reiter nannte noch die Prozentbereiche
-            von vor der Umstellung auf „Sehr gut / Gut“ und passte damit nicht mehr zu dem,
-            was das Programm tatsächlich rechnet. Richtiggestellt.</li>
+            von vor der Umstellung auf &bdquo;Sehr gut / Gut&ldquo; und passte damit nicht mehr zu dem,
+            was das Programm tats&auml;chlich rechnet. Richtiggestellt.</li>
       </ul>
     </div>
   </div>
@@ -131,18 +293,18 @@
     <div class="section">
       <h3>Bewertung &amp; Bericht</h3>
       <ul>
-        <li class="fix"><span class="highlight">Widersprüchliche Verschleiß-Angaben werden erkannt.</span>
+        <li class="fix"><span class="highlight">Widerspr&uuml;chliche Verschlei&szlig;-Angaben werden erkannt.</span>
             Manche SSDs melden ihren Abnutzungsgrad an zwei Stellen mit
-            unterschiedlichen Werten. Das Tool hält beide jetzt gegeneinander,
-            wählt die belastbarere Angabe und weist den Widerspruch offen aus –
+            unterschiedlichen Werten. Das Tool h&auml;lt beide jetzt gegeneinander,
+            w&auml;hlt die belastbarere Angabe und weist den Widerspruch offen aus &ndash;
             statt einer der Zahlen blind zu folgen und dadurch ein zu gutes oder
-            zu schlechtes Urteil zu fällen.</li>
-        <li class="fix"><span class="highlight">Reserveblöcke werden bei mehr Modellen korrekt angezeigt.</span>
-            Bei einigen Samsung-SSDs stand bisher „k.A.“, obwohl das Laufwerk den
-            Wert meldet. Jetzt erscheint der tatsächliche Zustand – bei intakten
-            Laufwerken „100 % – intakt“. <span class="tag-user">Nutzer-Feedback</span></li>
-        <li class="fix">Prüfbericht aufgeräumt: Der erklärende Hinweis zu
-            Übertragungsfehlern (CRC) erschien im Bericht doppelt und wird jetzt
+            zu schlechtes Urteil zu f&auml;llen.</li>
+        <li class="fix"><span class="highlight">Reservebl&ouml;cke werden bei mehr Modellen korrekt angezeigt.</span>
+            Bei einigen Samsung-SSDs stand bisher &bdquo;k.A.&ldquo;, obwohl das Laufwerk den
+            Wert meldet. Jetzt erscheint der tats&auml;chliche Zustand &ndash; bei intakten
+            Laufwerken &bdquo;100 % &ndash; intakt&ldquo;. <span class="tag-user">Nutzer-Feedback</span></li>
+        <li class="fix">Pr&uuml;fbericht aufger&auml;umt: Der erkl&auml;rende Hinweis zu
+            &Uuml;bertragungsfehlern (CRC) erschien im Bericht doppelt und wird jetzt
             nur noch einmal ausgegeben. <span class="tag-user">Nutzer-Feedback</span></li>
       </ul>
     </div>
@@ -158,37 +320,37 @@
     <div class="section">
       <h3>Bewertung</h3>
       <ul>
-        <li class="fix"><span class="highlight">Ein belegter Defekt schlägt jeden Verschleißwert.</span>
-            Schwebende oder nicht korrigierbare Sektoren und Medienfehler führen
-            immer zu einem roten Urteil – auch wenn das Laufwerk selbst noch
-            „100 % Restlebensdauer“ meldet.</li>
-        <li class="new"><span class="highlight">Neue grüne Stufe „Gut“ (80–94 %).</span>
-            „Sehr gut“ gilt jetzt ab 95 %. Beide Stufen sind grün und
-            uneingeschränkt geeignet – der Bewertungstext nennt zusätzlich den
+        <li class="fix"><span class="highlight">Ein belegter Defekt schl&auml;gt jeden Verschlei&szlig;wert.</span>
+            Schwebende oder nicht korrigierbare Sektoren und Medienfehler f&uuml;hren
+            immer zu einem roten Urteil &ndash; auch wenn das Laufwerk selbst noch
+            &bdquo;100 % Restlebensdauer&ldquo; meldet.</li>
+        <li class="new"><span class="highlight">Neue gr&uuml;ne Stufe &bdquo;Gut&ldquo; (80&ndash;94 %).</span>
+            &bdquo;Sehr gut&ldquo; gilt jetzt ab 95 %. Beide Stufen sind gr&uuml;n und
+            uneingeschr&auml;nkt geeignet &ndash; der Bewertungstext nennt zus&auml;tzlich den
             bereits verbrauchten Anteil, damit man beim Gebrauchtkauf den Preis
-            richtig einschätzen kann.</li>
+            richtig einsch&auml;tzen kann.</li>
         <li>Schreibreserve-Prognose als Spanne statt Scheinwert
-            („noch etwa 416–701 TB“ statt „noch ca. 523 TB“): Die Breite zeigt
-            selbst an, wie belastbar die Schätzung ist.</li>
+            (&bdquo;noch etwa 416&ndash;701 TB&ldquo; statt &bdquo;noch ca. 523 TB&ldquo;): Die Breite zeigt
+            selbst an, wie belastbar die Sch&auml;tzung ist.</li>
       </ul>
     </div>
     <div class="section">
       <h3>Bericht &amp; Bedienung</h3>
       <ul>
         <li class="fix">Der Bericht zeigt jetzt die Werte, die zur Abwertung
-            führen, und widerspricht sich nicht mehr: Ein rot bewertetes Laufwerk
-            meldet keine „lange Lebensdauer“ mehr; nicht gemeldete Zähler
-            erscheinen als „k.A.“ statt als „0“.</li>
-        <li>Übersicht dreispaltig (Identität, Zustand, Fehlerzähler) mit
-            anklickbarer gelber Ziffer für Zusatzbefunde wie Stromausfälle oder
-            auffälliges Kopfparken.</li>
-        <li>Fensterskalierung richtet sich automatisch nach dem verfügbaren
-            Bildschirmplatz; feste Werte von 80 % bis 200 % bleiben wählbar.</li>
-        <li class="fix">Behoben: falsche Kapazität auf deutschem Windows
-            (1 TB wurde als „2000 GB“ angezeigt), doppelt gelistete
-            USB-Laufwerke, „FAILED“ bei USB-Sticks und Kartenlesern ohne SMART.</li>
-        <li>Hilfe überarbeitet mit neuem Abschnitt „Wie das Tool bewertet – die
-            Strategie“; Haftungsausschluss liegt bei und steht im Berichtsfuß.</li>
+            f&uuml;hren, und widerspricht sich nicht mehr: Ein rot bewertetes Laufwerk
+            meldet keine &bdquo;lange Lebensdauer&ldquo; mehr; nicht gemeldete Z&auml;hler
+            erscheinen als &bdquo;k.A.&ldquo; statt als &bdquo;0&ldquo;.</li>
+        <li>&Uuml;bersicht dreispaltig (Identit&auml;t, Zustand, Fehlerz&auml;hler) mit
+            anklickbarer gelber Ziffer f&uuml;r Zusatzbefunde wie Stromausf&auml;lle oder
+            auff&auml;lliges Kopfparken.</li>
+        <li>Fensterskalierung richtet sich automatisch nach dem verf&uuml;gbaren
+            Bildschirmplatz; feste Werte von 80 % bis 200 % bleiben w&auml;hlbar.</li>
+        <li class="fix">Behoben: falsche Kapazit&auml;t auf deutschem Windows
+            (1 TB wurde als &bdquo;2000 GB&ldquo; angezeigt), doppelt gelistete
+            USB-Laufwerke, &bdquo;FAILED&ldquo; bei USB-Sticks und Kartenlesern ohne SMART.</li>
+        <li>Hilfe &uuml;berarbeitet mit neuem Abschnitt &bdquo;Wie das Tool bewertet &ndash; die
+            Strategie&ldquo;; Haftungsausschluss liegt bei und steht im Berichtsfu&szlig;.</li>
       </ul>
     </div>
   </div>
@@ -200,21 +362,21 @@
       <div class="v-date">Juli 2026</div>
     </div>
     <div class="section">
-      <h3>Zuverlässigere Bewertung</h3>
+      <h3>Zuverl&auml;ssigere Bewertung</h3>
       <ul>
         <li class="fix">Sicherheitsnetz gegen Fehlbewertungen: Ein kritisches
-            Urteil verlangt jetzt einen belegten Defekt – ein einzelner,
+            Urteil verlangt jetzt einen belegten Defekt &ndash; ein einzelner,
             herstellerspezifisch skalierter Zahlenwert reicht nicht mehr aus.</li>
-        <li>Die Verschleißprüfung funktioniert auch dann, wenn die geschriebene
-            Datenmenge nicht auslesbar ist (etwa bei manchen USB-Gehäusen und
-            OEM-SSDs); ein nicht überprüfbarer Wert wird offen so ausgewiesen,
-            statt eine Warnung auszulösen.</li>
-        <li>Hohe Betriebsstunden allein führen nicht mehr zu einem kritischen
-            Urteil – Betriebszeit ist kein Schaden.</li>
+        <li>Die Verschlei&szlig;pr&uuml;fung funktioniert auch dann, wenn die geschriebene
+            Datenmenge nicht auslesbar ist (etwa bei manchen USB-Geh&auml;usen und
+            OEM-SSDs); ein nicht &uuml;berpr&uuml;fbarer Wert wird offen so ausgewiesen,
+            statt eine Warnung auszul&ouml;sen.</li>
+        <li>Hohe Betriebsstunden allein f&uuml;hren nicht mehr zu einem kritischen
+            Urteil &ndash; Betriebszeit ist kein Schaden.</li>
         <li class="fix">Unplausible Rohwerte (z. B. −128 °C) werden verworfen und
-            benannt, statt die Bewertung zu verfälschen.</li>
-        <li>Prognose ohne Scheingenauigkeit: Bei sehr geringem Verschleiß
-            erscheint „rechnerisch weit über der üblichen Nutzungsdauer“ statt
+            benannt, statt die Bewertung zu verf&auml;lschen.</li>
+        <li>Prognose ohne Scheingenauigkeit: Bei sehr geringem Verschlei&szlig;
+            erscheint &bdquo;rechnerisch weit &uuml;ber der &uuml;blichen Nutzungsdauer&ldquo; statt
             einer Extremzahl.</li>
       </ul>
     </div>
@@ -229,14 +391,14 @@
     <div class="section">
       <h3>Fenster &amp; Anzeige</h3>
       <ul>
-        <li class="new">Fenstergröße lässt sich über das „Ansicht“-Menü speichern
-            und wird beim nächsten Start wiederhergestellt – so passt jeder das
+        <li class="new">Fenstergr&ouml;&szlig;e l&auml;sst sich &uuml;ber das &bdquo;Ansicht&ldquo;-Men&uuml; speichern
+            und wird beim n&auml;chsten Start wiederhergestellt &ndash; so passt jeder das
             Fenster an seinen Bildschirm an.</li>
-        <li>Fenster startet vollständig sichtbar über der Taskleiste; die
-            Startgröße zeigt die Übersicht sofort komplett.</li>
+        <li>Fenster startet vollst&auml;ndig sichtbar &uuml;ber der Taskleiste; die
+            Startgr&ouml;&szlig;e zeigt die &Uuml;bersicht sofort komplett.</li>
         <li class="fix">NVMe-Systemlaufwerke: Der von Windows blockierte
-            Medienfehler-Wert wird nicht mehr als echter Fehler gewertet –
-            Anzeige „nicht auslesbar (Systemlaufwerk)“ statt falscher Warnung.</li>
+            Medienfehler-Wert wird nicht mehr als echter Fehler gewertet &ndash;
+            Anzeige &bdquo;nicht auslesbar (Systemlaufwerk)&ldquo; statt falscher Warnung.</li>
       </ul>
     </div>
   </div>
@@ -248,24 +410,24 @@
       <div class="v-date">Juni 2026</div>
     </div>
     <div class="section">
-      <h3>Echtheitsprüfung &amp; neue Auswertungen</h3>
+      <h3>Echtheitspr&uuml;fung &amp; neue Auswertungen</h3>
       <ul>
-        <li class="new"><span class="highlight">Neuer Reiter „🔎 Echtheit“:</span>
-            Plausibilitätsprüfung der SMART-Werte – erkennt zurückgesetzte Zähler
-            bzw. „gebraucht als neu verkauft“ aus Widersprüchen zwischen Laufzeit,
-            Verschleiß und Schreibzyklen.</li>
-        <li>Unerwartete Stromausfälle werden neben den Einschaltzyklen angezeigt
-            – z. B. „99 (davon 59 nach Stromausfall)“.</li>
-        <li class="new">Echte 0 Betriebsstunden werden als „0 Std“ ausgewiesen;
-            neue Bewertungsstufe „Praktisch neu / unbenutzt“ für fabrikneue
+        <li class="new"><span class="highlight">Neuer Reiter &bdquo;🔎 Echtheit&ldquo;:</span>
+            Plausibilit&auml;tspr&uuml;fung der SMART-Werte &ndash; erkennt zur&uuml;ckgesetzte Z&auml;hler
+            bzw. &bdquo;gebraucht als neu verkauft&ldquo; aus Widerspr&uuml;chen zwischen Laufzeit,
+            Verschlei&szlig; und Schreibzyklen.</li>
+        <li>Unerwartete Stromausf&auml;lle werden neben den Einschaltzyklen angezeigt
+            &ndash; z. B. &bdquo;99 (davon 59 nach Stromausfall)&ldquo;.</li>
+        <li class="new">Echte 0 Betriebsstunden werden als &bdquo;0 Std&ldquo; ausgewiesen;
+            neue Bewertungsstufe &bdquo;Praktisch neu / unbenutzt&ldquo; f&uuml;r fabrikneue
             Laufwerke.</li>
         <li class="fix">RAID-/Intel-RST-Laufwerke: ehrliche
-            Windows-Gesundheitseinschätzung statt „FAILED“; Modell, Seriennummer
-            und Kapazität werden über Windows nachgezogen.</li>
+            Windows-Gesundheitseinsch&auml;tzung statt &bdquo;FAILED&ldquo;; Modell, Seriennummer
+            und Kapazit&auml;t werden &uuml;ber Windows nachgezogen.</li>
         <li>Windows-TRIM-Status, Lade-/Parkzyklen mit Hinweis auf aggressives
             Kopfparken, Einschaltzyklen jetzt auch im SSD-Bericht.</li>
-        <li>NVMe-Temperaturkorrektur, HDD-Bewertung über echte
-            Defekt-Indikatoren statt Flash-Verschleiß, zahlreiche
+        <li>NVMe-Temperaturkorrektur, HDD-Bewertung &uuml;ber echte
+            Defekt-Indikatoren statt Flash-Verschlei&szlig;, zahlreiche
             Detailverbesserungen.</li>
       </ul>
     </div>
@@ -278,21 +440,21 @@
       <div class="v-date">Juni 2026</div>
     </div>
     <div class="section">
-      <h3>Kompatibilität &amp; Stabilität</h3>
+      <h3>Kompatibilit&auml;t &amp; Stabilit&auml;t</h3>
       <ul>
         <li class="fix">Laufwerkserkennung komplett auf Windows-PowerShell
-            umgestellt – läuft jetzt auch auf neuen Windows-11-Systemen.</li>
-        <li>RAID-/Intel-RST-Laufwerke werden klar als „SMART nicht verfügbar“
-            ausgewiesen – mit Hinweis auf direkten SATA-Anschluss.</li>
-        <li class="fix">Geschwindigkeitstest: Abbruch mit Hinweis bei hängendem
+            umgestellt &ndash; l&auml;uft jetzt auch auf neuen Windows-11-Systemen.</li>
+        <li>RAID-/Intel-RST-Laufwerke werden klar als &bdquo;SMART nicht verf&uuml;gbar&ldquo;
+            ausgewiesen &ndash; mit Hinweis auf direkten SATA-Anschluss.</li>
+        <li class="fix">Geschwindigkeitstest: Abbruch mit Hinweis bei h&auml;ngendem
             Laufwerk (Hardware-/USB-Problem) statt Einfrieren.</li>
-        <li>Betriebsstunden-Plausibilität: korrekte Auswertung
+        <li>Betriebsstunden-Plausibilit&auml;t: korrekte Auswertung
             herstellerspezifischer Roh-Werte (u. a. Seagate).</li>
         <li>Geschwindigkeits-Ergebnisse werden bei Laufwerkswechsel
-            zurückgesetzt; farbige, deutlich sichtbare Reiter; Darstellung bei
+            zur&uuml;ckgesetzt; farbige, deutlich sichtbare Reiter; Darstellung bei
             125 %-Skalierung korrigiert.</li>
         <li class="fix">Dateiname des Berichts von Sonderzeichen bereinigt
-            (z. B. Anführungszeichen im Modellnamen).</li>
+            (z. B. Anf&uuml;hrungszeichen im Modellnamen).</li>
       </ul>
     </div>
   </div>
@@ -306,16 +468,16 @@
     <div class="section">
       <h3>Geschwindigkeitstest &amp; Berichtsdetails</h3>
       <ul>
-        <li class="new"><span class="highlight">Neuer Tab „⚡ Geschwindigkeit“:</span>
+        <li class="new"><span class="highlight">Neuer Tab &bdquo;⚡ Geschwindigkeit&ldquo;:</span>
             sequenzieller Lese-/Schreibtest mit Ampelbewertung.</li>
-        <li class="new">Temperatur-Bewertungsstufen optimal / warm / heiß /
+        <li class="new">Temperatur-Bewertungsstufen optimal / warm / hei&szlig; /
             kritisch mit Farbindikator.</li>
         <li>CRC-Fehler im Bericht: Hinweis, dass die Fehler auf Kabel/Adapter
             hindeuten, nicht auf die SSD selbst.</li>
-        <li>Betriebsstunden-Plausibilitätscheck mit Hinweis bei möglicherweise
-            zurückgesetztem Zähler.</li>
-        <li>HTML-Bericht: k.A.-Felder mit erklärenden Hinweisen und
-            USB-Adapter-Notiz; Druckoptimierung für den Ausdruck.</li>
+        <li>Betriebsstunden-Plausibilit&auml;tscheck mit Hinweis bei m&ouml;glicherweise
+            zur&uuml;ckgesetztem Z&auml;hler.</li>
+        <li>HTML-Bericht: k.A.-Felder mit erkl&auml;renden Hinweisen und
+            USB-Adapter-Notiz; Druckoptimierung f&uuml;r den Ausdruck.</li>
         <li>Bedienung: Geschwindigkeits-Tab per Mausrad scrollbar, Info-Box
             sauber ausgerichtet.</li>
       </ul>
@@ -323,7 +485,7 @@
   </div>
 
   <p style="text-align:center; font-size:12px; color:#95A5A6; margin-top:10px;">
-    Ältere Versionen (1.2.x – 1.3.x) enthielten die Grundfunktionen:
+    &Auml;ltere Versionen (1.2.x &ndash; 1.3.x) enthielten die Grundfunktionen:
     SSD-/HDD-Erkennung, USB- und Herstellererkennung, Reserveblock- und
     CRC-Anzeige sowie das strukturierte Berichtslayout.
   </p>
@@ -331,8 +493,8 @@
 </div>
 
 <footer>
-  © 2026 Sattler IT-Service, Greifenstein · Hans Udo Sattler ·
-  S-IT SSD-Check ist Freeware. Alle Angaben ohne Gewähr.
+  © 2026 Sattler IT-Service, Greifenstein &middot; Hans Udo Sattler &middot;
+  S-IT SSD-Check ist Freeware. Alle Angaben ohne Gew&auml;hr.
 </footer>
 </body>
 </html>

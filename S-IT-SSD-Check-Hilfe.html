@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S-IT SSD-Check – Hilfe</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #F5F5F5;
+         color: #2C3E50; font-size: 14px; line-height: 1.6; }
+  header { background: #2C3E50; color: #fff; padding: 24px 36px 18px 36px; }
+  header h1 { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+  header p  { font-size: 12px; color: #BDC3C7; }
+  nav { background: #34495E; padding: 0 36px; display: flex; flex-wrap: wrap; gap: 2px; }
+  nav a { color: #BDC3C7; text-decoration: none; padding: 10px 16px;
+          font-size: 13px; display: block; }
+  nav a:hover { background: #2C3E50; color: #fff; }
+  .container { max-width: 920px; margin: 28px auto; padding: 0 20px 60px 20px; }
+  h2 { font-size: 20px; color: #2C3E50; border-bottom: 3px solid #3498DB;
+       padding-bottom: 6px; margin: 36px 0 16px 0; }
+  h3 { font-size: 15px; color: #2980B9; margin: 20px 0 8px 0; }
+  h4 { font-size: 13px; color: #7F8C8D; margin: 14px 0 6px 0;
+       text-transform: uppercase; letter-spacing: .06em; }
+  p  { margin-bottom: 10px; }
+  ul, ol { padding-left: 22px; margin-bottom: 12px; }
+  li { margin-bottom: 5px; }
+  .box { background: #fff; border-radius: 8px; padding: 18px 22px;
+         box-shadow: 0 2px 6px rgba(0,0,0,.07); margin-bottom: 16px; }
+  .info  { background: #EBF5FB; border-left: 4px solid #3498DB;
+           padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
+  .warn  { background: #FEF9E7; border-left: 4px solid #F39C12;
+           padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
+  .tip   { background: #EAFAF1; border-left: 4px solid #27AE60;
+           padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
+  .danger{ background: #FDEDEC; border-left: 4px solid #E74C3C;
+           padding: 12px 16px; border-radius: 4px; margin: 12px 0; }
+  code   { background: #ECF0F1; padding: 2px 6px; border-radius: 3px;
+           font-family: Consolas, monospace; font-size: 12px; }
+  table  { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  th     { background: #2C3E50; color: #fff; padding: 8px 12px; text-align: left; }
+  td     { padding: 7px 12px; border-bottom: 1px solid #ECF0F1; vertical-align: top; }
+  tr:nth-child(even) td { background: #F8F9FA; }
+  .btn-demo { display: inline-block; padding: 4px 12px; border-radius: 4px;
+              font-size: 12px; font-weight: 600; color: #fff; margin: 2px;
+              white-space: nowrap; }
+  .btn-green  { background: #27AE60; }
+  .btn-blue   { background: #3498DB; }
+  .btn-orange { background: #E67E22; }
+  .btn-dark   { background: #2C3E50; }
+  .btn-red    { background: #E74C3C; }
+  .btn-grey   { background: #7F8C8D; }
+  footer { background: #2C3E50; color: #95A5A6; text-align: center;
+           padding: 14px; font-size: 11px; margin-top: 40px; }
+  .toc { background: #fff; border-radius: 8px; padding: 16px 22px;
+         box-shadow: 0 2px 6px rgba(0,0,0,.07); margin-bottom: 28px; }
+  .toc h3 { color: #2C3E50; margin-bottom: 10px; }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin: 4px 0; }
+  .toc a  { color: #3498DB; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .ampel { display:inline-block; width:13px; height:13px; border-radius:50%;
+           vertical-align:middle; margin-right:6px; }
+  .ziffer { display:inline-block; min-width:17px; height:17px; border-radius:50%;
+            background:#F1C40F; color:#2C3E50; border:1px solid #B7950B;
+            text-align:center; font-size:11px; font-weight:bold; line-height:15px;
+            padding:0 2px; vertical-align:-3px; }
+  .grundsatz { background:#fff; border-left:5px solid #2980B9; border-radius:0 6px 6px 0;
+               padding:14px 20px; margin:14px 0; box-shadow:0 2px 6px rgba(0,0,0,.07); }
+  .grundsatz h3 { margin-top:0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>📖 S-IT SSD-Check – Hilfe</h1>
+  <p>Version 1.7.0 &nbsp;•&nbsp; © 2026 Hans Udo Sattler &nbsp;•&nbsp;
+     Sattler IT-Service, Greifenstein</p>
+</header>
+
+<nav>
+  <a href="#schnellstart">Schnellstart</a>
+  <a href="#oberflaeche">Oberfläche</a>
+  <a href="#reiter">Die Reiter</a>
+  <a href="#strategie">Wie bewertet wird</a>
+  <a href="#werte">Die Werte</a>
+  <a href="#echtheit">Echtheit</a>
+  <a href="#anschluss">Anschluss</a>
+  <a href="#dateien">Dateien &amp; Bericht</a>
+  <a href="#faq">Häufige Fragen</a>
+  <a href="#lizenzen">Lizenzen</a>
+</nav>
+
+<div class="container">
+
+  <div class="toc">
+    <h3>Inhaltsverzeichnis</h3>
+    <ol>
+      <li><a href="#schnellstart">Schnellstart</a></li>
+      <li><a href="#oberflaeche">Programmoberfläche im Überblick</a></li>
+      <li><a href="#reiter">Die Reiter im Detail</a></li>
+      <li><a href="#strategie">Wie das Tool bewertet – die Strategie</a></li>
+      <li><a href="#werte">Die wichtigsten Werte verständlich</a></li>
+      <li><a href="#echtheit">Echtheits-Prüfung</a></li>
+      <li><a href="#verlauf">Messungsverlauf</a></li>
+      <li><a href="#anschluss">Anschluss &amp; Auslesbarkeit</a></li>
+      <li><a href="#dateien">DIAG, Bericht &amp; Dateien</a></li>
+      <li><a href="#faq">Häufige Fragen (FAQ)</a></li>
+      <li><a href="#lizenzen">Verwendete Fremdprogramme &amp; Lizenzen</a></li>
+    </ol>
+  </div>
+
+  <!-- SCHNELLSTART -->
+  <h2 id="schnellstart">1. Schnellstart</h2>
+  <div class="box">
+    <h3>Laufwerk prüfen in 3 Schritten</h3>
+    <ol>
+      <li><strong>Programm starten</strong> – <code>S-IT-SSD-Check.exe</code> doppelklicken.
+          Administratorrechte werden automatisch angefordert (für das Auslesen nötig).</li>
+      <li><strong>Laufwerk wählen</strong> – Oben im Auswahlfeld das zu prüfende Laufwerk
+          auswählen (Anschluss, Größe, Laufwerksbuchstabe und Modell werden angezeigt).</li>
+      <li><strong>Prüfen</strong> – Auf <span class="btn-demo btn-green">▶ Jetzt prüfen</span>
+          klicken. Anschließend füllen sich die Reiter mit den Ergebnissen.</li>
+    </ol>
+    <div class="tip">
+      <strong>Tipp:</strong> Für gebrauchte Laufwerke lohnt sich nach der Prüfung ein Blick
+      in den Reiter <span class="btn-demo btn-blue">🔎 Echtheit</span> – er erkennt typischen
+      Gebraucht-Schwindel wie zurückgesetzte Zähler.
+    </div>
+  </div>
+
+  <!-- OBERFLÄCHE -->
+  <h2 id="oberflaeche">2. Programmoberfläche im Überblick</h2>
+  <div class="box">
+    <h3>Schaltflächen unter der Laufwerksauswahl</h3>
+    <table>
+      <tr><th style="width:220px">Schaltfläche</th><th>Funktion</th></tr>
+      <tr><td><span class="btn-demo btn-blue">↻ Aktualisieren</span></td>
+          <td>Liest die Liste der angeschlossenen Laufwerke neu ein</td></tr>
+      <tr><td><span class="btn-demo btn-green">▶ Jetzt prüfen</span></td>
+          <td>Startet das Auslesen und Bewerten des gewählten Laufwerks. Die Anzeige springt
+              dabei automatisch auf die Übersicht, damit keine Werte des zuvor geprüften
+              Laufwerks stehen bleiben.</td></tr>
+      <tr><td><span class="btn-demo btn-dark">📄 Bericht</span></td>
+          <td>Erstellt einen HTML-Prüfbericht zum Speichern, Drucken oder Weitergeben</td></tr>
+    </table>
+
+    <h3>Buttons im Header (immer sichtbar)</h3>
+    <table>
+      <tr><th style="width:220px">Schaltfläche</th><th>Funktion</th></tr>
+      <tr><td><span class="btn-demo" style="background:#5D6D7E;">⚙ Einstellungen</span></td>
+          <td>Alles, was das <em>Verhalten</em> des Programms betrifft: Sprache
+              (Deutsch, English, Nederlands), automatischer Geschwindigkeitstest,
+              DIAG-Menü und der Messungsverlauf. Zu jedem Bereich gibt es ein
+              <span class="badge">ⓘ</span> mit Erklärung. Nach dem Wechsel der
+              Sprache startet das Programm neu.</td></tr>
+      <tr><td><span class="btn-demo" style="background:#5D6D7E;">🖵 Ansicht</span></td>
+          <td>Alles, was das <em>Fenster</em> betrifft: Darstellungsgröße
+              (80 %–200 % oder <em>↺ Automatisch</em>) und Fenstergröße speichern.
+              Nach dem Ändern der Größe startet das Programm neu.</td></tr>
+      <tr><td><span class="btn-demo" style="background:#1A5276;">? Hilfe</span></td>
+          <td>Öffnet diese Hilfe</td></tr>
+    </table>
+    <p>Mit <strong>ESC</strong> wird das Programm beendet.</p>
+
+    <div class="info">
+      <strong>Zur Darstellungsgröße:</strong> Das Programm wählt sie beim ersten Start selbst
+      so, dass das Fenster mit Arbeitsfläche daneben auf den Bildschirm passt. Der
+      Hintergrund: Die Windows-Skalierung ist ein Lesbarkeitswunsch <em>für Windows</em> –
+      das Fenster dieses Tools ist bereits auf einen Full-HD-Bildschirm ausgelegt. Würde die
+      Windows-Zahl zusätzlich angewendet, würde ein zweites Mal vergrößert und das Fenster
+      passte nicht mehr. Eine selbst gewählte Einstellung hat immer Vorrang und bleibt
+      dauerhaft erhalten.
+    </div>
+  </div>
+
+  <!-- REITER -->
+  <h2 id="reiter">3. Die Reiter im Detail</h2>
+  <div class="box">
+    <h3>📊 Übersicht</h3>
+    <p>Alle Messwerte auf einen Blick, in drei Spalten geordnet:</p>
+    <ul>
+      <li><strong>Laufwerk</strong> – Modell, Hersteller, Seriennummer, Firmware,
+          Schnittstelle, Kapazität</li>
+      <li><strong>Zustand</strong> – SMART-Status, Restlebensdauer, Reserveblöcke,
+          Betriebsstunden, Temperatur, geschriebene Datenmenge, Windows-TRIM</li>
+      <li><strong>Fehlerzähler</strong> – umgesetzte Blöcke, schwebende Sektoren, offline
+          unkorrigierbare Sektoren, gemeldete Lesefehler, Medienfehler, CRC-Fehler und die
+          Zyklenzähler</li>
+    </ul>
+    <p>Wer wissen will „ist das Ding kaputt?", schaut in die dritte Spalte. Werte über 0
+    stehen dort rot.</p>
+
+    <h3>🔧 SMART-Details</h3>
+    <p>Die ausgelesenen SMART-Werte im Detail, so wie das Laufwerk sie meldet – zum
+    Nachprüfen und für Fachleute.</p>
+
+    <h3>💡 Zustand &amp; Empfehlung</h3>
+    <p>Das Urteil im Klartext samt Begründung, den tragenden Messwerten und einer Empfehlung.
+    Die Ampel bedeutet:</p>
+    <ul>
+      <li><span class="ampel" style="background:#27AE60;"></span><strong>Sehr gut</strong>
+          – ab 95 % Restlebensdauer: kaum Verschleiß, keine Fehler; uneingeschränkt nutzbar</li>
+      <li><span class="ampel" style="background:#2ECC71;"></span><strong>Gut</strong>
+          – 80 bis 94 % Restlebensdauer: gut erhalten, keine Fehler; ebenfalls uneingeschränkt
+          nutzbar. Der Text nennt den bereits verbrauchten Anteil – er gehört beim
+          Gebrauchtkauf in die Preisfindung</li>
+      <li><span class="ampel" style="background:#F1C40F;"></span><strong>Noch gut</strong>
+          – spürbar benutzt, aber ohne Fehler; alltagstauglich</li>
+      <li><span class="ampel" style="background:#E67E22;"></span><strong>Vorsicht</strong>
+          – deutlich abgenutzt; nur noch für unkritische Daten</li>
+      <li><span class="ampel" style="background:#E74C3C;"></span><strong>Tauschen!</strong>
+          – nachgewiesener Defekt oder verbrauchte Lebensdauer; ersetzen</li>
+      <li><span class="ampel" style="background:#7F8C8D;"></span><strong>Keine Daten</strong>
+          – das Laufwerk gibt keine SMART-Werte heraus; kein Urteil möglich</li>
+    </ul>
+    <p><em>Sehr gut</em> und <em>Gut</em> sind beide <strong>grün</strong> und beide
+    uneingeschränkt geeignet – <em>Gut</em> in einem etwas helleren Grünton, damit die
+    beiden Stufen auch auf einen Blick unterscheidbar sind. Die Unterscheidung sagt nur,
+    wie viel Lebensdauer bereits verbraucht ist. Eine gesunde SSD wegen <em>Gut</em>
+    auszubauen wäre unsinnig.</p>
+    <p>Bei Festplatten heißt es sinngemäß <em>„SMART o.k."</em> beziehungsweise
+    <em>„SMART o.k. – beobachten"</em>, weil dort andere Maßstäbe gelten
+    (siehe <a href="#strategie">Abschnitt&nbsp;4</a>).</p>
+
+    <h3>🔎 Echtheit</h3>
+    <p>Prüft die Werte auf Plausibilität und erkennt typischen Gebraucht-Schwindel
+    (siehe Abschnitt&nbsp;6).</p>
+
+    <h3>⚡ Geschwindigkeit</h3>
+    <p>Optionaler Lese-/Schreibtest. Das Tempo wird getrennt vom Gesundheitszustand und nach
+    bauartgerechtem Maßstab bewertet – eine gesunde ältere SSD oder HDD ist nach modernem
+    Maßstab einfach langsamer, ohne dass etwas defekt wäre. Über USB liegen die Werte
+    naturgemäß niedriger als bei direktem Anschluss.</p>
+    <div class="tip">
+      Im Menü <span class="btn-demo" style="background:#5D6D7E;">🖵 Ansicht</span> lässt sich
+      der Test so einstellen, dass er nach jeder Prüfung automatisch mitläuft
+      (<em>⚡ Auto-Speedtest</em>).
+    </div>
+  </div>
+
+  <!-- STRATEGIE -->
+  <h2 id="strategie">4. Wie das Tool bewertet – die Strategie</h2>
+  <p>Dieser Abschnitt erklärt, <strong>warum</strong> das Tool zu seinem Urteil kommt. Sie
+  sollen es nachvollziehen können und nicht einfach glauben müssen.</p>
+
+  <div class="grundsatz">
+    <h3>Grundsatz 1: Verschleiß und Defekt sind zwei verschiedene Dinge</h3>
+    <p>Das ist der wichtigste Punkt – und der, der am häufigsten verwechselt wird.</p>
+    <ul>
+      <li><strong>Verschleiß</strong> beantwortet: Wie viel Flash-Leben ist rechnerisch noch
+          übrig? Das steckt in der Restlebensdauer und der geschriebenen Datenmenge.</li>
+      <li><strong>Defekt</strong> beantwortet: Verliert das Laufwerk <em>jetzt gerade</em>
+          Daten? Das steckt in den Sektorzählern.</li>
+    </ul>
+    <div class="danger">
+      <strong>Beides ist voneinander unabhängig.</strong> Eine SSD kann 100 %
+      Restlebensdauer melden und trotzdem defekt sein – wenn sie gleichzeitig unlesbare
+      Sektoren hat. Deshalb gilt: <strong>Ein nachgewiesener Defekt schlägt jeden guten
+      Verschleißwert.</strong> Die Restlebensdauer wird dann gar nicht mehr gefragt.
+    </div>
+  </div>
+
+  <div class="grundsatz">
+    <h3>Grundsatz 2: Rot gibt es nur mit Beweis</h3>
+    <p>Ein rotes Urteil entwertet ein Laufwerk. Deshalb vergibt das Tool Rot niemals wegen
+    eines einzelnen Zahlenwerts, sondern nur, wenn mindestens einer dieser
+    <strong>Defektbelege</strong> vorliegt:</p>
+    <ul>
+      <li>Das Laufwerk meldet seinen SMART-Selbsttest als durchgefallen</li>
+      <li>Schwebende Sektoren – Bereiche, die nicht sicher gelesen werden können</li>
+      <li>Offline nicht korrigierbare Sektoren – Daten sind bereits verloren</li>
+      <li>Medienfehler (bei NVMe-SSDs)</li>
+      <li>Zehn oder mehr umgesetzte Blöcke</li>
+      <li>Zehn oder mehr gemeldete Lesefehler – Bereiche, die das Laufwerk nicht
+          herausrücken konnte</li>
+      <li>Reserveblöcke unter der Schwelle des Herstellers</li>
+    </ul>
+    <p>Meldet ein Laufwerk dagegen nur eine kritische Restlebensdauer, ohne dass irgendein
+    anderer Messwert das bestätigt, wird es <em>nicht</em> rot – es wird orange, mit dem
+    offenen Hinweis, dass der Wert unbestätigt ist. Lieber eine ehrliche Unsicherheit als ein
+    falscher Todesstoß.</p>
+  </div>
+
+  <div class="grundsatz">
+    <h3>Grundsatz 3: Unglaubwürdige Werte werden verworfen, nicht behauptet</h3>
+    <p>Laufwerke melden gelegentlich Unsinn. Meldet eine SSD nach vier Jahren Betrieb eine
+    geschriebene Datenmenge von 0,3 GB, dann ist nicht die SSD ungewöhnlich – dann ist ihr
+    Zähler kaputt.</p>
+    <p>Solche Werte prüft das Tool auf Plausibilität. Was den Test nicht besteht, wird
+    verworfen und fließt <strong>nicht</strong> in die Bewertung ein. Die Anzeige sagt dann
+    ehrlich <code>k.A.</code> und nennt auf Klick den Grund.</p>
+    <div class="info">
+      Aus demselben Grund steht bei einem nicht gemeldeten Wert <strong><code>k.A.</code> und
+      nicht <code>0</code></strong>. Eine Null wäre die Behauptung einer Messung, die es
+      nicht gibt.
+    </div>
+  </div>
+
+  <div class="grundsatz">
+    <h3>Grundsatz 4: SSD und Festplatte werden unterschiedlich bewertet</h3>
+    <p>Eine SSD verschleißt durch <strong>Schreiben</strong>. Betriebsstunden sagen über ihren
+    Zustand fast nichts – eine SSD kann jahrelang laufen und dabei kaum abgenutzt sein.</p>
+    <p>Eine Festplatte hat keinen Flash-Verschleiß, sondern Mechanik. Bewertet wird deshalb
+    ihr tatsächlicher Fehlerzustand, nicht ein Verschleißwert. Die Betriebsstunden fließen
+    ergänzend ein: Nach Langzeitdaten aus großen Rechenzentren (Backblaze) steigt die
+    Ausfallrate ab etwa fünf Jahren Dauerbetrieb statistisch spürbar. Ab rund 50.000 Stunden
+    setzt das Tool eine fehlerfreie Platte deshalb auf Gelb – nicht weil sie kaputt wäre,
+    sondern weil Backups dann wichtiger werden.
+    <strong>Zu Rot führt hohe Laufzeit allein nie.</strong></p>
+  </div>
+
+  <div class="grundsatz">
+    <h3>Grundsatz 5: Datenlücken werden offengelegt</h3>
+    <p>Konnte ein Wert nicht gelesen werden oder musste er verworfen werden, sagt das Tool
+    das – in der Warnzeile und an der Stelle des Werts selbst. Sie sollen sehen können,
+    worauf ein Urteil beruht und worauf nicht.</p>
+    <p>Deshalb gibt es auch die Ampelfarbe <strong>Grau</strong>. Sie bedeutet nicht
+    „schlecht", sondern <em>„ich weiß es nicht"</em>. Ein Werkzeug, das im Zweifel rät, wäre
+    wertlos.</p>
+  </div>
+
+  <div class="danger">
+    <strong>Was das Tool nicht kann:</strong> Es kann keine Zukunft vorhersagen. Auch ein grün
+    bewertetes Laufwerk kann morgen ausfallen – etwa durch einen Elektronikdefekt, den kein
+    SMART-Wert ankündigt. Umgekehrt kann ein rot bewertetes Laufwerk noch monatelang laufen.
+    Das Tool sagt, was <em>messbar</em> ist, nicht was passieren wird.
+    <strong>Eine Prüfung ersetzt kein Backup.</strong>
+  </div>
+
+  <!-- WERTE -->
+  <h2 id="werte">5. Die wichtigsten Werte verständlich</h2>
+  <div class="box">
+    <table>
+      <tr><th style="width:200px">Wert</th><th>Bedeutung</th></tr>
+      <tr><td>SMART-Status</td>
+          <td>Die Selbsteinschätzung des Laufwerks. <code>PASSED</code> heißt: Das Laufwerk
+              hält sich selbst für in Ordnung – eine grobe Aussage, viele defekte Laufwerke
+              melden trotzdem PASSED. <code>k.A. (nicht gemeldet)</code> heißt: Es gibt keine
+              Einschätzung ab. Das ist etwas anderes als ein durchgefallener Test.</td></tr>
+      <tr><td>Restlebensdauer</td>
+          <td>Bei SSDs der verbleibende Flash-Vorrat (100 % = neuwertig). Sinkt mit der
+              geschriebenen Datenmenge. Sagt nichts über bereits vorhandene Fehler.</td></tr>
+      <tr><td>Verbr. Lebensdauer</td>
+          <td>Die Gegenzahl, sofern das Laufwerk sie direkt meldet.</td></tr>
+      <tr><td>Reserveblöcke</td>
+          <td>Ersatzkapazität für ausgefallene Bereiche. Sinkt der Wert unter die
+              Herstellerschwelle, ist das ein Defektbeleg.</td></tr>
+      <tr><td>Bisher geschrieben (TBW)</td>
+          <td>Die gesamte auf die SSD geschriebene Datenmenge – das Maß für die Abnutzung.
+              Aussagekräftig wird sie erst im Verhältnis zur Kapazität: 10 TB sind auf einer
+              256-GB-SSD sehr viel und auf einer 4-TB-SSD fast nichts. Die
+              <span class="ziffer">1</span> rechnet das in volle Schreibdurchläufe um.</td></tr>
+      <tr><td>Betriebsstunden</td>
+          <td>Reine Einschaltzeit. <code>0 Std</code> steht für ein fabrikneues Laufwerk,
+              <code>k.A.</code> nur, wenn der Wert gar nicht gemeldet wird. Bei SSDs kein
+              Verschleißmaß, bei Festplatten ein statistischer Risikofaktor.</td></tr>
+      <tr><td>Temperatur</td>
+          <td>Aktuelle Laufwerkstemperatur. Dauerhaft über 65 °C ist ungünstig, über 75 °C
+              kritisch.</td></tr>
+      <tr><td>Umgesetzte Blöcke</td>
+          <td>Bereiche, die das Laufwerk bereits gegen Reserve ersetzt hat. Einzelne sind
+              unkritisch, ab zehn gilt es als Defektbeleg.</td></tr>
+      <tr><td>Schwebende Sektoren</td>
+          <td>Bereiche, die beim Lesen nicht sicher entziffert werden konnten und zur Prüfung
+              vorgemerkt sind. <strong>Jeder Wert über 0 ist ein Defektbeleg.</strong></td></tr>
+      <tr><td>Offline unkorrigierbar</td>
+          <td>Bereiche, die auch mit allen Korrekturverfahren nicht mehr zu retten waren – die
+              Daten darin sind verloren. <strong>Jeder Wert über 0 ist ein
+              Defektbeleg.</strong></td></tr>
+      <tr><td>Gemeldete Lesefehler</td>
+          <td>Bereiche, die das Laufwerk lesen sollte und nicht liefern konnte – der Rechner
+              hat dabei einen Lesefehler bekommen. Dieser Zähler ist nötig, weil ein Laufwerk
+              einen schadhaften Bereich erst dann <em>ersetzen</em> kann, wenn wieder darauf
+              <em>geschrieben</em> wird: Bei Daten, die nur gelesen werden – Fotos, Archive,
+              alte Sicherungen – bleiben die umgesetzten Blöcke auf 0, obwohl das Laufwerk
+              längst Bereiche nicht mehr herausrückt. Bei gesunden Laufwerken steht hier 0;
+              <strong>ab zehn gilt es als Defektbeleg</strong>. Einzelne Vorfälle darunter
+              können von einem Wackelkontakt oder einem Stromausfall während des Lesens
+              stammen und führen zu keiner Abwertung. Meldet ein Laufwerk diesen Wert nicht,
+              steht <code>k.A.</code> – das ist keine schlechte Nachricht, sondern eine
+              Datenlücke.</td></tr>
+      <tr><td>Medienfehler</td>
+          <td>Das Gegenstück bei NVMe-SSDs. Über 0 ist ein Defektbeleg.</td></tr>
+      <tr><td>CRC-Fehler</td>
+          <td>Übertragungsfehler auf der <em>Verbindung</em> – Kabel, Stecker oder USB-Brücke –,
+              <strong>nicht auf dem Laufwerk selbst</strong>. Der Zähler ist kumulativ und
+              wird nie zurückgesetzt: Ein gleichbleibender Wert bedeutet keine neuen Fehler,
+              nur ein steigender weist auf ein aktuelles Problem hin. Ein hoher Altbestand
+              führt deshalb zu keiner Abwertung.</td></tr>
+      <tr><td>Lade-/Parkzyklen</td>
+          <td>Nur bei Festplatten relevant: wie oft die Köpfe geparkt wurden. Übliche
+              Auslegung rund 300.000. Deutlich mehr deutet auf aggressives Kopfparken (idle3)
+              hin – mechanischer Verschleiß, aber kein Defekt und keine Abwertung. Vor
+              Dauerbetrieb (NAS) prüfenswert.</td></tr>
+      <tr><td>Start/Stopp-Zyklen</td>
+          <td>Anlaufvorgänge der Mechanik.</td></tr>
+      <tr><td>Einschaltzyklen</td>
+          <td>Wie oft das Laufwerk eingeschaltet wurde. Meldet es zusätzlich Stromausfälle,
+              erscheint die <span class="ziffer">1</span> mit dem Anteil und seiner
+              Einordnung.</td></tr>
+      <tr><td>Windows-TRIM</td>
+          <td>Systemweite Windows-Einstellung, keine Eigenschaft des Laufwerks. Nur für SSDs
+              relevant.</td></tr>
+    </table>
+
+    <h3>Die gelbe Ziffer und das ⓘ</h3>
+    <p>Zwei Zeichen mit zwei verschiedenen Bedeutungen:</p>
+    <div class="info">
+      <p style="margin-bottom:8px"><strong>ⓘ neben einem Feldnamen</strong> erklärt den Wert
+      <em>allgemein</em>. Es steht immer da, unabhängig vom geprüften Laufwerk.</p>
+      <p style="margin-bottom:0"><span class="ziffer">1</span>
+      <strong>hinter einem Wert</strong> meldet einen <em>konkreten Befund an genau diesem
+      Laufwerk</em> – wie eine ungelesene Nachricht. Sie erscheint nur, wenn es wirklich etwas
+      zu berichten gibt; die Ziffer sagt, wie viele Angaben dahinterstecken. Anklicken.</p>
+    </div>
+  </div>
+
+  <!-- ECHTHEIT -->
+  <h2 id="echtheit">6. Echtheits-Prüfung</h2>
+  <div class="box">
+    <p>Der Echtheits-Reiter prüft die SMART-Werte auf innere Widersprüche und erkennt damit
+    den häufigsten Gebraucht-Schwindel: <strong>zurückgesetzte Zähler</strong> bzw. ein als
+    „neu" verkauftes, tatsächlich gebrauchtes Laufwerk. Geprüft werden Widersprüche zwischen
+    Laufzeit, Verschleiß, Schreibmenge und Sektorfehlern.</p>
+    <p>Die Schwellen sind bewusst zurückhaltend gewählt, damit neuwertige Laufwerke nicht
+    fälschlich angeprangert werden. Eine grüne Bewertung bedeutet: keine Hinweise auf
+    manipulierte Werte gefunden.</p>
+    <div class="warn">
+      <strong>Grenze:</strong> Eine <strong>vorgetäuschte Kapazität</strong> (manipulierter
+      Controller, der z.&nbsp;B. „2&nbsp;TB" meldet, aber weniger hat) lässt sich auf diesem
+      Weg <strong>nicht</strong> nachweisen – das erfordert einen vollständigen
+      Schreib-/Lesetest des gesamten Laufwerks.
+    </div>
+  </div>
+
+
+  <!-- MESSUNGSVERLAUF -->
+  <h2 id="verlauf">7. Messungsverlauf</h2>
+  <div class="box">
+    <p>Eine einzelne Pr&uuml;fung ist eine Momentaufnahme. Mehrere Pr&uuml;fungen
+       ergeben einen Verlauf &ndash; und der beantwortet Fragen, die eine
+       Momentaufnahme nicht beantworten kann.</p>
+    <p>Das ist kein Beiwerk, sondern schlie&szlig;t eine L&uuml;cke: An mehreren
+       Stellen sagt dieses Programm sinngem&auml;&szlig; &bdquo;achte auf den
+       Anstieg&ldquo; &ndash; bei CRC-Fehlern, bei umgesetzten Bl&ouml;cken, bei
+       schwebenden Sektoren. Sehen konnte es den Anstieg bisher nicht.</p>
+
+    <h3>Aufzeichnen</h3>
+    <p>Ab Werk h&auml;lt das Programm bei jeder Pr&uuml;fung die Kennzahlen fest.
+       Abschalten l&auml;sst sich das unter
+       <span class="btn-demo btn-blue">⚙ Einstellungen</span> &rarr;
+       <em>Messungsverlauf</em>. Wer die laufende Aufzeichnung nicht m&ouml;chte,
+       kann dort mit <em>Diese Messung jetzt sichern</em> einzelne St&auml;nde
+       gezielt festhalten.</p>
+
+    <h3>Der Reiter „Verlauf&ldquo;</h3>
+    <table>
+      <tr><th style="width:180px">Bereich</th><th>Was dort steht</th></tr>
+      <tr><td><strong>Urteil oben</strong></td>
+          <td>Die Kernaussage &uuml;ber alle Messungen hinweg, mit Zeitraum und
+              Anzahl &ndash; etwa &bdquo;Unauff&auml;llig &uuml;ber 47 Messungen&ldquo;.</td></tr>
+      <tr><td><strong>Werteliste</strong></td>
+          <td>Je Kennzahl der erste und der aktuelle Wert, die Ver&auml;nderung
+              und &ndash; in der letzten Spalte &ndash; was das bedeutet. Angezeigt
+              wird nur, was das Laufwerk auch liefert.</td></tr>
+      <tr><td><strong>Diagramm</strong></td>
+          <td>Zeichnet den Verlauf der angeklickten Zeile.</td></tr>
+    </table>
+    <div class="tip">
+      <strong>Die letzte Spalte ist der eigentliche Gewinn.</strong> Ein Zahlenpaar
+      sagt wenig; erst die Einordnung macht daraus eine Aussage &ndash; etwa
+      &bdquo;52 am Tag, jetzt bei 28&nbsp;% der Auslegungsgrenze, noch rund
+      11 Jahre&ldquo; oder &bdquo;seit 95 Tagen kein neuer CRC-Fehler &ndash; die
+      Verbindung ist in Ordnung&ldquo;.
+    </div>
+
+    <h3>Drei Arten von Diagramm</h3>
+    <p>Die Form richtet sich nach dem Wert, denn die Werte beantworten
+       verschiedene Fragen. Das Programm w&auml;hlt sie selbst.</p>
+    <table>
+      <tr><th style="width:150px">Form</th><th>Wof&uuml;r</th><th>Was man sieht</th></tr>
+      <tr><td><strong>Kurve mit Balken</strong></td>
+          <td>Werte, die zwangsl&auml;ufig laufen: Betriebsstunden,
+              Schreibmenge, Verschlei&szlig;, Zyklen</td>
+          <td>Die Kurve zeigt, wie gleichm&auml;&szlig;ig es geht; der Balken
+              daneben, wie weit es bis zu einer Grenze noch ist</td></tr>
+      <tr><td><strong>Zeitleiste</strong></td>
+          <td>Werte, die null bleiben sollen: CRC, Sektoren, Lesefehler</td>
+          <td>Ein Punkt je Messung. Ist etwas passiert, f&auml;rbt sich der
+              Balken ab dieser Stelle &ndash; so sieht man sofort, ob ein
+              Vorfall frisch ist oder l&auml;ngst zur&uuml;ckliegt</td></tr>
+      <tr><td><strong>Spannenband</strong></td>
+          <td>Werte, die schwanken: Temperatur</td>
+          <td>Der Bereich, in dem sich der Wert bewegt, vor den
+              Warnschwellen des Programms</td></tr>
+    </table>
+    <p>Bei einer Kurve mit Grenze steht hinter der &Uuml;berschrift ein
+       ⓘ. Dahinter ist erkl&auml;rt, woher die Marke stammt &ndash; und dass sie
+       eine <em>Warnschwelle</em> ist und keine Ausfallgrenze.</p>
+
+    <h3>Fr&uuml;here Messungen einlesen</h3>
+    <p>Wer das Programm schon l&auml;nger benutzt, hat Berichte und
+       DIAG-Archive auf der Platte &ndash; jede Datei ist eine Messung. &Uuml;ber
+       <em>Alte Berichte und DIAG-Archive einlesen</em> wird ein Ordner
+       gew&auml;hlt; Unterordner werden mitgenommen.</p>
+    <p>Werte, die nicht zur Messreihe passen, l&auml;sst das Programm dabei
+       aus. Ein Z&auml;hler kann nicht kleiner werden, eine Restlebensdauer
+       nicht steigen &ndash; solche Spr&uuml;nge stammen aus Korrekturen der
+       Auswertung in fr&uuml;heren Programmfassungen und sagen nichts &uuml;ber
+       das Laufwerk. Am Ende steht, was &uuml;bersprungen wurde und warum.</p>
+
+    <h3>Sicherung</h3>
+    <p>Der Verlauf ist das Einzige, was dieses Programm erzeugt und was sich
+       <em>nicht</em> wiederbeschaffen l&auml;sst: Ein Bericht kann jederzeit
+       neu gedruckt werden, eine Messung von vor drei Monaten nicht.</p>
+    <p><em>Verlauf jetzt sichern</em> legt eine Kopie im Verzeichnis
+       <code>_Backups</code> neben den Programmen ab, benannt nach Tool und
+       Zeitpunkt. Findet das Programm sp&auml;ter einen leeren Verlauf, obwohl
+       dort eine Sicherung liegt &ndash; die Lage nach einer Neuinstallation
+       &ndash;, bietet es die R&uuml;ckholung von selbst an. Dabei wird nur
+       erg&auml;nzt, nie &uuml;berschrieben.</p>
+    <div class="tip">
+      <strong>Zur Seriennummer:</strong> Die Verlaufsdateien enthalten die
+      Seriennummer des Laufwerks &ndash; nur sie ordnet eine Messung
+      zweifelsfrei demselben Ger&auml;t zu; Modell und Gr&ouml;&szlig;e gen&uuml;gen
+      nicht, sobald zwei gleiche Ger&auml;te im Einsatz sind. Die Dateien
+      bleiben auf Ihrem Rechner. In DIAG-Dateien, die Sie einsenden, wird die
+      Nummer wie bisher entfernt.
+    </div>
+  </div>
+
+  <!-- ANSCHLUSS -->
+  <h2 id="anschluss">8. Anschluss &amp; Auslesbarkeit</h2>
+  <div class="box">
+    <p>Die zuverlässigsten Ergebnisse liefern <strong>direkt</strong> (intern per SATA/M.2)
+    oder über einen <strong>USB-SATA-/USB-NVMe-Adapter mit SMART-Durchleitung</strong>
+    angeschlossene Laufwerke.</p>
+    <div class="info">
+      Bei Laufwerken in einem <strong>RAID-/Intel-RST-System</strong> sind die SMART-Werte
+      herstellerbedingt oft nicht auslesbar. Das Programm zeigt dann offen
+      „SMART nicht verfügbar" und – soweit möglich – eine grobe Windows-Einschätzung, statt
+      einen Zustand vorzutäuschen. Zum vollständigen Prüfen das Laufwerk ausbauen und per
+      Adapter anschließen.
+    </div>
+    <div class="warn">
+      <strong>Das Gehäuse verändert das Ergebnis.</strong> Dasselbe Laufwerk kann an zwei
+      verschiedenen Anschlüssen unterschiedlich viele Werte liefern – manche Brücken und
+      Docking-Stationen reichen einzelne SMART-Seiten nicht durch. Steht bei einem Wert
+      <code>k.A.</code>, obwohl Sie ihn erwarten: anderen Anschluss oder direkt per SATA
+      probieren. Kartenleser und USB-Sticks haben gar kein SMART.
+    </div>
+  </div>
+
+  <!-- DATEIEN -->
+  <h2 id="dateien">9. DIAG, Bericht &amp; Dateien</h2>
+  <div class="box">
+    <h3>Bericht</h3>
+    <p><span class="btn-demo btn-dark">📄 Bericht</span> erstellt einen übersichtlichen
+    HTML-Prüfbericht zum Speichern, Drucken oder Weitergeben – ideal als Beleg beim
+    Gebrauchtverkauf. Er enthält die Seriennummer; wenn das nicht gewünscht ist, vor der
+    Weitergabe entfernen.</p>
+    <p><strong>Ausdruck:</strong> Der Bericht ist für A4 hochkant bei 100 % eingerichtet –
+    ein Verkleinern im Browser ist nicht nötig. Passt der Inhalt nicht auf ein Blatt, wird
+    an einer sinnvollen Stelle umgebrochen: Ein Abschnitt wird nie auseinandergerissen,
+    sondern wandert vollständig auf die nächste Seite.</p>
+
+    <h3>DIAG (Ferndiagnose)</h3>
+    <p>Das DIAG-Menü richtet sich an Tester und ist <strong>standardmäßig
+    ausgeblendet</strong>. Einschalten unter
+    <span class="btn-demo" style="background:#5D6D7E;">🖵 Ansicht</span> →
+    <em>DIAG-Menü anzeigen (Tester)</em>. Danach erscheint oben
+    <span class="btn-demo btn-grey">🔧 DIAG</span> mit:</p>
+    <ul>
+      <li><strong>Einzel-Diag</strong> – Diagnosedaten des gerade geprüften Laufwerks</li>
+      <li><strong>Diag-All</strong> – prüft alle gefundenen Laufwerke nacheinander</li>
+      <li><strong>Einzel-Diag lesen</strong> – zeigt eine erzeugte Datei im Editor an</li>
+    </ul>
+    <p>In beiden Fällen entsteht <strong>genau eine</strong> verschlüsselte
+    <code>.7z</code>-Datei im Ordner <code>S-IT-Diagnose</code> neben dem Programm. Sie kann
+    zur Analyse an <code>tool-entwicklung@sattler-it.de</code> gesendet werden. DIAG
+    funktioniert auch bei Laufwerken, die sich nicht regulär bewerten lassen – dann enthält
+    die Datei die Fehlermeldung, was für die Ferndiagnose besonders wertvoll ist.</p>
+    <div class="tip">
+      <strong>Datenschutz:</strong> Die DIAG-Datei enthält <strong>keine
+      Seriennummer</strong> – sie wird vor dem Schreiben entfernt. Der vollständige
+      SMART-Dump enthält sie und wird deshalb ausschließlich verschlüsselt gespeichert. Es
+      entsteht nichts automatisch und es wird nichts automatisch verschickt – nur auf Ihren
+      ausdrücklichen Aufruf hin. Das Programm sendet von sich aus nichts: keine Telemetrie,
+      kein Aufruf nach außen, keine Registrierung.
+    </div>
+
+    <h3>Dateien im Programmordner</h3>
+    <table>
+      <tr><th style="width:250px">Datei</th><th>Inhalt</th></tr>
+      <tr><td><code>S-IT-SSD-Check.exe</code></td><td>Hauptprogramm</td></tr>
+      <tr><td><code>smartctl.exe</code></td>
+          <td>Ausleseprogramm (smartmontools, GPLv2) – wird zwingend benötigt</td></tr>
+      <tr><td><code>drivedb.h</code></td>
+          <td>Laufwerks-Datenbank von smartctl – sorgt für sprechende Attributnamen</td></tr>
+      <tr><td><code>7z.exe</code></td>
+          <td>Wird für die Erstellung der verschlüsselten Diagnose-Dateien im
+              DIAG-Menü verwendet. Muss die <strong>Kommandozeilen-Version</strong> sein;
+              <code>7zG.exe</code> (Oberfläche) und <code>7zr.exe</code> (Mini-Version)
+              verstehen die nötigen Befehle nicht.</td></tr>
+      <tr><td><code>S-IT-SSD-Check-Hilfe.html</code></td><td>Diese Hilfe-Datei</td></tr>
+      <tr><td><code>Disclaimer.txt</code></td>
+          <td><a href="Disclaimer.txt">Haftungsausschluss</a> – bitte vor der Nutzung lesen</td></tr>
+      <tr><td><code>s-it-iconSSD.ico</code></td><td>Programmsymbol</td></tr>
+      <tr><td><code>SSD-Check-config.ini</code></td>
+          <td>Einstellungen – wird bei Bedarf selbst angelegt</td></tr>
+    </table>
+    <div class="info">
+      Alle Dateien gehören in <strong>denselben Ordner</strong>. Fehlt die Hilfe-Datei,
+      öffnet der Knopf <span class="btn-demo" style="background:#1A5276;">? Hilfe</span>
+      ersatzweise ein einfaches internes Fenster.
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h2 id="faq">10. Häufige Fragen (FAQ)</h2>
+  <div class="box">
+
+    <h3>SmartScreen oder das Antiviren-Programm blockiert die Datei</h3>
+    <p>Da es sich um ein unabhängig entwickeltes Windows-Tool handelt, kann es vorkommen,
+    dass Windows SmartScreen oder installierte Internet-Security-Programme die Datei zunächst
+    als unbekannt einstufen. Das Programm enthält keine Schadsoftware. In diesem Fall fügen
+    Sie das Programm bitte als <strong>vertrauenswürdig</strong> bzw. als
+    <strong>Ausnahme</strong> in Ihrer Sicherheitssoftware hinzu.</p>
+
+    <h3>Es erscheint „SMART nicht verfügbar"</h3>
+    <p>Das Laufwerk wird vermutlich intern in einem RAID-/Intel-RST-System betrieben, das den
+    direkten Zugriff blockiert (siehe Abschnitt&nbsp;7). Zum vollständigen Prüfen das Laufwerk
+    ausbauen und per SATA/USB-Adapter anschließen.</p>
+
+    <h3>Bei „Betriebsstunden" steht 0 – ist das ein Fehler?</h3>
+    <p>Nein. <code>0 Std</code> bedeutet, dass das Laufwerk tatsächlich noch keine
+    Betriebszeit hat – also fabrikneu ist. Nur wenn der Wert gar nicht gemeldet wird, steht
+    <code>k.A.</code></p>
+
+    <h3>Warum steht bei einem Wert „k.A." statt einer Zahl?</h3>
+    <p>Dafür gibt es drei mögliche Gründe, und der Bericht nennt sie einzeln: Entweder meldet
+    das Laufwerk den Wert nicht, oder der Anschluss reicht ihn nicht durch, oder der gemeldete
+    Wert war unglaubwürdig und wurde verworfen (siehe
+    <a href="#strategie">Grundsatz&nbsp;3</a>). Bei verworfenen Werten steht der Grund auf
+    Klick hinter der <span class="ziffer">1</span>.</p>
+
+    <h3>Die Restlebensdauer ist hoch, das Urteil trotzdem „Tauschen!" – ein Widerspruch?</h3>
+    <p>Nein, das ist Absicht und der Kern der Bewertung. Der Verschleißwert sagt, wie viel
+    Flash-Leben rechnerisch übrig ist. Er sagt nichts darüber, ob das Laufwerk gerade Sektoren
+    verliert. Siehe <a href="#strategie">Grundsatz&nbsp;1</a>. Welcher Messwert das Urteil
+    trägt, steht im Reiter <strong>Zustand &amp; Empfehlung</strong>.</p>
+
+    <h3>CrystalDiskInfo zeigt etwas anderes an – wer hat recht?</h3>
+    <p>Meist beide, die Werte stammen aus derselben Quelle. Unterschiede entstehen durch die
+    <em>Auslegung</em>: Manche Programme rechnen herstellerabhängige Rohwerte in Prozente um,
+    die so nicht gemeint sind. Dieses Tool verzichtet bewusst darauf und nutzt nur Werte, die
+    ein Laufwerk eindeutig meldet. Auch der Zeitpunkt spielt eine Rolle – zwei Messungen mit
+    einer Stunde Abstand zeigen unterschiedliche Temperaturen und Betriebsstunden.</p>
+
+    <h3>Das Programm wirkt auf meinem Bildschirm zu klein oder zu groß</h3>
+    <p>Öffnen Sie <span class="btn-demo" style="background:#5D6D7E;">🖵 Ansicht</span> und
+    wählen Sie eine andere Skalierung (80 % bis 200 %). <em>↺ Automatisch</em> stellt die
+    selbsttätige Anpassung wieder her. Das Programm startet nach dem Ändern automatisch neu,
+    die Einstellung bleibt erhalten. Die Fenstergröße selbst lässt sich im selben Menü mit
+    <em>Fenstergröße speichern</em> festhalten.</p>
+
+    <h3>Kann ich das Tool von einem USB-Stick verwenden?</h3>
+    <p>Ja, das Tool ist portabel. Kopieren Sie alle Dateien aus dem Programmordner auf den
+    USB-Stick. Die Einstellungen werden neben der EXE gespeichert.</p>
+
+    <h3>Das Laufwerk ist alt, aber „gesund" – kann ich mich darauf verlassen?</h3>
+    <p>Ein „gesundes" Ergebnis bedeutet „aktuell keine Warnzeichen" – nicht „garantiert
+    sicher". Ein Teil der Ausfälle kündigt sich in den SMART-Werten nicht vorher an.</p>
+    <div class="danger">
+      <strong>Wichtig:</strong> Eine Prüfung ersetzt kein Backup. Die einzige verlässliche
+      Sicherheit gegen Datenverlust ist ein aktuelles Backup – unabhängig von Alter,
+      Ampelfarbe oder Prüfergebnis.
+    </div>
+  </div>
+
+  <h2 id="lizenzen">11. Verwendete Fremdprogramme &amp; Lizenzen</h2>
+  <div class="card">
+    <p>S-IT SSD-Check nutzt zwei quelloffene Fremdprogramme. Beide werden
+    unverändert mitgeliefert; ihre vollständigen Lizenztexte liegen im Ordner
+    <code>3rd-Party-Licenses</code> im Programmordner.</p>
+    <table>
+      <tr><th style="width:180px">Programm</th><th>Verwendung &amp; Lizenz</th></tr>
+      <tr><td><code>smartctl.exe</code><br>(smartmontools)</td>
+          <td>Liest die SMART-Werte der Laufwerke aus – die Grundlage jeder
+              Bewertung. Lizenziert unter der <strong>GNU GPL v2</strong>.
+              Quellcode und Projekt:
+              <a href="https://www.smartmontools.org">www.smartmontools.org</a></td></tr>
+      <tr><td><code>7z.exe</code><br>(7-Zip)</td>
+          <td>Wird für die Erstellung der verschlüsselten Diagnose-Dateien
+              (DIAG-Menü) verwendet. Teile des 7-Zip-Programms von Igor Pavlov,
+              lizenziert unter der <strong>GNU LGPL</strong>. Quellcode und Projekt:
+              <a href="https://www.7-zip.org">www.7-zip.org</a></td></tr>
+    </table>
+    <div class="info">
+      S-IT SSD-Check selbst ist Freeware von Sattler IT-Service. Die beiden
+      Fremdprogramme behalten ihre jeweilige Lizenz; ihre Weitergabe erfolgt
+      im Rahmen der GPL bzw. LGPL.
+    </div>
+  </div>
+
+  <div class="box" style="background:#EBF5FB; text-align:center; padding:24px;">
+    <p style="font-size:15px; font-weight:600; color:#2C3E50; margin-bottom:8px;">
+      Hat Ihnen dieses Tool geholfen?</p>
+    <p style="color:#7F8C8D; margin-bottom:16px;">
+      Der S-IT SSD-Check wird kostenlos entwickelt und gepflegt.<br>
+      Eine kleine Spende hilft dabei, das Tool weiterzuentwickeln. Herzlichen Dank! 🙏</p>
+    <a href="https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR"
+       target="_blank"
+       style="display:inline-block; background:#009CDE; color:#fff; font-weight:700;
+              font-size:15px; padding:10px 28px; border-radius:6px; text-decoration:none;">
+      ☕ Spende via PayPal
+    </a>
+    <p style="margin-top:10px; font-size:11px; color:#95A5A6;">tool-entwicklung@sattler-it.de</p>
+  </div>
+
+</div>
+
+<footer>
+  <p style="margin-bottom:6px">
+    Alle Angaben ohne Gewähr – die Bewertung ist eine Momentaufnahme und keine
+    Zusicherung über den Zustand eines Laufwerks.
+    <a href="Disclaimer.txt" style="color:#BDC3C7">Vollständiger Haftungsausschluss</a>
+  </p>
+  S-IT SSD-Check &nbsp;•&nbsp; © 2026 Sattler IT-Service, Greifenstein &nbsp;•&nbsp;
+  Autor: Hans Udo Sattler
+</footer>
+</body>
+</html>
