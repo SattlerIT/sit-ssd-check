@@ -8,7 +8,7 @@ you. This one reads them and gives a verdict: from "Very good" to
 and a recommendation. For your own PC or laptop, or before buying a
 second-hand drive.
 
-![Overview](screenshots/screenshot-overview.png)
+![Measurement history](screenshots/screenshot-verlauf.png)
 
 ## Features
 
@@ -36,8 +36,8 @@ second-hand drive.
 ### Condition & advice
 ![Condition](screenshots/screenshot-zustand.png)
 
-### Measurement history
-![History](screenshots/screenshot-verlauf.png)
+### Authenticity check
+![Authenticity](screenshots/screenshot-echtheit.png)
 
 ### HTML report
 ![Report](screenshots/screenshot-report.png)
